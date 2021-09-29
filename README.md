@@ -1,4 +1,4 @@
-# TypeScript interfaces
+# TypeScript utility interfaces
 This package contains most frequently used functionality that most projects need.
 
 ## Installation
