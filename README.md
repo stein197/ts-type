@@ -7,6 +7,6 @@ npm install @stein197/ts-util
 ```
 
 ## Interfaces
-- Cloneable\<T\>
-- Comparable\<T\>
-- Equalable\<T\>
+- `Cloneable<T>`
+- `Comparable<T>`
+- `Equalable<T>`
