@@ -1,0 +1,29 @@
+{
+  "name": "@stein197/ts-util",
+  "version": "0.1.0",
+  "description": "TypeScript untility interfaces",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stein197/ts-util.git"
+  },
+  "keywords": [
+    "ts",
+    "typescript",
+    "util",
+    "utility",
+    "utils",
+    "utilities",
+    "interface",
+    "interfaces",
+    "cloneable",
+    "comparable",
+    "equalable"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stein197/ts-util/issues"
+  },
+  "homepage": "https://github.com/stein197/ts-util#readme"
+}
