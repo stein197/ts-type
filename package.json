@@ -20,7 +20,7 @@
     "comparable",
     "equalable"
   ],
-  "author": "",
+  "author": "Nail Gafarov <nil20122013@gmail.com> (http://gnail.dev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stein197/ts-util/issues"
