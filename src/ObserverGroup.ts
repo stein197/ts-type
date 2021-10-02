@@ -14,7 +14,7 @@ export class ObserverGroup<T extends {[K: string]: (...data: any[]) => void}> {
 		this.observers[key]?.removeListener(callback);
 	}
 
-	public trigger<K extends keyof T>(key: K, ...data: Parameters<T[K]>): void {
-		this.observers[key]?.trigger(...data);
+	public notify<K extends keyof T>(key: K, ...data: Parameters<T[K]>): void {
+		this.observers[key]?.notify(...data);
 	}
 }

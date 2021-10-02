@@ -13,7 +13,7 @@ export default class Observer<T extends (...data: any[]) => void = () => void> {
 			this.callbacks.splice(index, 1);
 	}
 
-	public trigger(...data: Parameters<T>): void {
+	public notify(...data: Parameters<T>): void {
 		this.callbacks.slice().forEach(callback => callback(...data));
 	}
 
