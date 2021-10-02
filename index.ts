@@ -55,7 +55,7 @@ export interface Equalable<T> {
 export default class Observer<T extends (...data: any[]) => void = () => void> {
 
 	/** Holds all subscribed listeners */
-	private readonly callbacks: T[] = [];
+	private readonly listeners: T[] = [];
 
 	/**
 	 * Add a listener.
@@ -63,7 +63,7 @@ export default class Observer<T extends (...data: any[]) => void = () => void> {
 	 */
 	public addListener(listener: T): void {
 		if (!this.has(listener))
-			this.callbacks.push(listener);
+			this.listeners.push(listener);
 	}
 
 	/**
@@ -71,9 +71,9 @@ export default class Observer<T extends (...data: any[]) => void = () => void> {
 	 * @param listener Listener to remove.
 	 */
 	public removeListener(listener: T): void {
-		const index: number = this.callbacks.indexOf(listener);
+		const index: number = this.listeners.indexOf(listener);
 		if (index >= 0)
-			this.callbacks.splice(index, 1);
+			this.listeners.splice(index, 1);
 	}
 
 	/**
@@ -81,11 +81,11 @@ export default class Observer<T extends (...data: any[]) => void = () => void> {
 	 * @param data Parameters being passed to subscribed listeners.
 	 */
 	public notify(...data: Parameters<T>): void {
-		this.callbacks.slice().forEach(callback => callback(...data));
+		this.listeners.slice().forEach(callback => callback(...data));
 	}
 
 	private has(listener: T): boolean {
-		return this.callbacks.indexOf(listener) >= 0;
+		return this.listeners.indexOf(listener) >= 0;
 	}
 }
 
