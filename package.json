@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "TypeScript untility classes & interfaces",
   "main": "index.js",
+  "scripts": {
+    "test": "ts-mocha test.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stein197/ts-util.git"
@@ -19,12 +22,19 @@
     "cloneable",
     "comparable",
     "equalable",
-	"observer"
+    "observer"
   ],
   "author": "Nail Gafarov <nil20122013@gmail.com> (http://gnail.dev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stein197/ts-util/issues"
   },
-  "homepage": "https://github.com/stein197/ts-util#readme"
+  "homepage": "https://github.com/stein197/ts-util#readme",
+  "devDependencies": {
+    "@types/mocha": "^9.0.0",
+    "mocha": "^8.4.0",
+    "should": "^13.2.3",
+    "ts-mocha": "^8.0.0",
+    "ts-node": "^10.2.1"
+  }
 }

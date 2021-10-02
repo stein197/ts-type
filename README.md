@@ -9,7 +9,7 @@ npm install @stein197/ts-util
 ## Usage
 Let's say that there is a class named `Point`. Any point could be cloned, so the usage of `Cloneable<T>` interface could be as follows:
 ```ts
-import {Cloneable} from "@stein197/ts-util/src/Cloneable"
+import {Cloneable} from "@stein197/ts-util"
 
 class Point implements Cloneable<Point> {
 
@@ -27,3 +27,6 @@ class Point implements Cloneable<Point> {
 ## Classes
 - `Observer`
 - `ObserverGroup`
+
+## Running tests
+Run `npm run test` to test the package
