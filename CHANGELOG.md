@@ -1,5 +1,6 @@
 # CHANGELOG
 ## [Unreleased]
+- Add `Value` type to subscribe on it's changes
 
 ## [0.2.0](../../compare/0.1.0...0.2.0) - XXXX-XX-XX
 ### Added
