@@ -1,6 +1,6 @@
 {
   "name": "@stein197/ts-util",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TypeScript untility classes & interfaces",
   "main": "index.js",
   "scripts": {
