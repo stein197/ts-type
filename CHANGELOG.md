@@ -2,6 +2,12 @@
 ## [Unreleased]
 - Add `Value` type to subscribe on it's changes
 
+## [1.0.0](../../compare/0.2.0..1.0.0) - 2021-10-03
+### Added
+- `Nullable<T>` type
+### Removed
+- `Observer`, `ObserverGroup` classes
+
 ## [0.2.0](../../compare/0.1.0...0.2.0) - 2021-10-02
 ### Added
 - `Observer`, `ObserverGroup` classes
