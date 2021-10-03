@@ -1,5 +1,5 @@
-# TypeScript utility classes & interfaces
-This package contains most frequently used functionality that most projects need.
+# TypeScript utility types
+This package contains most frequently used types that most projects need.
 
 ## Installation
 ```
@@ -20,13 +20,9 @@ class Point implements Cloneable<Point> {
 ```
 
 ## Interfaces
-- `Cloneable`
-- `Comparable`
-- `Equalable`
+- `Cloneable<T>`
+- `Comparable<T>`
+- `Equalable<T>`
 
-## Classes
-- `Observer`
-- `ObserverGroup`
-
-## Running tests
-Run `npm run test` to test the package
+## Types
+- `Nullable<T>`
