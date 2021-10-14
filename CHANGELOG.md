@@ -1,6 +1,9 @@
 # CHANGELOG
 ## [Unreleased]
-- Add `Value` type to subscribe on it's changes
+
+## [1.1.0](../../compare/1.0.1..1.1.0) - 2021-10-14
+### Added
+- `ObjectMap<T>` type
 
 ## [1.0.1](../../compare/1.0.0..1.0.1) - 2021-10-03
 ### Fixed
