@@ -28,3 +28,5 @@ class Point implements Cloneable<Point> {
 - `Nullable<T>`
 - `ObjectMap<T>`
 - `Json`
+- `JsonArray`
+- `JsonObject`
