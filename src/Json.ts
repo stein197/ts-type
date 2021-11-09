@@ -11,4 +11,4 @@ export type JsonArray = Json[];
 /**
  * Represents an object of JSON values
  */
-export type JsonObject = {[K: string | number]: Json}
+export type JsonObject = {[K: string]: Json}

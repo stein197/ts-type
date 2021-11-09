@@ -1,6 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
 
+## [1.3.1](../../compare/1.3.0..1.3.1) - 2021-11-09
+### Changed
+- `JsonObject` type now accepts only string keys
+
 ## [1.3.0](../../compare/1.2.0..1.3.0) - 2021-11-08
 ### Added
 - `JsonArray` type
