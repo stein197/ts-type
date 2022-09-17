@@ -13,8 +13,39 @@ export type SVGElementAttributesMap = {}
 // TODO
 export type MathMLElementAttributesMap = {}
 
-// TODO
-type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {}
+type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
+	[K: `data-${string}`]: string;
+	"accesskey": string;
+	"autocapitalize": "off" | "on" | "none" | "sentences" | "words" | "characters";
+	"autofocus": "";
+	"class": string;
+	"contenteditable": HtmlBoolean;
+	"contextmenu": string;
+	"dir": "ltr" | "rtl" | "auto";
+	"draggable": HtmlBoolean;
+	"enterkeyhint": "enter" | "done" | "go" | "next" | "previous" | "search" | "send";
+	"exportparts": string;
+	"hidden": "";
+	"id": string;
+	"inputmode": "none" | "text" | "decimal" | "numeric" | "tel" | "search" | "email" | "url";
+	"is": string;
+	"itemid": string;
+	"itemprop": string;
+	"itemref": string;
+	"itemscope": "";
+	"itemtype": string;
+	"lang": string; // TODO: Replace with BCP47 std
+	"nonce": string;
+	"part": string;
+	"slot": string;
+	"spellcheck": HtmlBoolean;
+	"style": string;
+	"tabindex": number;
+	"title": string;
+	"translate": "" | "yes" | "no";
+	"x-ms-acceleratorkey": string;
+	"x-ms-format-detection": "all" | "none" | "phone";
+}
 
 type EventHandlerAttributes = {
 	[K in Extract<keyof GlobalEventHandlers, `on${string}`>]: Exclude<GlobalEventHandlers[K], null> | string;
