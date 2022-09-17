@@ -14,7 +14,11 @@ export type SVGElementAttributesMap = {}
 export type MathMLElementAttributesMap = {}
 
 // TODO
-type GlobalAttributes = AriaAttributes & {}
+type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {}
+
+type EventHandlerAttributes = {
+	[K in Extract<keyof GlobalEventHandlers, `on${string}`>]: Exclude<GlobalEventHandlers[K], null> | string;
+}
 
 type AriaAttributes = {
 	"aria-activedescendant": string;
