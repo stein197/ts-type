@@ -30,3 +30,4 @@ class Point implements Cloneable<Point> {
 - `Json`
 - `JsonArray`
 - `JsonObject`
+- Large `HTMLAttributes` type that maps HTML, SVG and MathML tag names to a map of attributes that each tag can have

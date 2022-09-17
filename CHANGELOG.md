@@ -1,6 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
 
+## [1.4.0](../../compare/1.3.2..1.4.0) - XXXX-XX-XX
+### Added
+- HTML attributes map support
+
 ## [1.3.2](../../compare/1.3.1..1.3.2) - 2021-11-09
 ### Changed
 - `JsonObject` type accepts both string and number keys
