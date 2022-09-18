@@ -18,6 +18,7 @@ npm install @stein197/ts-util
 - `JsonArray`
 - `JsonObject`
 - Large `MIME` module that contains all available MIME-types, described [here](https://www.iana.org/assignments/media-types/media-types.xhtml)
+- Large `HTMLAttributes` type that maps HTML, SVG and MathML tag names to a map of attributes that each tag can have
 
 ## NPM scripts
 - `make:index` generates at the root `index.ts`

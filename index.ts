@@ -1,6 +1,7 @@
 export * from "./src/Cloneable";
 export * from "./src/Comparable";
 export * from "./src/Equalable";
+export * from "./src/HTMLAttributes";
 export * from "./src/Json";
 export * from "./src/MIME";
 export * from "./src/Nullable";

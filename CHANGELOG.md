@@ -1,6 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
 
+## [1.5.0](../../compare/1.4.0..1.5.0) - XXXX-XX-XX
+### Added
+- HTML attributes map support
+
 ## [1.4.0](../../compare/1.3.2..1.4.0) - 2022-09-18
 ### Added
 - `MIME*` types
