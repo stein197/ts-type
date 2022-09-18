@@ -4,8 +4,147 @@
 
 export type ElementAttributesMap = HTMLElementAttributesMap & SVGElementAttributesMap & MathMLElementAttributesMap;
 
-// TODO
-export type HTMLElementAttributesMap = {}
+export type HTMLElementAttributesMap = {
+	"a": HTMLAnchorElementAttributes;
+	"abbr": GlobalAttributes;
+	"acronym": GlobalAttributes;
+	"address": GlobalAttributes;
+	"applet": HTMLAppletElementAttributes;
+	"area": HTMLAreaElementAttributes;
+	"article": GlobalAttributes;
+	"aside": GlobalAttributes;
+	"audio": HTMLAudioElementAttributes;
+	"b": GlobalAttributes;
+	"base": HTMLBaseElementAttributes;
+	"basefont": HTMLBasefontElementAttributes;
+	"bdi": GlobalAttributes;
+	"bdo": GlobalAttributes;
+	"bgsound": HTMLBgSoundElementAttributes;
+	"big": GlobalAttributes;
+	"blink": GlobalAttributes;
+	"blockquote": HTMLBlockquoteElementAttributes;
+	"body": HTMLBodyElementAttributes;
+	"br": GlobalAttributes;
+	"button": HTMLButtonElementAttributes;
+	"canvas": HTMLCanvasElementAttributes;
+	"caption": HTMLCaptionElementAttributes;
+	"center": GlobalAttributes;
+	"cite": GlobalAttributes;
+	"code": GlobalAttributes;
+	"col": HTMLColElementAttributes;
+	"colgroup": HTMLColElementAttributes;
+	"content": HTMLContentElementAttributes;
+	"data": HTMLDataElementAttributes;
+	"datalist": GlobalAttributes;
+	"dd": HTMLDDElementAttributes;
+	"del": HTMLDelElementAttributes;
+	"details": HTMLDetailsElementAttributes;
+	"dfn": GlobalAttributes;
+	"dialog": HTMLDialogElementAttributes;
+	"dir": HTMLDirElementAttributes;
+	"div": GlobalAttributes;
+	"dl": GlobalAttributes;
+	"dt": GlobalAttributes;
+	"em": GlobalAttributes;
+	"embed": HTMLEmbedElementAttributes;
+	"fieldset": HTMLFieldSetElementAttributes;
+	"figcaption": GlobalAttributes;
+	"figure": GlobalAttributes;
+	"font": HTMLFontElementAttributes;
+	"footer": GlobalAttributes;
+	"form": HTMLFormElementAttributes;
+	"frame": HTMLFrameElementAttributes;
+	"frameset": HTMLFrameSetElementAttributes;
+	"h1": GlobalAttributes;
+	"h2": GlobalAttributes;
+	"h3": GlobalAttributes;
+	"h4": GlobalAttributes;
+	"h5": GlobalAttributes;
+	"h6": GlobalAttributes;
+	"head": HTMLHeadElementAttributes;
+	"header": GlobalAttributes;
+	"hgroup": GlobalAttributes;
+	"hr": GlobalAttributes;
+	"html": HTMLHtmlElementAttributes;
+	"i": GlobalAttributes;
+	"iframe": HTMLIFrameElementAttributes;
+	"img": HTMLImageElementAttributes;
+	"input": HTMLInputElementAttributes;
+	"ins": HTMLInsElementAttributes;
+	"kbd": GlobalAttributes;
+	"keygen": HTMLKeygenElementAttributes;
+	"label": HTMLLabelElementAttributes;
+	"legend": GlobalAttributes;
+	"li": HTMLLIElementAttributes;
+	"link": HTMLLinkElementAttributes;
+	"main": GlobalAttributes;
+	"map": HTMLMapElementAttributes;
+	"mark": GlobalAttributes;
+	"marquee": HTMLMarqueeElementAttributes;
+	"menu": GlobalAttributes;
+	"menuitem": HTMLMenuItemAttributes;
+	"meta": HTMLMetaElementAttributes;
+	"meter": HTMLMeterElementAttributes;
+	"nav": GlobalAttributes;
+	"nobr": GlobalAttributes;
+	"noembed": GlobalAttributes;
+	"noframes": GlobalAttributes;
+	"noscript": GlobalAttributes;
+	"object": HTMLObjectElementAttributes;
+	"ol": HTMLOListElementAttributes;
+	"optgroup": HTMLOptGroupElementAttributes;
+	"option": HTMLOptionElementAttributes;
+	"output": HTMLOutputElementAttributes;
+	"p": GlobalAttributes;
+	"param": HTMLParamElementAttributes;
+	"picture": GlobalAttributes;
+	"plaintext": GlobalAttributes;
+	"portal": HTMLPortalElementAttributes;
+	"pre": HTMLPreElementAttributes;
+	"progress": HTMLProgressElementAttributes;
+	"q": HTMLQuoteElementAttributes;
+	"rb": GlobalAttributes;
+	"rp": GlobalAttributes;
+	"rt": GlobalAttributes;
+	"rtc": GlobalAttributes;
+	"ruby": GlobalAttributes;
+	"s": GlobalAttributes;
+	"samp": GlobalAttributes;
+	"script": HTMLScriptElementAttributes;
+	"section": GlobalAttributes;
+	"select": HTMLSelectElementAttributes;
+	"shadow": GlobalAttributes;
+	"slot": HTMLSlotElementAttributes;
+	"small": GlobalAttributes;
+	"source": HTMLSourceElementAttributes;
+	"spacer": HTMLSpacerElenentAttributes;
+	"span": GlobalAttributes;
+	"strike": GlobalAttributes;
+	"strong": GlobalAttributes;
+	"style": HTMLStyleElementAttributes;
+	"sub": GlobalAttributes;
+	"summary": GlobalAttributes;
+	"sup": GlobalAttributes;
+	"table": HTMLTableElementAttributes;
+	"tbody": HTMLTableBodyElementAttributes;
+	"td": HTMLTableCellElementAttributes;
+	"template": GlobalAttributes;
+	"textarea": HTMLTextAreaElementAttributes;
+	"tfoot": HTMLTableFootElementAttributes;
+	"th": HTMLTableCellElementAttributes;
+	"thead": HTMLTableHeadElementAttributes;
+	"time": HTMLTimeElementAttributes;
+	"title": GlobalAttributes;
+	"tr": HTMLTableRowElementAttributes;
+	"track": HTMLTrackElementAttributes;
+	"tt": GlobalAttributes;
+	"u": GlobalAttributes;
+	"ul": HTMLUListElementAttributes;
+	"var": GlobalAttributes;
+	"video": HTMLVideoElementAttributes;
+	"wbr": GlobalAttributes;
+	"xmp": GlobalAttributes;
+}
 
 // TODO
 export type SVGElementAttributesMap = {}
@@ -106,6 +245,210 @@ type AriaAttributes = {
 	"aria-valuenow": number;
 	"aria-valuetext": string;
 }
+
+// TODO
+type HTMLAnchorElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLAppletElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLAreaElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLAudioElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLBaseElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLBasefontElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLBgSoundElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLBlockquoteElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLBodyElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLButtonElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLCanvasElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLCaptionElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLColElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLContentElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLDDElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLDataElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLDelElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLDetailsElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLDialogElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLDirElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLEmbedElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLFieldSetElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLFontElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLFormElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLFrameElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLFrameSetElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLHeadElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLHtmlElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLIFrameElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLImageElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLInputElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLInsElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLKeygenElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLLIElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLLabelElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLLinkElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLMapElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLMarqueeElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLMenuItemAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLMetaElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLMeterElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLOListElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLObjectElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLOptGroupElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLOptionElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLOutputElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLParamElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLPortalElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLPreElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLProgressElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLQuoteElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLScriptElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLSelectElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLSlotElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLSourceElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLSpacerElenentAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLStyleElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTableBodyElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTableCellElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTableElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTableFootElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTableHeadElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTableRowElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTextAreaElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTimeElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLTrackElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLUListElementAttributes = GlobalAttributes & {}
+
+// TODO
+type HTMLVideoElementAttributes = GlobalAttributes & {}
 
 type HtmlBoolean = "false" | "true" | boolean;
 
