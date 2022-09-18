@@ -1,6 +1,7 @@
 // TODO: Take everything from https://html.spec.whatwg.org/ instead of https://developer.mozilla.org/en
 // TODO: Add documentation per each entry
 // TODO: Automatic web data scraping
+// TODO: Should we allow arrays as values?
 
 export type ElementAttributesMap = HTMLElementAttributesMap & SVGElementAttributesMap & MathMLElementAttributesMap;
 
@@ -157,7 +158,7 @@ type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
 	"accesskey": string;
 	"autocapitalize": "off" | "on" | "none" | "sentences" | "words" | "characters";
 	"autofocus": "";
-	"class": string;
+	"class": string | string[];
 	"contenteditable": HtmlBoolean;
 	"contextmenu": string;
 	"dir": "ltr" | "rtl" | "auto";
