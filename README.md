@@ -17,6 +17,7 @@ npm install @stein197/ts-util
 - `Json`
 - `JsonArray`
 - `JsonObject`
+- Large `MIME` module that contains all available MIME-types, described [here](https://www.iana.org/assignments/media-types/media-types.xhtml)
 
 ## NPM scripts
 - `make:index` generates at the root `index.ts`

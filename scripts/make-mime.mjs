@@ -33,11 +33,11 @@ const URL_MIME = "https://www.iana.org/assignments/media-types/media-types.xhtml
 	let content = "";
 	const typeNameArray = [];
 	for (const [categoryName, data] of Object.entries(result)) {
-		const typeName = `MIME${categoryName[0].toUpperCase()}${categoryName.substring(1)}`;
+		const typeName = `${categoryName[0].toUpperCase()}${categoryName.substring(1)}`;
 		typeNameArray.push(typeName);
-		content += `export type ${typeName} = ${data.map(mime => `"${mime}"`).join(" | ")} | "${categoryName}/*";\n\n`;
+		content += `\texport type ${typeName} = ${data.map(mime => `"${mime}"`).join(" | ")} | "${categoryName}/*";\n\n`;
 	}
-	content = `export type MIMEAll = ${typeNameArray.join(" | ")};\n\n` + content;
+	content = `export declare module mime {\n\n\texport type All = ${typeNameArray.join(" | ")};\n\n` + content + "}\n";
 	fs.writeFileSync(path.resolve(u.ROOT_DIR, "src", "MIME.ts"), content);
 	const seconds = (new Date() - now) / 1000;
 	u.log.success(`Generated MIME.ts in ${seconds}s`);
