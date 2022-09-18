@@ -3,6 +3,11 @@
   "version": "1.4.0",
   "description": "TypeScript utility types",
   "main": "index.js",
+  "scripts": {
+    "make:index": "node scripts/make-index.mjs",
+    "make:mime": "node scripts/make-mime.mjs",
+    "build": "npm run make:mime && npm run make:index"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stein197/ts-util.git"
@@ -18,14 +23,18 @@
     "comparable",
     "equalable",
     "nullable",
-	"json",
-	"html",
-	"attributes"
+    "json",
+    "mime"
   ],
   "author": "Nail Gafarov <nil20122013@gmail.com> (http://gnail.dev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stein197/ts-util/issues"
   },
-  "homepage": "https://github.com/stein197/ts-util#readme"
+  "homepage": "https://github.com/stein197/ts-util#readme",
+  "devDependencies": {
+    "chalk": "5.0.1",
+    "jsdom": "20.0.0",
+    "node-fetch": "3.2.10"
+  }
 }
