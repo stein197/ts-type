@@ -301,8 +301,17 @@ type HTMLAreaElementAttributes = GlobalAttributes & {
 	"type": string;
 }
 
-// TODO
-type HTMLAudioElementAttributes = GlobalAttributes & {}
+type HTMLAudioElementAttributes = GlobalAttributes & {
+	"autoplay": HtmlBoolean;
+	"controls": "";
+	"controlslist": "nodownload" | "nofullscreen" | "noremoteplayback";
+	"crossorigin": "anonymous" | "use-credentials";
+	"disableremoteplayback": string;
+	"loop": HtmlBoolean;
+	"muted": HtmlBoolean;
+	"preload": "none" | "metadata" | "auto";
+	"src": string;
+}
 
 // TODO
 type HTMLBaseElementAttributes = GlobalAttributes & {}
@@ -502,6 +511,6 @@ type ShapeAttr = "default" | "circle" | "rect" | "polygon" | "poly";
 
 type TargetAttr = "_blank" | "_parent" | "_self" | "_top";
 
-type HtmlBoolean = "false" | "true" | boolean;
+type HtmlBoolean = "" | "false" | "true" | boolean;
 
 type HtmlUndefined = "undefined" | undefined;
