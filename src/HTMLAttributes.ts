@@ -267,8 +267,23 @@ type HTMLAnchorElementAttributes = GlobalAttributes & {
 	"urn": string;
 }
 
-// TODO
-type HTMLAppletElementAttributes = GlobalAttributes & {}
+type HTMLAppletElementAttributes = GlobalAttributes & {
+	"align": "bottom" | "left" | "middle" | "right" | "top" | "absbottom" | "absmiddle" | "baseline" | "center" | "texttop";
+	"alt": string;
+	"archive": string;
+	"code": string;
+	"codebase": string;
+	"datafld": string;
+	"datasrc": string;
+	"height": number;
+	"hspace": number;
+	"mayscript": string;
+	"name": string;
+	"object": string;
+	"src": string;
+	"vspace": number;
+	"width": string;
+}
 
 // TODO
 type HTMLAreaElementAttributes = GlobalAttributes & {}
