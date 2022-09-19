@@ -254,13 +254,13 @@ type HTMLAnchorElementAttributes = GlobalAttributes & {
 	"hreflang": string; // TODO: Replace with BCP47 std
 	"ping": string;
 	"referrerpolicy": "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "unsafe-url";
-	"rel": ("alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up")[];
-	"target": "_blank" | "_parent" | "_self" | "_top";
+	"rel": RelAttr[];
+	"target": TargetAttr;
 	"type": mime.All;
 	"charset": string;
 	"coords": number[];
 	"name": string;
-	"shape": "default" | "circle" | "rect" | "polygon";
+	"shape": ShapeAttr;
 	"datafld": string;
 	"datasrc": string;
 	"methods": string;
@@ -285,8 +285,21 @@ type HTMLAppletElementAttributes = GlobalAttributes & {
 	"width": string;
 }
 
-// TODO
-type HTMLAreaElementAttributes = GlobalAttributes & {}
+type HTMLAreaElementAttributes = GlobalAttributes & {
+	"alt": string;
+	"coords": number[];
+	"download": string;
+	"href": string;
+	"hreflang": string; // TODO: Replace with BCP47 std
+	"ping": string;
+	"referrerpolicy": "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url";
+	"rel": RelAttr[];
+	"shape": ShapeAttr;
+	"target": TargetAttr;
+	"name": string;
+	"nohref": string;
+	"type": string;
+}
 
 // TODO
 type HTMLAudioElementAttributes = GlobalAttributes & {}
@@ -482,6 +495,12 @@ type HTMLUListElementAttributes = GlobalAttributes & {}
 
 // TODO
 type HTMLVideoElementAttributes = GlobalAttributes & {}
+
+type RelAttr = "alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up";
+
+type ShapeAttr = "default" | "circle" | "rect" | "polygon" | "poly";
+
+type TargetAttr = "_blank" | "_parent" | "_self" | "_top";
 
 type HtmlBoolean = "false" | "true" | boolean;
 
