@@ -161,10 +161,10 @@ type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
 	"autocapitalize": SwitchUnion | "none" | "sentences" | "words" | "characters";
 	"autofocus": "";
 	"class": string | string[];
-	"contenteditable": HtmlBoolean;
+	"contenteditable": BooleanUnion;
 	"contextmenu": string;
 	"dir": "ltr" | "rtl" | "auto";
-	"draggable": HtmlBoolean;
+	"draggable": BooleanUnion;
 	"enterkeyhint": "enter" | "done" | "go" | "next" | "previous" | "search" | "send";
 	"exportparts": string;
 	"hidden": "";
@@ -180,7 +180,7 @@ type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
 	"nonce": string;
 	"part": string;
 	"slot": string;
-	"spellcheck": HtmlBoolean;
+	"spellcheck": BooleanUnion;
 	"style": string;
 	"tabindex": number;
 	"title": string;
@@ -195,52 +195,52 @@ type EventHandlerAttributes = {
 
 type AriaAttributes = {
 	"aria-activedescendant": string;
-	"aria-atomic": HtmlBoolean;
+	"aria-atomic": BooleanUnion;
 	"aria-autocomplete": "none" | "inline" | "list" | "both";
 	"aria-braillelabel": string;
 	"aria-brailleroledescription": string;
-	"aria-busy": HtmlBoolean;
-	"aria-checked": HtmlBoolean | "mixed";
+	"aria-busy": BooleanUnion;
+	"aria-checked": BooleanUnion | "mixed";
 	"aria-colcount": number;
 	"aria-colindex": number;
 	"aria-colindextext": string;
 	"aria-colspan": number;
 	"aria-controls": string;
-	"aria-current": HtmlBoolean | "page" | "step" | "location" | "date" | "time";
+	"aria-current": BooleanUnion | "page" | "step" | "location" | "date" | "time";
 	"aria-describedby": string;
 	"aria-description": string;
 	"aria-details": string;
-	"aria-disabled": HtmlBoolean;
+	"aria-disabled": BooleanUnion;
 	"aria-dropeffect": "copy" | "execute" | "link" | "move" | "none" | "popup";
 	"aria-errormessage": string;
-	"aria-expanded": HtmlBoolean | HtmlUndefined;
+	"aria-expanded": BooleanUnion | UndefinedUnion;
 	"aria-flowto": string;
-	"aria-grabbed": HtmlBoolean | HtmlUndefined;
-	"aria-haspopup": HtmlBoolean | "menu" | "listbox" | "tree" | "grid" | "dialog";
-	"aria-hidden": HtmlBoolean | HtmlUndefined;
-	"aria-invalid": HtmlBoolean | "grammar" | "spelling";
+	"aria-grabbed": BooleanUnion | UndefinedUnion;
+	"aria-haspopup": BooleanUnion | "menu" | "listbox" | "tree" | "grid" | "dialog";
+	"aria-hidden": BooleanUnion | UndefinedUnion;
+	"aria-invalid": BooleanUnion | "grammar" | "spelling";
 	"aria-keyshortcuts": string;
 	"aria-label": string;
 	"aria-labelledby": string;
 	"aria-level": number;
 	"aria-live": "assertive" | "off" | "polite";
-	"aria-modal": HtmlBoolean;
-	"aria-multiline": HtmlBoolean;
-	"aria-multiselectable": HtmlBoolean;
-	"aria-orientation": HtmlUndefined | "horizontal" | "vertical";
+	"aria-modal": BooleanUnion;
+	"aria-multiline": BooleanUnion;
+	"aria-multiselectable": BooleanUnion;
+	"aria-orientation": UndefinedUnion | "horizontal" | "vertical";
 	"aria-owns": string;
 	"aria-placeholder": string;
 	"aria-posinset": number;
-	"aria-pressed": HtmlBoolean | HtmlUndefined | "mixed";
-	"aria-readonly": HtmlBoolean;
+	"aria-pressed": BooleanUnion | UndefinedUnion | "mixed";
+	"aria-readonly": BooleanUnion;
 	"aria-relevant": "additions" | "all" | "removals" | "text" | "additions text";
-	"aria-required": HtmlBoolean;
+	"aria-required": BooleanUnion;
 	"aria-roledescription": string;
 	"aria-rowcount": number;
 	"aria-rowindex": number;
 	"aria-rowindextext": string;
 	"aria-rowspan": number;
-	"aria-selected": HtmlBoolean | HtmlUndefined;
+	"aria-selected": BooleanUnion | UndefinedUnion;
 	"aria-setsize": number;
 	"aria-sort": "ascending" | "descending" | "none" | "other";
 	"aria-valuemax": number;
@@ -303,13 +303,13 @@ type HTMLAreaElementAttributes = GlobalAttributes & {
 }
 
 type HTMLAudioElementAttributes = GlobalAttributes & {
-	"autoplay": HtmlBoolean;
+	"autoplay": BooleanUnion;
 	"controls": "";
 	"controlslist": "nodownload" | "nofullscreen" | "noremoteplayback";
 	"crossorigin": "anonymous" | "use-credentials";
 	"disableremoteplayback": string;
-	"loop": HtmlBoolean;
-	"muted": HtmlBoolean;
+	"loop": BooleanUnion;
+	"muted": BooleanUnion;
 	"preload": "none" | "metadata" | "auto";
 	"src": string;
 }
@@ -348,14 +348,14 @@ type WindowEventHandlersAttributes = {
 }
 
 type HTMLButtonElementAttributes = GlobalAttributes & {
-	"autofocus": HtmlBoolean;
+	"autofocus": BooleanUnion;
 	"autocomplete": SwitchUnion;
-	"disabled": HtmlBoolean;
+	"disabled": BooleanUnion;
 	"form": string;
 	"formaction": string;
 	"formenctype": EnctypeAttr;
-	"formmethod": "get" | "post";
-	"formnovalidate": HtmlBoolean;
+	"formmethod": MethodAttr;
+	"formnovalidate": BooleanUnion;
 	"formtarget": TargetAttr;
 	"name": string;
 	"type": "submit" | "reset" | "button";
@@ -395,15 +395,15 @@ type HTMLDelElementAttributes = GlobalAttributes & {
 }
 
 type HTMLDetailsElementAttributes = GlobalAttributes & {
-	"open": HtmlBoolean;
+	"open": BooleanUnion;
 }
 
 type HTMLDialogElementAttributes = GlobalAttributes & {
-	"open": HtmlBoolean;
+	"open": BooleanUnion;
 }
 
 type HTMLDirElementAttributes = GlobalAttributes & {
-	"compact": HtmlBoolean;
+	"compact": BooleanUnion;
 }
 
 type HTMLEmbedElementAttributes = GlobalAttributes & {
@@ -414,7 +414,7 @@ type HTMLEmbedElementAttributes = GlobalAttributes & {
 }
 
 type HTMLFieldSetElementAttributes = GlobalAttributes & {
-	"disabled": HtmlBoolean;
+	"disabled": BooleanUnion;
 	"form": string;
 	"name": string;
 }
@@ -433,8 +433,8 @@ type HTMLFormElementAttributes = GlobalAttributes & {
 	"rel": RelAttr[];
 	"action": string;
 	"enctype": EnctypeAttr;
-	"method": "get" | "post" | "dialog";
-	"novalidate": HtmlBoolean;
+	"method": MethodAttr | "dialog";
+	"novalidate": BooleanUnion;
 	"target": TargetAttr;
 }
 
@@ -572,6 +572,8 @@ type HTMLVideoElementAttributes = GlobalAttributes & {}
 
 type EnctypeAttr = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
 
+type MethodAttr = "get" | "post";
+
 type RelAttr = "alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up";
 
 type ShapeAttr = "default" | "circle" | "rect" | "polygon" | "poly";
@@ -580,6 +582,6 @@ type TargetAttr = "_blank" | "_parent" | "_self" | "_top";
 
 type SwitchUnion = "on" | "off";
 
-type HtmlBoolean = "" | "false" | "true" | boolean;
+type BooleanUnion = "" | "false" | "true" | boolean;
 
-type HtmlUndefined = "undefined" | undefined;
+type UndefinedUnion = "undefined" | undefined;
