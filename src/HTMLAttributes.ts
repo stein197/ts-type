@@ -158,7 +158,7 @@ export type MathMLElementAttributesMap = {}
 type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
 	[K: `data-${string}`]: string;
 	"accesskey": string;
-	"autocapitalize": "off" | "on" | "none" | "sentences" | "words" | "characters";
+	"autocapitalize": SwitchUnion | "none" | "sentences" | "words" | "characters";
 	"autofocus": "";
 	"class": string | string[];
 	"contenteditable": HtmlBoolean;
@@ -349,7 +349,7 @@ type WindowEventHandlersAttributes = {
 
 type HTMLButtonElementAttributes = GlobalAttributes & {
 	"autofocus": HtmlBoolean;
-	"autocomplete": "on" | "off";
+	"autocomplete": SwitchUnion;
 	"disabled": HtmlBoolean;
 	"form": string;
 	"formaction": string;
@@ -425,9 +425,17 @@ type HTMLFontElementAttributes = GlobalAttributes & {
 	"size": number;
 }
 
-// TODO
 type HTMLFormElementAttributes = GlobalAttributes & {
+	"accept": mime.All;
+	"accept-charset": string | string[];
+	"autocomplete": SwitchUnion;
+	"name": string;
+	"rel": RelAttr[];
+	"action": string;
 	"enctype": EnctypeAttr;
+	"method": "get" | "post" | "dialog";
+	"novalidate": HtmlBoolean;
+	"target": TargetAttr;
 }
 
 // TODO
@@ -569,6 +577,8 @@ type RelAttr = "alternate" | "archives" | "author" | "bookmark" | "dns-prefetch"
 type ShapeAttr = "default" | "circle" | "rect" | "polygon" | "poly";
 
 type TargetAttr = "_blank" | "_parent" | "_self" | "_top";
+
+type SwitchUnion = "on" | "off";
 
 type HtmlBoolean = "" | "false" | "true" | boolean;
 
