@@ -318,8 +318,12 @@ type HTMLBaseElementAttributes = GlobalAttributes & {
 	"target": TargetAttr;
 }
 
-// TODO
-type HTMLBgSoundElementAttributes = GlobalAttributes & {}
+type HTMLBgSoundElementAttributes = GlobalAttributes & {
+	"balance": number;
+	"loop": number | "infinite";
+	"src": string;
+	"volume": number;
+}
 
 // TODO
 type HTMLBlockquoteElementAttributes = GlobalAttributes & {}
