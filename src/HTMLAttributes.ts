@@ -2,6 +2,7 @@
 // TODO: Add documentation per each entry
 // TODO: Automatic web data scraping
 // TODO: Should we allow arrays as values?
+import type {mime} from "./MIME";
 
 export type ElementAttributesMap = HTMLElementAttributesMap & SVGElementAttributesMap & MathMLElementAttributesMap;
 
