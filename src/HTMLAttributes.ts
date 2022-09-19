@@ -254,7 +254,7 @@ type HTMLAnchorElementAttributes = GlobalAttributes & {
 	"href": string;
 	"hreflang": string; // TODO: Replace with BCP47 std
 	"ping": string;
-	"referrerpolicy": "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "unsafe-url";
+	"referrerpolicy": Exclude<ReferrerPolicyAttr, "no-referrer" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin">;
 	"rel": RelAttr[];
 	"target": TargetAttr;
 	"type": mime.All;
@@ -293,7 +293,7 @@ type HTMLAreaElementAttributes = GlobalAttributes & {
 	"href": string;
 	"hreflang": string; // TODO: Replace with BCP47 std
 	"ping": string;
-	"referrerpolicy": "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url";
+	"referrerpolicy": ReferrerPolicyAttr;
 	"rel": RelAttr[];
 	"shape": ShapeAttr;
 	"target": TargetAttr;
@@ -463,8 +463,21 @@ type HTMLHtmlElementAttributes = GlobalAttributes & {
 	"xmlns": string;
 }
 
-// TODO
-type HTMLIFrameElementAttributes = GlobalAttributes & {}
+type HTMLIFrameElementAttributes = GlobalAttributes & {
+	"allow": string; // TODO: Take values from HTTP Feature-Policy header
+	"allowfullscreen": BooleanUnion;
+	"allowpaymentrequest": BooleanUnion;
+	"csp": string; // TODO: Take values from Content Security Policy
+	"fetchpriority": "high" | "low" | "auto";
+	"width": number;
+	"height": number;
+	"loading": "eager" | "lazy";
+	"name": string;
+	"referrerpolicy": ReferrerPolicyAttr;
+	"sandbox": "allow-downloads-without-user-activation" | "allow-downloads" | "allow-forms" | "allow-modals" | "allow-orientation-lock" | "allow-pointer-lock" | "allow-popups" | "allow-popups-to-escape-sandbox" | "allow-presentation" | "allow-same-origin" | "allow-scripts" | "allow-storage-access-by-user-activation" | "allow-top-navigation" | "allow-top-navigation-by-user-activation";
+	"src": string;
+	"srcdoc": string;
+}
 
 // TODO
 type HTMLImageElementAttributes = GlobalAttributes & {}
@@ -586,6 +599,8 @@ type HTMLVideoElementAttributes = GlobalAttributes & {}
 type EnctypeAttr = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
 
 type MethodAttr = "get" | "post";
+
+type ReferrerPolicyAttr = "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url";
 
 type RelAttr = "alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up";
 
