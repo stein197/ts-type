@@ -313,8 +313,10 @@ type HTMLAudioElementAttributes = GlobalAttributes & {
 	"src": string;
 }
 
-// TODO
-type HTMLBaseElementAttributes = GlobalAttributes & {}
+type HTMLBaseElementAttributes = GlobalAttributes & {
+	"href": string;
+	"target": TargetAttr;
+}
 
 // TODO
 type HTMLBasefontElementAttributes = GlobalAttributes & {}
