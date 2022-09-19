@@ -2,6 +2,7 @@
 // TODO: Add documentation per each entry
 // TODO: Automatic web data scraping
 // TODO: Should we allow arrays as values?
+// TODO: Mark deprecated elements and attributes
 import type {mime} from "./MIME";
 
 export type ElementAttributesMap = HTMLElementAttributesMap & SVGElementAttributesMap & MathMLElementAttributesMap;
@@ -329,8 +330,22 @@ type HTMLBlockquoteElementAttributes = GlobalAttributes & {
 	"cite": string;
 }
 
-// TODO
-type HTMLBodyElementAttributes = GlobalAttributes & {}
+type HTMLBodyElementAttributes = GlobalAttributes & WindowEventHandlersAttributes & {
+	"alink": string;
+	"background": string;
+	"bgcolor": string;
+	"bottommargin": string;
+	"leftmargin": string;
+	"link": string;
+	"rightmargin": string;
+	"text": string;
+	"topmargin": string;
+	"vlink": string;
+}
+
+type WindowEventHandlersAttributes = {
+	[K in Extract<keyof WindowEventHandlers, `on${string}`>]: Exclude<WindowEventHandlers[K], null> | string;
+}
 
 // TODO
 type HTMLButtonElementAttributes = GlobalAttributes & {}
