@@ -325,8 +325,9 @@ type HTMLBgSoundElementAttributes = GlobalAttributes & {
 	"volume": number;
 }
 
-// TODO
-type HTMLBlockquoteElementAttributes = GlobalAttributes & {}
+type HTMLBlockquoteElementAttributes = GlobalAttributes & {
+	"cite": string;
+}
 
 // TODO
 type HTMLBodyElementAttributes = GlobalAttributes & {}
