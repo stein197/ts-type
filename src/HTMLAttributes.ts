@@ -501,8 +501,40 @@ type HTMLImageElementAttributes = GlobalAttributes & {
 	"vspace": number;
 }
 
-// TODO
-type HTMLInputElementAttributes = GlobalAttributes & {}
+type HTMLInputElementAttributes = GlobalAttributes & {
+	"accept": string;
+	"alt": string;
+	"autocomplete": OnOffUnion;
+	"capture": string;
+	"checked": BooleanUnion;
+	"dirname": string;
+	"disabled": BooleanUnion;
+	"form": string;
+	"formaction": string;
+	"formenctype": EnctypeAttr;
+	"formmethod": MethodAttr;
+	"formnovalidate": BooleanUnion;
+	"formtarget": TargetAttr;
+	"width": number;
+	"height": number;
+	"inputmode": "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search";
+	"list": string;
+	"max": number | string;
+	"maxlength": number;
+	"min": number | string;
+	"minlength": number;
+	"multiple": BooleanUnion;
+	"name": string;
+	"pattern": RegExp;
+	"placeholder": string;
+	"readonly": BooleanUnion;
+	"required": BooleanUnion;
+	"size": number;
+	"src": string;
+	"step": number;
+	"type": "button" | "checkbox" | "color" | "date" | "datetime" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
+	"value": number | string; // Add date support?
+}
 
 // TODO
 type HTMLInsElementAttributes = GlobalAttributes & {}
