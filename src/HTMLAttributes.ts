@@ -247,8 +247,24 @@ type AriaAttributes = {
 	"aria-valuetext": string;
 }
 
-// TODO
-type HTMLAnchorElementAttributes = GlobalAttributes & {}
+type HTMLAnchorElementAttributes = GlobalAttributes & {
+	"download": string;
+	"href": string;
+	"hreflang": string; // TODO: Replace with BCP47 std
+	"ping": string;
+	"referrerpolicy": "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "unsafe-url";
+	"rel": ("alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up")[];
+	"target": "_blank" | "_parent" | "_self" | "_top";
+	"type": mime.All;
+	"charset": string;
+	"coords": number[];
+	"name": string;
+	"shape": "default" | "circle" | "rect" | "polygon";
+	"datafld": string;
+	"datasrc": string;
+	"methods": string;
+	"urn": string;
+}
 
 // TODO
 type HTMLAppletElementAttributes = GlobalAttributes & {}
