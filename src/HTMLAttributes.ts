@@ -129,16 +129,16 @@ export type HTMLElementAttributesMap = {
 	"summary": GlobalAttributes;
 	"sup": GlobalAttributes;
 	"table": HTMLTableElementAttributes;
-	"tbody": HTMLTableBodyElementAttributes;
+	"tbody": HTMLTableSectionElementAttributes;
 	"td": HTMLTableCellElementAttributes;
 	"template": GlobalAttributes;
 	"textarea": HTMLTextAreaElementAttributes;
-	"tfoot": HTMLTableFootElementAttributes;
+	"tfoot": HTMLTableSectionElementAttributes;
 	"th": HTMLTableCellElementAttributes;
-	"thead": HTMLTableHeadElementAttributes;
+	"thead": HTMLTableSectionElementAttributes;
 	"time": HTMLTimeElementAttributes;
 	"title": GlobalAttributes;
-	"tr": HTMLTableRowElementAttributes;
+	"tr": HTMLTableSectionElementAttributes;
 	"track": HTMLTrackElementAttributes;
 	"tt": GlobalAttributes;
 	"u": GlobalAttributes;
@@ -227,7 +227,7 @@ type AriaAttributes = {
 	"aria-modal": BooleanUnion;
 	"aria-multiline": BooleanUnion;
 	"aria-multiselectable": BooleanUnion;
-	"aria-orientation": UndefinedUnion | "horizontal" | "vertical";
+	"aria-orientation": UndefinedUnion | OrientationUnion;
 	"aria-owns": string;
 	"aria-placeholder": string;
 	"aria-posinset": number;
@@ -713,52 +713,102 @@ type HTMLSelectElementAttributes = GlobalAttributes & {
 	"size": string;
 }
 
-// TODO
-type HTMLSlotElementAttributes = GlobalAttributes & {}
+type HTMLSlotElementAttributes = GlobalAttributes & {
+	"name": string;
+}
 
-// TODO
-type HTMLSourceElementAttributes = GlobalAttributes & {}
+type HTMLSourceElementAttributes = GlobalAttributes & {
+	"sizes": string | string[];
+	"src": string;
+	"srcset": string | string[];
+	"type": mime.All;
+	"media": string;
+}
 
-// TODO
-type HTMLSpacerElenentAttributes = GlobalAttributes & {}
+type HTMLSpacerElenentAttributes = GlobalAttributes & {
+	"type": OrientationUnion | "block";
+	"width": number;
+	"height": number;
+	"size": number;
+	"align": "left" | "right" | "center";
+}
 
-// TODO
-type HTMLStyleElementAttributes = GlobalAttributes & {}
+type HTMLStyleElementAttributes = GlobalAttributes & {
+	"media": string;
+	"nonce": string;
+	"type": "" | "text/css";
+}
 
-// TODO
-type HTMLTableBodyElementAttributes = GlobalAttributes & {}
+type HTMLTableSectionElementAttributes = GlobalAttributes & {
+	"align": "left" | "center" | "right" | "justify" | "char";
+	"bgcolor": string;
+	"char": string;
+	"charoff": number;
+	"valign": "baseline" | "bottom" | "middle" | "top";
+}
 
-// TODO
-type HTMLTableCellElementAttributes = GlobalAttributes & {}
+type HTMLTableCellElementAttributes = GlobalAttributes & HTMLTableSectionElementAttributes & {
+	"colspan": number;
+	"headers": string | string[];
+	"rowspan": number;
+	"abbr": string;
+	"axis": string | string[];
+	"width": number;
+	"height": number;
+	"scope": string;
+}
 
-// TODO
-type HTMLTableElementAttributes = GlobalAttributes & {}
-
-// TODO
-type HTMLTableFootElementAttributes = GlobalAttributes & {}
-
-// TODO
-type HTMLTableHeadElementAttributes = GlobalAttributes & {}
-
-// TODO
-type HTMLTableRowElementAttributes = GlobalAttributes & {}
+type HTMLTableElementAttributes = GlobalAttributes & {
+	"align": "left" | "center" | "right";
+	"bgcolor": string;
+	"border": number;
+	"cellpadding": number;
+	"cellspacing": number;
+	"frame": string;
+	"rules": "none" | "groups" | "rows" | "columns" | "all";
+	"summary": string;
+	"width": number;
+}
 
 // TODO
 type HTMLTextAreaElementAttributes = GlobalAttributes & {
 	"autocomplete": AutocompleteAttr;
 }
 
-// TODO
-type HTMLTimeElementAttributes = GlobalAttributes & {}
+type HTMLTimeElementAttributes = GlobalAttributes & {
+	"datetime": string; // Date?
+}
 
-// TODO
-type HTMLTrackElementAttributes = GlobalAttributes & {}
+type HTMLTrackElementAttributes = GlobalAttributes & {
+	"default": string;
+	"kind": "subtitles" | "captions" | "descriptions" | "chapters" | "metadata";
+	"label": string;
+	"src": string;
+	"srclang": string; // TODO: Replace with BCP47 std
+}
 
-// TODO
-type HTMLUListElementAttributes = GlobalAttributes & {}
+type HTMLUListElementAttributes = GlobalAttributes & {
+	"compact": string;
+	"type": "circle" | "disc" | "square";
+}
 
-// TODO
-type HTMLVideoElementAttributes = GlobalAttributes & {}
+type HTMLVideoElementAttributes = GlobalAttributes & {
+	"autoplay": BooleanUnion;
+	"autopictureinpicture": BooleanUnion;
+	"controls": string;
+	"controlslist": ("nodownload" | "nofullscreen" | "noremoteplayback")[];
+	"crossorigin": CrossOriginAttr;
+	"disablepictureinpicture": string;
+	"disableremoteplayback": BooleanUnion;
+	"width": number;
+	"height": number;
+	"loop": BooleanUnion;
+	"muted": BooleanUnion;
+	"playsinline": BooleanUnion;
+	"poster": BooleanUnion;
+	"preload": "none" | "metadata" | "auto" | "";
+	"src": string;
+}
 
 type AlignAttr = "top" | "bottom" | "left" | "right";
 
@@ -789,5 +839,7 @@ type BooleanUnion = "" | "false" | "true" | boolean;
 type YesNoUnion = "yes" | "no";
 
 type OnOffUnion = "on" | "off";
+
+type OrientationUnion = "horizontal" | "vertical";
 
 type UndefinedUnion = "undefined" | undefined;
