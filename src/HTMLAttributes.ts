@@ -347,8 +347,20 @@ type WindowEventHandlersAttributes = {
 	[K in Extract<keyof WindowEventHandlers, `on${string}`>]: Exclude<WindowEventHandlers[K], null> | string;
 }
 
-// TODO
-type HTMLButtonElementAttributes = GlobalAttributes & {}
+type HTMLButtonElementAttributes = GlobalAttributes & {
+	"autofocus": HtmlBoolean;
+	"autocomplete": "on" | "off";
+	"disabled": HtmlBoolean;
+	"form": string;
+	"formaction": string;
+	"formenctype": EnctypeAttr;
+	"formmethod": "get" | "post";
+	"formnovalidate": HtmlBoolean;
+	"formtarget": TargetAttr;
+	"name": string;
+	"type": "submit" | "reset" | "button";
+	"value": string;
+}
 
 // TODO
 type HTMLCanvasElementAttributes = GlobalAttributes & {}
@@ -393,7 +405,9 @@ type HTMLFontElementAttributes = GlobalAttributes & {
 }
 
 // TODO
-type HTMLFormElementAttributes = GlobalAttributes & {}
+type HTMLFormElementAttributes = GlobalAttributes & {
+	"enctype": EnctypeAttr;
+}
 
 // TODO
 type HTMLFrameElementAttributes = GlobalAttributes & {}
@@ -526,6 +540,8 @@ type HTMLUListElementAttributes = GlobalAttributes & {}
 
 // TODO
 type HTMLVideoElementAttributes = GlobalAttributes & {}
+
+type EnctypeAttr = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
 
 type RelAttr = "alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up";
 
