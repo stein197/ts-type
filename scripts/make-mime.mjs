@@ -37,7 +37,7 @@ const URL_MIME = "https://www.iana.org/assignments/media-types/media-types.xhtml
 		typeNameArray.push(typeName);
 		content += `\texport type ${typeName} = ${data.map(mime => `"${mime}"`).join(" | ")} | "${categoryName}/*";\n\n`;
 	}
-	content = `export declare module mime {\n\n\texport type All = ${typeNameArray.join(" | ")};\n\n` + content + "}\n";
+	content = `export declare module mime {\n\n\texport type All = "*/*" | ${typeNameArray.join(" | ")};\n\n` + content + "}\n";
 	fs.writeFileSync(path.resolve(u.ROOT_DIR, "src", "MIME.ts"), content);
 	const seconds = (new Date() - now) / 1000;
 	u.log.success(`Generated MIME.ts in ${seconds}s`);
