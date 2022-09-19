@@ -158,7 +158,7 @@ export type MathMLElementAttributesMap = {}
 type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
 	[K: `data-${string}`]: string;
 	"accesskey": string;
-	"autocapitalize": SwitchUnion | "none" | "sentences" | "words" | "characters";
+	"autocapitalize": OnOffUnion | "none" | "sentences" | "words" | "characters";
 	"autofocus": "";
 	"class": string | string[];
 	"contenteditable": BooleanUnion;
@@ -184,7 +184,7 @@ type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
 	"style": string;
 	"tabindex": number;
 	"title": string;
-	"translate": "" | "yes" | "no";
+	"translate": "" | YesNoUnion;
 	"x-ms-acceleratorkey": string;
 	"x-ms-format-detection": "all" | "none" | "phone";
 }
@@ -349,7 +349,7 @@ type WindowEventHandlersAttributes = {
 
 type HTMLButtonElementAttributes = GlobalAttributes & {
 	"autofocus": BooleanUnion;
-	"autocomplete": SwitchUnion;
+	"autocomplete": OnOffUnion;
 	"disabled": BooleanUnion;
 	"form": string;
 	"formaction": string;
@@ -382,7 +382,7 @@ type HTMLContentElementAttributes = GlobalAttributes & {
 }
 
 type HTMLDDElementAttributes = GlobalAttributes & {
-	"nowrap": "yes" | "no";
+	"nowrap": YesNoUnion;
 }
 
 type HTMLDataElementAttributes = GlobalAttributes & {
@@ -428,7 +428,7 @@ type HTMLFontElementAttributes = GlobalAttributes & {
 type HTMLFormElementAttributes = GlobalAttributes & {
 	"accept": mime.All;
 	"accept-charset": string | string[];
-	"autocomplete": SwitchUnion;
+	"autocomplete": OnOffUnion;
 	"name": string;
 	"rel": RelAttr[];
 	"action": string;
@@ -438,17 +438,30 @@ type HTMLFormElementAttributes = GlobalAttributes & {
 	"target": TargetAttr;
 }
 
-// TODO
-type HTMLFrameElementAttributes = GlobalAttributes & {}
+type HTMLFrameElementAttributes = GlobalAttributes & {
+	"src": string;
+	"name": string;
+	"noresize": string;
+	"scrolling": YesNoUnion;
+	"marginwidth": number;
+	"marginheight": number;
+	"frameborder": string;
+}
 
-// TODO
-type HTMLFrameSetElementAttributes = GlobalAttributes & {}
+type HTMLFrameSetElementAttributes = GlobalAttributes & {
+	"cols": number;
+	"rows": number;
+}
 
-// TODO
-type HTMLHeadElementAttributes = GlobalAttributes & {}
+type HTMLHeadElementAttributes = GlobalAttributes & {
+	"profile": string;
+}
 
-// TODO
-type HTMLHtmlElementAttributes = GlobalAttributes & {}
+type HTMLHtmlElementAttributes = GlobalAttributes & {
+	"manifest": string;
+	"version": string;
+	"xmlns": string;
+}
 
 // TODO
 type HTMLIFrameElementAttributes = GlobalAttributes & {}
@@ -580,8 +593,10 @@ type ShapeAttr = "default" | "circle" | "rect" | "polygon" | "poly";
 
 type TargetAttr = "_blank" | "_parent" | "_self" | "_top";
 
-type SwitchUnion = "on" | "off";
-
 type BooleanUnion = "" | "false" | "true" | boolean;
+
+type YesNoUnion = "yes" | "no";
+
+type OnOffUnion = "on" | "off";
 
 type UndefinedUnion = "undefined" | undefined;
