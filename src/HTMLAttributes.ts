@@ -362,41 +362,62 @@ type HTMLButtonElementAttributes = GlobalAttributes & {
 	"value": string;
 }
 
-// TODO
-type HTMLCanvasElementAttributes = GlobalAttributes & {}
+type HTMLCanvasElementAttributes = GlobalAttributes & {
+	"height": number;
+	"width": number;
+	"moz-opaque": string;
+}
 
-// TODO
-type HTMLCaptionElementAttributes = GlobalAttributes & {}
+type HTMLCaptionElementAttributes = GlobalAttributes & {
+	"align": "left" | "top" | "right" | "bottom";
+}
 
-// TODO
-type HTMLColElementAttributes = GlobalAttributes & {}
+type HTMLColElementAttributes = GlobalAttributes & {
+	"span": number;
+	"align": "left" | "center" | "right" | "justify";
+}
 
-// TODO
-type HTMLContentElementAttributes = GlobalAttributes & {}
+type HTMLContentElementAttributes = GlobalAttributes & {
+	"select": string | string[];
+}
 
-// TODO
-type HTMLDDElementAttributes = GlobalAttributes & {}
+type HTMLDDElementAttributes = GlobalAttributes & {
+	"nowrap": "yes" | "no";
+}
 
-// TODO
-type HTMLDataElementAttributes = GlobalAttributes & {}
+type HTMLDataElementAttributes = GlobalAttributes & {
+	"value": string;
+}
 
-// TODO
-type HTMLDelElementAttributes = GlobalAttributes & {}
+type HTMLDelElementAttributes = GlobalAttributes & {
+	"cite": string;
+	"datetime": string; // TODO: Use Date in addition?
+}
 
-// TODO
-type HTMLDetailsElementAttributes = GlobalAttributes & {}
+type HTMLDetailsElementAttributes = GlobalAttributes & {
+	"open": HtmlBoolean;
+}
 
-// TODO
-type HTMLDialogElementAttributes = GlobalAttributes & {}
+type HTMLDialogElementAttributes = GlobalAttributes & {
+	"open": HtmlBoolean;
+}
 
-// TODO
-type HTMLDirElementAttributes = GlobalAttributes & {}
+type HTMLDirElementAttributes = GlobalAttributes & {
+	"compact": HtmlBoolean;
+}
 
-// TODO
-type HTMLEmbedElementAttributes = GlobalAttributes & {}
+type HTMLEmbedElementAttributes = GlobalAttributes & {
+	"width": number;
+	"height": number;
+	"src": string;
+	"type": mime.All;
+}
 
-// TODO
-type HTMLFieldSetElementAttributes = GlobalAttributes & {}
+type HTMLFieldSetElementAttributes = GlobalAttributes & {
+	"disabled": HtmlBoolean;
+	"form": string;
+	"name": string;
+}
 
 type HTMLFontElementAttributes = GlobalAttributes & {
 	"color": string;
