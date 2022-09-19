@@ -269,7 +269,7 @@ type HTMLAnchorElementAttributes = GlobalAttributes & {
 }
 
 type HTMLAppletElementAttributes = GlobalAttributes & {
-	"align": "bottom" | "left" | "middle" | "right" | "top" | "absbottom" | "absmiddle" | "baseline" | "center" | "texttop";
+	"align": AlignAttr | "middle"| "absbottom" | "absmiddle" | "baseline" | "center" | "texttop";
 	"alt": string;
 	"archive": string;
 	"code": string;
@@ -306,7 +306,7 @@ type HTMLAudioElementAttributes = GlobalAttributes & {
 	"autoplay": BooleanUnion;
 	"controls": "";
 	"controlslist": "nodownload" | "nofullscreen" | "noremoteplayback";
-	"crossorigin": "anonymous" | "use-credentials";
+	"crossorigin": CrossOriginAttr;
 	"disableremoteplayback": string;
 	"loop": BooleanUnion;
 	"muted": BooleanUnion;
@@ -369,7 +369,7 @@ type HTMLCanvasElementAttributes = GlobalAttributes & {
 }
 
 type HTMLCaptionElementAttributes = GlobalAttributes & {
-	"align": "left" | "top" | "right" | "bottom";
+	"align": AlignAttr;
 }
 
 type HTMLColElementAttributes = GlobalAttributes & {
@@ -468,10 +468,10 @@ type HTMLIFrameElementAttributes = GlobalAttributes & {
 	"allowfullscreen": BooleanUnion;
 	"allowpaymentrequest": BooleanUnion;
 	"csp": string; // TODO: Take values from Content Security Policy
-	"fetchpriority": "high" | "low" | "auto";
+	"fetchpriority": FetchPriorityAttr;
 	"width": number;
 	"height": number;
-	"loading": "eager" | "lazy";
+	"loading": LoadingAttr;
 	"name": string;
 	"referrerpolicy": ReferrerPolicyAttr;
 	"sandbox": "allow-downloads-without-user-activation" | "allow-downloads" | "allow-forms" | "allow-modals" | "allow-orientation-lock" | "allow-pointer-lock" | "allow-popups" | "allow-popups-to-escape-sandbox" | "allow-presentation" | "allow-same-origin" | "allow-scripts" | "allow-storage-access-by-user-activation" | "allow-top-navigation" | "allow-top-navigation-by-user-activation";
@@ -479,8 +479,27 @@ type HTMLIFrameElementAttributes = GlobalAttributes & {
 	"srcdoc": string;
 }
 
-// TODO
-type HTMLImageElementAttributes = GlobalAttributes & {}
+type HTMLImageElementAttributes = GlobalAttributes & {
+	"alt": string;
+	"crossorigin": CrossOriginAttr;
+	"decoding": "sync" | "async" | "auto";
+	"fetchpriority": FetchPriorityAttr;
+	"width": number;
+	"height": number;
+	"ismap": BooleanUnion;
+	"loading": LoadingAttr;
+	"referrerpolicy": ReferrerPolicyAttr;
+	"sizes": string | string[];
+	"src": string;
+	"srcset": string | string[];
+	"usemap": string;
+	"align": AlignAttr | "middle";
+	"border": number;
+	"hspace": number;
+	"longdesc": string;
+	"name": string;
+	"vspace": number;
+}
 
 // TODO
 type HTMLInputElementAttributes = GlobalAttributes & {}
@@ -596,7 +615,15 @@ type HTMLUListElementAttributes = GlobalAttributes & {}
 // TODO
 type HTMLVideoElementAttributes = GlobalAttributes & {}
 
+type AlignAttr = "top" | "bottom" | "left" | "right";
+
+type CrossOriginAttr = "anonymous" | "use-credentials";
+
 type EnctypeAttr = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
+
+type FetchPriorityAttr = "high" | "low" | "auto";
+
+type LoadingAttr = "eager" | "lazy";
 
 type MethodAttr = "get" | "post";
 
