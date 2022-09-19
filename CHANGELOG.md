@@ -1,5 +1,6 @@
 # CHANGELOG
 ## [Unreleased]
+- Add HTTP headers typings
 
 ## [1.4.1](../../compare/1.4.0..1.4.1) - 2022-09-19
 ### Added
