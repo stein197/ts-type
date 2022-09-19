@@ -348,7 +348,6 @@ type WindowEventHandlersAttributes = {
 }
 
 type HTMLButtonElementAttributes = GlobalAttributes & {
-	"autofocus": BooleanUnion;
 	"autocomplete": OnOffUnion;
 	"disabled": BooleanUnion;
 	"form": string;
@@ -428,7 +427,7 @@ type HTMLFontElementAttributes = GlobalAttributes & {
 type HTMLFormElementAttributes = GlobalAttributes & {
 	"accept": mime.All;
 	"accept-charset": string | string[];
-	"autocomplete": OnOffUnion;
+	"autocomplete": AutocompleteAttr;
 	"name": string;
 	"rel": RelAttr[];
 	"action": string;
@@ -504,7 +503,7 @@ type HTMLImageElementAttributes = GlobalAttributes & {
 type HTMLInputElementAttributes = GlobalAttributes & {
 	"accept": string;
 	"alt": string;
-	"autocomplete": OnOffUnion;
+	"autocomplete": AutocompleteAttr;
 	"capture": string;
 	"checked": BooleanUnion;
 	"dirname": string;
@@ -536,71 +535,183 @@ type HTMLInputElementAttributes = GlobalAttributes & {
 	"value": number | string; // Add date support?
 }
 
-// TODO
-type HTMLInsElementAttributes = GlobalAttributes & {}
+type HTMLInsElementAttributes = GlobalAttributes & {
+	"cite": string;
+	"datetime": string;
+}
 
-// TODO
-type HTMLKeygenElementAttributes = GlobalAttributes & {}
+type HTMLKeygenElementAttributes = GlobalAttributes & {
+	"challenge": string;
+	"disabled": BooleanUnion;
+	"form": string;
+	"keytype": string;
+	"name": string;
+}
 
-// TODO
-type HTMLLIElementAttributes = GlobalAttributes & {}
+type HTMLLIElementAttributes = GlobalAttributes & {
+	"value": number;
+	"type": ListTypeAttr;
+}
 
-// TODO
-type HTMLLabelElementAttributes = GlobalAttributes & {}
+type HTMLLabelElementAttributes = GlobalAttributes & {
+	"for": string;
+}
 
-// TODO
-type HTMLLinkElementAttributes = GlobalAttributes & {}
+type HTMLLinkElementAttributes = GlobalAttributes & {
+	"as": "audio" | "document" | "embed" | "fetch" | "font" | "image" | "object" | "script" | "style" | "track" | "video" | "worker";
+	"crossorigin": CrossOriginAttr;
+	"disabled": BooleanUnion;
+	"fetchpriority": FetchPriorityAttr;
+	"href": string;
+	"hreflang": string; // TODO: Replace with BCP47 std
+	"imagesizes": string;
+	"imagesrcset": string;
+	"integrity": string;
+	"media": string;
+	"prefetch": string;
+	"referrerpolicy": Exclude<ReferrerPolicyAttr, "same-origin" | "strict-origin" | "strict-origin-when-cross-origin">;
+	"rel": RelAttr;
+	"sizes": string;
+	"type": mime.All;
+}
 
-// TODO
-type HTMLMapElementAttributes = GlobalAttributes & {}
+type HTMLMapElementAttributes = GlobalAttributes & {
+	"name": string;
+}
 
-// TODO
-type HTMLMarqueeElementAttributes = GlobalAttributes & {}
+type HTMLMarqueeElementAttributes = GlobalAttributes & {
+	"behavior": "scroll" | "slide" | "alternate";
+	"bgcolor": string;
+	"direction": "left" | "right" | "up" | "down";
+	"width": number;
+	"height": number;
+	"hspace": number;
+	"vspace": number;
+	"loop": number;
+	"scrollamount": number;
+	"scrolldelay": number;
+	"truespeed": string;
+}
 
-// TODO
-type HTMLMenuItemAttributes = GlobalAttributes & {}
+type HTMLMenuItemAttributes = GlobalAttributes & {
+	"checked": BooleanUnion;
+	"command": string;
+	"default": BooleanUnion;
+	"disabled": BooleanUnion;
+	"icon": string;
+	"lavel": string;
+	"radiogroup": string;
+	"type": "command" | "checkbox" | "radio";
+}
 
-// TODO
-type HTMLMetaElementAttributes = GlobalAttributes & {}
+type HTMLMetaElementAttributes = GlobalAttributes & {
+	"charset": string;
+	"content": string;
+	"http-equiv": "content-language" | "content-type" | "default-style" | "refresh" | "set-cookie" | "x-ua-compatible" | "content-security-policy";
+	"name": string;
+}
 
-// TODO
-type HTMLMeterElementAttributes = GlobalAttributes & {}
+type HTMLMeterElementAttributes = GlobalAttributes & {
+	"value": number;
+	"min": number;
+	"max": number;
+	"low": number;
+	"high": number;
+	"optimum": number;
+}
 
-// TODO
-type HTMLOListElementAttributes = GlobalAttributes & {}
+type HTMLOListElementAttributes = GlobalAttributes & {
+	"reversed": BooleanUnion;
+	"start": number;
+	"type": ListTypeAttr;
+}
 
-// TODO
-type HTMLObjectElementAttributes = GlobalAttributes & {}
+type HTMLObjectElementAttributes = GlobalAttributes & {
+	"archive": string | string[];
+	"border": number;
+	"classid": string;
+	"codebase": string;
+	"codetype": mime.All;
+	"data": string;
+	"declare": BooleanUnion;
+	"form": string;
+	"width": number;
+	"height": number;
+	"name": string;
+	"standby": string;
+	"type": mime.All;
+	"usemap": string;
+}
 
-// TODO
-type HTMLOptGroupElementAttributes = GlobalAttributes & {}
+type HTMLOptGroupElementAttributes = GlobalAttributes & {
+	"disabled": BooleanUnion;
+	"label": string;
+}
 
-// TODO
-type HTMLOptionElementAttributes = GlobalAttributes & {}
+type HTMLOptionElementAttributes = GlobalAttributes & {
+	"disabled": BooleanUnion;
+	"label": string;
+	"selected": BooleanUnion;
+	"value": string;
+}
 
-// TODO
-type HTMLOutputElementAttributes = GlobalAttributes & {}
+type HTMLOutputElementAttributes = GlobalAttributes & {
+	"for": string;
+	"form": string;
+	"name": string;
+}
 
-// TODO
-type HTMLParamElementAttributes = GlobalAttributes & {}
+type HTMLParamElementAttributes = GlobalAttributes & {
+	"name": string;
+	"value": string;
+	"type": mime.All;
+	"valuetype": "data" | "ref" | "object";
+}
 
-// TODO
-type HTMLPortalElementAttributes = GlobalAttributes & {}
+type HTMLPortalElementAttributes = GlobalAttributes & {
+	"referrerpolicy": ReferrerPolicyAttr;
+	"src": string;
+}
 
-// TODO
-type HTMLPreElementAttributes = GlobalAttributes & {}
+type HTMLPreElementAttributes = GlobalAttributes & {
+	"cols": number;
+	"width": number;
+	"wrap": string;
+}
 
-// TODO
-type HTMLProgressElementAttributes = GlobalAttributes & {}
+type HTMLProgressElementAttributes = GlobalAttributes & {
+	"max": number;
+	"value": number;
+}
 
-// TODO
-type HTMLQuoteElementAttributes = GlobalAttributes & {}
+type HTMLQuoteElementAttributes = GlobalAttributes & {
+	"cite": string;
+}
 
-// TODO
-type HTMLScriptElementAttributes = GlobalAttributes & {}
+type HTMLScriptElementAttributes = GlobalAttributes & {
+	"async": string;
+	"crossorigin": CrossOriginAttr;
+	"defer": BooleanUnion;
+	"fetchpriority": FetchPriorityAttr;
+	"integrity": string;
+	"nomodule": BooleanUnion;
+	"nonce": string;
+	"referrerpolicy": ReferrerPolicyAttr;
+	"src": string;
+	"type": "module" | mime.All;
+	"charset": string;
+	"language": string;
+}
 
-// TODO
-type HTMLSelectElementAttributes = GlobalAttributes & {}
+type HTMLSelectElementAttributes = GlobalAttributes & {
+	"autocomplete": AutocompleteAttr;
+	"disabled": BooleanUnion;
+	"form": string;
+	"multiple": BooleanUnion;
+	"name": string;
+	"required": BooleanUnion;
+	"size": string;
+}
 
 // TODO
 type HTMLSlotElementAttributes = GlobalAttributes & {}
@@ -633,7 +744,9 @@ type HTMLTableHeadElementAttributes = GlobalAttributes & {}
 type HTMLTableRowElementAttributes = GlobalAttributes & {}
 
 // TODO
-type HTMLTextAreaElementAttributes = GlobalAttributes & {}
+type HTMLTextAreaElementAttributes = GlobalAttributes & {
+	"autocomplete": AutocompleteAttr;
+}
 
 // TODO
 type HTMLTimeElementAttributes = GlobalAttributes & {}
@@ -649,11 +762,15 @@ type HTMLVideoElementAttributes = GlobalAttributes & {}
 
 type AlignAttr = "top" | "bottom" | "left" | "right";
 
-type CrossOriginAttr = "anonymous" | "use-credentials";
+type AutocompleteAttr = OnOffUnion | "name" | "honorific-prefix" | "given-name" | "additional-name" | "family-name" | "honorific-suffix" | "nickname" | "email" | "username" | "new-password" | "current-password" | "one-time-code" | "organization-title" | "organization" | "street-address" | "address-line1" | "address-line2" | "address-line3" | "address-level1" | "address-level2" | "address-level3" | "address-level4" | "country" | "country-name" | "postal-code" | "cc-name" | "cc-given-name" | "cc-additional-name" | "cc-family-name" | "cc-number" | "cc-exp" | "cc-exp-month" | "cc-exp-year" | "cc-csc" | "cc-type" | "transaction-currency" | "transaction-amount" | "language" | "bday" | "bday-day" | "bday-month" | "bday-year" | "sex" | "tel" | "tel-country-code" | "tel-national" | "tel-area-code" | "tel-local" | "tel-extension" | "impp" | "url" | "photo"
+
+type CrossOriginAttr = "" | "anonymous" | "use-credentials";
 
 type EnctypeAttr = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
 
 type FetchPriorityAttr = "high" | "low" | "auto";
+
+type ListTypeAttr = "a" | "A" | "i" | "I" | "1";
 
 type LoadingAttr = "eager" | "lazy";
 
