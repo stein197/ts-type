@@ -18,7 +18,7 @@ export type HTMLElementAttributesMap = {
 	"audio": HTMLAudioElementAttributes;
 	"b": GlobalAttributes;
 	"base": HTMLBaseElementAttributes;
-	"basefont": HTMLBasefontElementAttributes;
+	"basefont": HTMLFontElementAttributes;
 	"bdi": GlobalAttributes;
 	"bdo": GlobalAttributes;
 	"bgsound": HTMLBgSoundElementAttributes;
@@ -319,9 +319,6 @@ type HTMLBaseElementAttributes = GlobalAttributes & {
 }
 
 // TODO
-type HTMLBasefontElementAttributes = GlobalAttributes & {}
-
-// TODO
 type HTMLBgSoundElementAttributes = GlobalAttributes & {}
 
 // TODO
@@ -369,8 +366,11 @@ type HTMLEmbedElementAttributes = GlobalAttributes & {}
 // TODO
 type HTMLFieldSetElementAttributes = GlobalAttributes & {}
 
-// TODO
-type HTMLFontElementAttributes = GlobalAttributes & {}
+type HTMLFontElementAttributes = GlobalAttributes & {
+	"color": string;
+	"face": string | string[];
+	"size": number;
+}
 
 // TODO
 type HTMLFormElementAttributes = GlobalAttributes & {}
