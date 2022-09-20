@@ -155,8 +155,7 @@ export type SVGElementAttributesMap = {}
 // TODO
 export type MathMLElementAttributesMap = {}
 
-type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
-	[K: `data-${string}`]: string;
+type GlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes & {
 	"accesskey": string;
 	"autocapitalize": OnOffUnion | "none" | "sentences" | "words" | "characters";
 	"autofocus": "";
@@ -187,6 +186,19 @@ type GlobalAttributes = AriaAttributes & EventHandlerAttributes & {
 	"translate": "" | YesNoUnion;
 	"x-ms-acceleratorkey": string;
 	"x-ms-format-detection": "all" | "none" | "phone";
+}
+
+type SVGGlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes & {
+	"id": string;
+	"tabindex": number;
+	"lang": string; // TODO: Replace with BCP47 std
+	"xml:space": string;
+	"class": string | string[];
+	"style": string;
+}
+
+type DataAttributes = {
+	[K: `data-${string}`]: string;
 }
 
 type EventHandlerAttributes = {
