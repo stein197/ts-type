@@ -1,5 +1,6 @@
 # CHANGELOG
 ## [Unreleased]
+- Change file extensions from `ts` to `d.ts`
 
 ## [1.4.1](../../compare/1.4.0..1.4.1) - 2022-09-19
 ### Added
