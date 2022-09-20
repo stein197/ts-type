@@ -3,6 +3,7 @@
 // TODO: Automatic web data scraping
 // TODO: Should we allow arrays as values?
 // TODO: Mark deprecated elements and attributes
+// TODO: Add AnimationTimingAttributes, AnimationValueAttributes, etc.
 import type {mime} from "./MIME";
 
 export type ElementAttributesMap = HTMLElementAttributesMap & SVGElementAttributesMap & MathMLElementAttributesMap;
@@ -149,8 +150,83 @@ export type HTMLElementAttributesMap = {
 	"xmp": GlobalAttributes;
 }
 
-// TODO
-export type SVGElementAttributesMap = {}
+export type SVGElementAttributesMap = {
+	"altGlyph": SVGAltGlyphElementAttributes;
+	"altGlyphDef": SVGGlobalAttributes;
+	"altGlyphItem": SVGGlobalAttributes;
+	"animate": SVGAnimateElementAttributes;
+	"animateMotion": SVGAnimateMotionElementAttributes;
+	"animateTransform": SVGAnimateTransformElementAttributes;
+	"circle": SVGCircleElementAttributes;
+	"clipPath": SVGClipPathElementAttributes;
+	"color-profile": any;
+	"cursor": SVGCursorElementAttributes;
+	"defs": SVGGlobalAttributes;
+	"desc": SVGGlobalAttributes;
+	"ellipse": SVGEllipseElementAttributes;
+	"feBlend": SVGFEBlendElementAttributes;
+	"feColorMatrix": SVGFEColorMatrixElementAttributes;
+	"feComponentTransfer": SVGFEComponentTransferElementAttributes;
+	"feComposite": SVGFECompositeElementAttributes;
+	"feConvolveMatrix": SVGFEConvolveMatrixElementAttributes;
+	"feDiffuseLighting": SVGFEDiffuseLightingElementAttributes;
+	"feDisplacementMap": SVGFEDisplacementMapElementAttributes;
+	"feDistantLight": SVGFEDistantLightElementAttributes;
+	"feFlood": SVGFEFloodElementAttributes;
+	"feFuncA": SVGFEFuncAElementAttrinutes;
+	"feFuncB": SVGFEFuncBElementAttrinutes;
+	"feFuncG": SVGFEFuncGElementAttrinutes;
+	"feFuncR": SVGFEFuncRElementAttrinutes;
+	"feGaussianBlur": SVGFEGaussianBlurElementAttributes;
+	"feImage": SVGFEImageElementAttributes;
+	"feMerge": SVGFEMergeElementAttributes;
+	"feMergeNode": SVGFEMergeNodeElementAttributes;
+	"feMorphology": SVGFEMorphologyElementAttributes;
+	"feOffset": SVGFEOffsetElementAttributes;
+	"fePointLight": SVGFEPointLightElementAttributes;
+	"feSpecularLighting": SVGFESpecularLightingElementAttributes;
+	"feSpotLight": SVGFESpotLightElementAttributes;
+	"feTile": SVGFETileElementAttributes;
+	"feTurbulence": SVGFETurbulenceElementAttributes;
+	"filter": SVGFilterElementAttributes;
+	"font": SVGFontElementAttributes;
+	"font-face": SVGFontFaceElementAttributes;
+	"font-face-format": SVGFontFaceFormatElementAttributes;
+	"font-face-name": SVGFontFaceNameElementAttributes;
+	"font-face-src": SVGGlobalAttributes;
+	"font-face-uri": SVGFontFaceURIElementAttributes;
+	"foreignObject": SVGForeignObjectElementAttributes;
+	"g": SVGGlobalAttributes;
+	"glyph": SVGGlyphElementAttributes;
+	"glyphRef": SVGGlyphRefElementAttributes;
+	"hkern": SVGHKernElementAttributes;
+	"image": SVGImageElementAttributes;
+	"line": SVGLineElementAttributes;
+	"linearGradient": SVGLinearGradientElementAttributes;
+	"marker": SVGMarkerElementAttributes;
+	"mask": SVGMaskElementAttributes;
+	"metadata": SVGMetadataElementAttributes;
+	"missing-glyph": SVGMissingGlyphElementAttributes;
+	"mpath": SVGMPathElementAttributes;
+	"path": SVGPathElementAttributes;
+	"pattern": SVGPatternElementAttributes;
+	"polygon": SVGPolygonElementAttributes;
+	"polyline": SVGPolylineElementAttributes;
+	"radialGradient": SVGRadialGradientElementAttributes;
+	"rect": SVGRectElementAttributes;
+	"set": SVGSetElement;
+	"stop": SVGStopElementAttributes;
+	"svg": SVGSVGElementAttributes;
+	"switch": SVGSwitchElementAttributes;
+	"symbol": SVGSymbolElementAttributes;
+	"text": SVGTextElementAttributes;
+	"textPath": SVGTextPathElementAttributes;
+	"tref": SVGGlobalAttributes;
+	"tspan": SVGTSpanElementAttributes;
+	"use": SVGUseElementAttributes;
+	"view": SVGViewElementAttributes;
+	"vkern": SVGVkernElementAttributes;
+}
 
 // TODO
 export type MathMLElementAttributesMap = {}
@@ -821,6 +897,207 @@ type HTMLVideoElementAttributes = GlobalAttributes & {
 	"preload": "none" | "metadata" | "auto" | "";
 	"src": string;
 }
+
+// TODO
+type SVGAltGlyphElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGAnimateElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGAnimateMotionElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGAnimateTransformElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGCircleElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGClipPathElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGCursorElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGEllipseElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEBlendElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEColorMatrixElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEComponentTransferElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFECompositeElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEConvolveMatrixElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEDiffuseLightingElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEDisplacementMapElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEDistantLightElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEFloodElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEFuncAElementAttrinutes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEFuncBElementAttrinutes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEFuncGElementAttrinutes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEFuncRElementAttrinutes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEGaussianBlurElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEImageElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEMergeElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEMergeNodeElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEMorphologyElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEOffsetElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFEPointLightElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFESpecularLightingElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFESpotLightElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFETileElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFETurbulenceElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFilterElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFontElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFontFaceElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFontFaceFormatElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFontFaceNameElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGFontFaceURIElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGForeignObjectElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGGlyphElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGGlyphRefElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGHKernElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGImageElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGLineElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGLinearGradientElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGMarkerElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGMaskElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGMetadataElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGMissingGlyphElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGMPathElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGPathElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGPatternElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGPolygonElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGPolylineElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGRadialGradientElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGRectElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGSetElement = SVGGlobalAttributes & {}
+
+// TODO
+type SVGStopElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGSVGElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGSwitchElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGSymbolElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGTextElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGTextPathElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGTSpanElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGUseElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGViewElementAttributes = SVGGlobalAttributes & {}
+
+// TODO
+type SVGVkernElementAttributes = SVGGlobalAttributes & {}
 
 type AlignAttr = "top" | "bottom" | "left" | "right";
 
