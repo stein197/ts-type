@@ -256,6 +256,7 @@ type GlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes
 	"part": string;
 	"slot": string;
 	"spellcheck": BooleanUnion;
+	// TODO: Replace with map type
 	"style": string;
 	"tabindex": number;
 	"title": string;
@@ -270,6 +271,7 @@ type SVGGlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttribu
 	"lang": string; // TODO: Replace with BCP47 std
 	"xml:space": string;
 	"class": string | string[];
+	// TODO: Replace with map type
 	"style": string;
 }
 
