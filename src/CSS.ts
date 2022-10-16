@@ -810,6 +810,86 @@ export declare type CSS = Merge<{
 
 declare type GlobalValue = "inherit" | "initial" | "unset";
 
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+// TODO
+declare type TypeAlpha = any;
+// TODO
+declare type TypeAngle = any;
+// TODO
+declare type TypeAnglePercentage = any;
+// TODO
+declare type TypeBasicShape = any;
+// TODO
+declare type TypeBlendMode = any;
+// TODO
+declare type TypeColor = any;
+// TODO
+declare type TypeFunction = any;
+// TODO
+declare type TypeCustomIndent = any;
+// TODO
+declare type TypeDimension = any;
+// TODO
+declare type TypeDisplayBox = any;
+// TODO
+declare type TypeDisplayInside = any;
+// TODO
+declare type TypeDisplayInternal = any;
+// TODO
+declare type TypeDisplayLegacy = any;
+// TODO
+declare type TypeDisplayListitem = any;
+// TODO
+declare type TypeDisplayOutside = any;
+// TODO
+declare type TypeEasingFunction = any;
+// TODO
+declare type TypeFilterFunction = any;
+// TODO
+declare type TypeFlex = any;
+// TODO
+declare type TypeFrequency = any;
+// TODO
+declare type TypeFrequencyPercentage = any;
+// TODO
+declare type TypeGradient = any;
+// TODO
+declare type TypeHexColor = any;
+// TODO
+declare type TypeIdent = any;
+// TODO
+declare type TypeImage = any;
+// TODO
+declare type TypeInteger = any;
+// TODO
+declare type TypeLength = any;
+// TODO
+declare type TypeLengthPercentage = any;
+// TODO
+declare type TypeNamedColor = any;
+// TODO
+declare type TypeNumber = any;
+// TODO
+declare type TypePercentage = any;
+// TODO
+declare type TypePosition = any;
+// TODO
+declare type TypeRatio = any;
+// TODO
+declare type TypeResolution = any;
+// TODO
+declare type TypeShape = any;
+// TODO
+declare type TypeString = any;
+// TODO
+declare type TypeTime = any;
+// TODO
+declare type TypeTimePercentage = any;
+// TODO
+declare type TypeTransformFunction = any;
+// TODO
+declare type TypeTtranslationValue = any;
+
 declare type Merge<T extends object, U> = {
 	[K in keyof T]: T[K] | U;
 }
