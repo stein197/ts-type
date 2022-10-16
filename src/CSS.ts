@@ -856,8 +856,8 @@ export declare module css {
 	type TypeTransformFunction = any;
 	// TODO
 	type TypeTranslationValue = any;
-	
-	type Merge<T extends object, U> = {
-		[K in keyof T]: T[K] | U;
-	}
+}
+
+type Merge<T extends object, U> = {
+	[K in keyof T]: T[K] | U;
 }
