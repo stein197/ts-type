@@ -410,24 +410,15 @@ export declare module css {
 	export type RealProperties = Merge<{
 		"-webkit-line-clamp": "none" | number;
 		"-webkit-text-fill-color": Color;
-		// TODO
-		"-webkit-text-stroke": any;
-		// TODO
-		"-webkit-text-stroke-color": any;
-		// TODO
-		"-webkit-text-stroke-width": any;
-		// TODO
-		"accent-color": any;
-		// TODO
-		"align-content": any;
-		// TODO
-		"align-items": any;
-		// TODO
-		"align-self": any;
-		// TODO
-		"align-tracks": any;
-		// TODO
-		"all": any;
+		"-webkit-text-stroke": `${RealProperties["-webkit-text-stroke-width"]} ${RealProperties["-webkit-text-stroke-color"]}`;
+		"-webkit-text-stroke-color": Color;
+		"-webkit-text-stroke-width": "thin" | "medium" | "thick" | Length;
+		"accent-color": "auto" | Color;
+		"align-content": "normal" | BaselinePosition | ContentDistribution | OverflowPosition<ContentPosition> | ContentPosition;
+		"align-items": "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition> | SelfPosition;
+		"align-self": "auto" | "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition> | SelfPosition;
+		"align-tracks": "normal" | BaselinePosition | ContentDistribution | OverflowPosition<ContentPosition> | ContentPosition;
+		"all": GlobalValue;
 		// TODO
 		"animation": any;
 		// TODO
@@ -1414,8 +1405,8 @@ export declare module css {
 		"writing-mode": any;
 	}
 	
-	type GlobalValue = "inherit" | "initial" | "unset";
-	
+	type GlobalValue = "inherit" | "initial" | "unset" | "revert" | "revert-layer";
+
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 	type TypeAlpha = number | TypePercentage;
 	type TypeAngle = `${number}${"deg" | "grad" | "rad" | "turn" | "%"}`;
@@ -1446,7 +1437,7 @@ export declare module css {
 	type TypeGradient = any;
 	// TODO
 	type TypeImage = any;
-	type TypeLength = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}`;
+	export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}`;
 	type TypePercentage = `${number}%`;
 	// TODO
 	type TypePosition = any;
@@ -1458,6 +1449,16 @@ export declare module css {
 	type TypeTransformFunction = any;
 	// TODO
 	type TypeTranslationValue = any;
+
+	type BaselinePosition = "baseline" | "first baseline" | "last baseline";
+
+	type ContentDistribution = "space-between" | "space-around" | "space-evenly" | "stretch";
+
+	type ContentPosition = "center" | "start" | "end" | "flex-start" | "flex-end";
+
+	type SelfPosition = ContentPosition | "self-start" | "self-end";
+
+	type OverflowPosition<T extends string> = `safe ${T}` | `unsafe ${T}`;
 }
 
 type Merge<T extends object, U> = {
