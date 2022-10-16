@@ -858,9 +858,20 @@ type HTMLTableElementAttributes = GlobalAttributes & {
 	"width": number;
 }
 
-// TODO
 type HTMLTextAreaElementAttributes = GlobalAttributes & {
 	"autocomplete": AutocompleteAttr;
+	"autocorrect": OnOffUnion;
+	"cols": number;
+	"disabled": BooleanUnion;
+	"form": string;
+	"maxlength": number;
+	"name": string;
+	"placeholder": string;
+	"readonly": string;
+	"required": string;
+	"rows": number;
+	"spellcheck": BooleanUnion | "default";
+	"wrap": "hard" | "soft" | "off";
 }
 
 type HTMLTimeElementAttributes = GlobalAttributes & {
