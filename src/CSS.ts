@@ -1,6 +1,5 @@
-export declare type CSS = {
-	// TODO
-	"-webkit-line-clamp": any;
+export declare type CSS = Merge<{
+	"-webkit-line-clamp": "none" | number;
 	// TODO
 	"-webkit-text-fill-color": any;
 	// TODO
@@ -807,4 +806,10 @@ export declare type CSS = {
 	"writing-mode": any;
 	// TODO
 	"z-index": any;
+}, GlobalValue>;
+
+declare type GlobalValue = "inherit" | "initial" | "unset";
+
+declare type Merge<T extends object, U> = {
+	[K in keyof T]: T[K] | U;
 }
