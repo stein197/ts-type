@@ -409,6 +409,8 @@ export declare module css {
 	}
 
 	export type RealProperties = Merge<{
+		"-moz-appearance": RealProperties["appearance"] | VendorAppearanceProperty;
+		"-webkit-appearance": RealProperties["appearance"] | VendorAppearanceProperty;
 		"-webkit-line-clamp": "none" | number;
 		"-webkit-text-fill-color": Color;
 		"-webkit-text-stroke": `${RealProperties["-webkit-text-stroke-width"]} ${RealProperties["-webkit-text-stroke-color"]}`;
@@ -420,8 +422,7 @@ export declare module css {
 		"align-self": "auto" | "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition> | SelfPosition;
 		"align-tracks": "normal" | BaselinePosition | ContentDistribution | OverflowPosition<ContentPosition> | ContentPosition;
 		"all": GlobalValue;
-		// TODO
-		"animation": any;
+		"animation": string;
 		"animation-composition": Arrayize<"replace" | "add" | "accumulate">;
 		"animation-delay": Arrayize<Time | `${Time} ${Time}`>;
 		"animation-direction": Arrayize<"normal" | "reverse" | "alternate" | "alternate-reverse">;
@@ -432,8 +433,7 @@ export declare module css {
 		"animation-play-state": Arrayize<"running" | "paused">;
 		"animation-timeline": string;
 		"animation-timing-function": Arrayize<EasingFunction>;
-		// TODO
-		"appearance": any;
+		"appearance": "none" | "auto" | "searchfield" | "textarea" | "push-button" | "slider-horizontal" | "checkbox" | "radio" | "square-button" | "menulist" | "listbox" | "meter" | "progress-bar" | "button" | "textfield" | "menulist-button";
 		// TODO
 		"aspect-ratio": any;
 		// TODO
@@ -1461,6 +1461,8 @@ export declare module css {
 	type SelfPosition = ContentPosition | "self-start" | "self-end";
 
 	type OverflowPosition<T extends string> = `safe ${T}` | `unsafe ${T}`;
+
+	type VendorAppearanceProperty = "attachment" | "borderless-attachment" | "button-bevel" | "caps-lock-indicator" | "caret" | "checkbox-container" | "checkbox-label" | "checkmenuitem" | "color-well" | "continuous-capacity-level-indicator" | "default-button" | "discrete-capacity-level-indicator" | "inner-spin-button" | "image-controls-button" | "list-button" | "listitem" | "media-enter-fullscreen-button" | "media-exit-fullscreen-button" | "media-fullscreen-volume-slider" | "media-fullscreen-volume-slider-thumb" | "media-mute-button" | "media-play-button" | "media-overlay-play-button" | "media-return-to-realtime-button" | "media-rewind-button" | "media-seek-back-button" | "media-seek-forward-button" | "media-toggle-closed-captions-button" | "media-slider" | "media-sliderthumb" | "media-volume-slider-container" | "media-volume-slider-mute-button" | "media-volume-slider" | "media-volume-sliderthumb" | "media-controls-background" | "media-controls-dark-bar-background" | "media-controls-fullscreen-background" | "media-controls-light-bar-background" | "media-current-time-display" | "media-time-remaining-display" | "menulist-text" | "menulist-textfield" | "meterbar" | "number-input" | "progress-bar-value" | "progressbar" | "progressbar-vertical" | "range" | "range-thumb" | "rating-level-indicator" | "relevancy-level-indicator" | "scale-horizontal" | "scalethumbend" | "scalethumb-horizontal" | "scalethumbstart" | "scalethumbtick" | "scalethumb-vertical" | "scale-vertical" | "scrollbarthumb-horizontal" | "scrollbarthumb-vertical" | "scrollbartrack-horizontal" | "scrollbartrack-vertical" | "searchfield-decoration" | "searchfield-results-decoration" | "searchfield-results-button" | "searchfield-cancel-button" | "snapshotted-plugin-overlay" | "sheet" | "slider-vertical" | "sliderthumb-horizontal" | "sliderthumb-vertical" | "textfield-multiline" | "-apple-pay-button";
 }
 
 type Merge<T extends object, U> = {
