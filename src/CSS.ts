@@ -1,3 +1,4 @@
+// TODO: Replace arrays with union joining inferring
 export declare module css {
 
 	export type Properties = {
@@ -421,26 +422,16 @@ export declare module css {
 		"all": GlobalValue;
 		// TODO
 		"animation": any;
-		// TODO
-		"animation-composition": any;
-		// TODO
-		"animation-delay": any;
-		// TODO
-		"animation-direction": any;
-		// TODO
-		"animation-duration": any;
-		// TODO
-		"animation-fill-mode": any;
-		// TODO
-		"animation-iteration-count": any;
-		// TODO
-		"animation-name": any;
-		// TODO
-		"animation-play-state": any;
-		// TODO
-		"animation-timeline": any;
-		// TODO
-		"animation-timing-function": any;
+		"animation-composition": Arrayize<"replace" | "add" | "accumulate">;
+		"animation-delay": Arrayize<Time | `${Time} ${Time}`>;
+		"animation-direction": Arrayize<"normal" | "reverse" | "alternate" | "alternate-reverse">;
+		"animation-duration": Arrayize<Time>;
+		"animation-fill-mode": Arrayize<"none" | "forwards" | "backwards" | "both">;
+		"animation-iteration-count": Arrayize<"infinite" | number>;
+		"animation-name": string;
+		"animation-play-state": Arrayize<"running" | "paused">;
+		"animation-timeline": string;
+		"animation-timing-function": Arrayize<EasingFunction>;
 		// TODO
 		"appearance": any;
 		// TODO
@@ -1408,11 +1399,16 @@ export declare module css {
 	type GlobalValue = "inherit" | "initial" | "unset" | "revert" | "revert-layer";
 
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
-	type TypeAlpha = number | TypePercentage;
-	type TypeAngle = `${number}${"deg" | "grad" | "rad" | "turn" | "%"}`;
+	type TypeAlpha = number | Percentage;
+
+	export type Angle = `${number}${"deg" | "grad" | "rad" | "turn" | "%"}`;
+
 	type TypeBasicShape = `${"inset" | "circle" | "ellipse" | "polygon" | "path"}(${string})`; // TODO
-	type TypeBlendMode = "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity";
+
+	export type BlendMode = "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity";
+
 	export type Color = number | `#${string}` | "black" | "silver" | "gray" | "white" | "maroon" | "red" | "purple" | "fuchsia" | "green" | "lime" | "olive" | "yellow" | "navy" | "blue" | "teal" | "aqua" | "orange" | "aliceblue" | "antiquewhite" | "aquamarine" | "azure" | "beige" | "bisque" | "blanchedalmond" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "limegreen" | "linen" | "magenta" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "oldlace" | "olivedrab" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellowgreen" | "rebeccapurple" | "transparent" | `${"rgb" | "rgba" | "hsl" | "hsla" | "hwb" | "lab" | "lch" | "oklab" | "oklch" | "color"}(${string})`; // TODO
+
 	type TypeFunction = any; // TODO
 	// TODO
 	type TypeDisplayBox = any;
@@ -1426,25 +1422,31 @@ export declare module css {
 	type TypeDisplayListitem = any;
 	// TODO
 	type TypeDisplayOutside = any;
-	// TODO
-	type TypeEasingFunction = any;
-	// TODO
-	type TypeFilterFunction = `${"blur" | "brightness" | "contrast" | "drop-shadow" | "grayscale" | "hue-rotate" | "invert" | "opacity" | "sepia" | "saturate"}(${string})`; // TODO
+
+	export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${number}, ${number}, ${number}, ${number})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
+
+	export type FilterFunction = `${"blur" | "brightness" | "contrast" | "drop-shadow" | "grayscale" | "hue-rotate" | "invert" | "opacity" | "sepia" | "saturate"}(${string})`; // TODO
 	// TODO
 	type TypeFlex = any;
-	type TypeFrequency = `${number}${"Hz" | "kHz" | "%"}`;
+	
+	export type Frequency = `${number}${"Hz" | "kHz" | "%"}`;
 	// TODO
 	type TypeGradient = any;
 	// TODO
 	type TypeImage = any;
+
 	export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}`;
-	type TypePercentage = `${number}%`;
+
+	export type Percentage = `${number}%`;
 	// TODO
 	type TypePosition = any;
 	type TypeRatio = `${number}/${number}`;
-	type TypeResolution = `${number}${"dpi" | "dpcm" | "dppx" | "x"}`;
+
+	export type Resolution = `${number}${"dpi" | "dpcm" | "dppx" | "x"}`;
+
 	type TypeShape = `rect(${string})`; // TODO
-	type TypeTime = `${number}${"s" | "ms" | "%"}`;
+
+	export type Time = `${number}${"s" | "ms" | "%"}`;
 	// TODO
 	type TypeTransformFunction = any;
 	// TODO
@@ -1464,3 +1466,5 @@ export declare module css {
 type Merge<T extends object, U> = {
 	[K in keyof T]: T[K] | U;
 }
+
+type Arrayize<T> = T | T[];
