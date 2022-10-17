@@ -1441,8 +1441,222 @@ export declare module css {
 
 	type VendorAppearanceProperty = "attachment" | "borderless-attachment" | "button-bevel" | "caps-lock-indicator" | "caret" | "checkbox-container" | "checkbox-label" | "checkmenuitem" | "color-well" | "continuous-capacity-level-indicator" | "default-button" | "discrete-capacity-level-indicator" | "inner-spin-button" | "image-controls-button" | "list-button" | "listitem" | "media-enter-fullscreen-button" | "media-exit-fullscreen-button" | "media-fullscreen-volume-slider" | "media-fullscreen-volume-slider-thumb" | "media-mute-button" | "media-play-button" | "media-overlay-play-button" | "media-return-to-realtime-button" | "media-rewind-button" | "media-seek-back-button" | "media-seek-forward-button" | "media-toggle-closed-captions-button" | "media-slider" | "media-sliderthumb" | "media-volume-slider-container" | "media-volume-slider-mute-button" | "media-volume-slider" | "media-volume-sliderthumb" | "media-controls-background" | "media-controls-dark-bar-background" | "media-controls-fullscreen-background" | "media-controls-light-bar-background" | "media-current-time-display" | "media-time-remaining-display" | "menulist-text" | "menulist-textfield" | "meterbar" | "number-input" | "progress-bar-value" | "progressbar" | "progressbar-vertical" | "range" | "range-thumb" | "rating-level-indicator" | "relevancy-level-indicator" | "scale-horizontal" | "scalethumbend" | "scalethumb-horizontal" | "scalethumbstart" | "scalethumbtick" | "scalethumb-vertical" | "scale-vertical" | "scrollbarthumb-horizontal" | "scrollbarthumb-vertical" | "scrollbartrack-horizontal" | "scrollbartrack-vertical" | "searchfield-decoration" | "searchfield-results-decoration" | "searchfield-results-button" | "searchfield-cancel-button" | "snapshotted-plugin-overlay" | "sheet" | "slider-vertical" | "sliderthumb-horizontal" | "sliderthumb-vertical" | "textfield-multiline" | "-apple-pay-button";
 
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions
 	export module fn {
 
+		export type TransformFunction = Matrix | Matrix3D | Perspective | Rotate | Rotate3D | RotateX | RotateY | RotateZ | Scale | Scale3D | ScaleX | ScaleY | ScaleZ | Skew | SkewX | SkewX | Translate | Translate3D | TranslateX | TranslateY | TranslateZ;;
+
+		export type MathFunction = Calc | Min | Max | Clamp | Round | Mod | Rem | Sin | Cos | Tan | Asin | Acos | Atan | Atan2 | Pow | Sqrt | Hypot | Log | Exp | Abs | Sign;;
+
+		export type FilterFunction = Blur | Brightness | Contrast | DropShadow | Grayscale | HueRotate | Invert | Opacity | Saturate | Sepia;;
+
+		export type ColorFunction = Color | ColorMix | ColorContrast | DeviceCMYK | HSL | HSLA | HWB | LAB | LCH | OKLAB | OKLCH | RGB | RGBA;;
+
+		export type ImageFunction = ConicGradient | Image | ImageSet | LinearGradient | RadialGradient | RepeatingLinearGradient | RepeatingRadialGradient | RepeatingConicGradient | CrossFade | Element | Paint;;
+
+		export type CounterFunction = Counter | Counters | Symbols;;
+
+		export type FontFunction = Stylistic | Styleset | CharacterVariant | Swash | Ornaments | Annotation;;
+
+		export type ShapeFunction = Circle | Ellipse | Inset | Polygon | Path;;
+
+		export type ReferenceFunction = Attr | Env | URL | Var;;
+
+		export type Grid = FitContent | MinMax | Repeat;;
+		// TODO
+		export type Matrix = any;
+		// TODO
+		export type Matrix3D = any;
+		// TODO
+		export type Perspective = any;
+		// TODO
+		export type Rotate = any;
+		// TODO
+		export type Rotate3D = any;
+		// TODO
+		export type RotateX = any;
+		// TODO
+		export type RotateY = any;
+		// TODO
+		export type RotateZ = any;
+		// TODO
+		export type Scale = any;
+		// TODO
+		export type Scale3D = any;
+		// TODO
+		export type ScaleX = any;
+		// TODO
+		export type ScaleY = any;
+		// TODO
+		export type ScaleZ = any;
+		// TODO
+		export type Skew = any;
+		// TODO
+		export type SkewX = any;
+		// TODO
+		export type SkewX = any;
+		// TODO
+		export type Translate = any;
+		// TODO
+		export type Translate3D = any;
+		// TODO
+		export type TranslateX = any;
+		// TODO
+		export type TranslateY = any;
+		// TODO
+		export type TranslateZ = any;
+		// TODO
+		export type Calc = any;
+		// TODO
+		export type Min = any;
+		// TODO
+		export type Max = any;
+		// TODO
+		export type Clamp = any;
+		// TODO
+		export type Round = any;
+		// TODO
+		export type Mod = any;
+		// TODO
+		export type Rem = any;
+		// TODO
+		export type Sin = any;
+		// TODO
+		export type Cos = any;
+		// TODO
+		export type Tan = any;
+		// TODO
+		export type Asin = any;
+		// TODO
+		export type Acos = any;
+		// TODO
+		export type Atan = any;
+		// TODO
+		export type Atan2 = any;
+		// TODO
+		export type Pow = any;
+		// TODO
+		export type Sqrt = any;
+		// TODO
+		export type Hypot = any;
+		// TODO
+		export type Log = any;
+		// TODO
+		export type Exp = any;
+		// TODO
+		export type Abs = any;
+		// TODO
+		export type Sign = any;
+		// TODO
+		export type Blur = any;
+		// TODO
+		export type Brightness = any;
+		// TODO
+		export type Contrast = any;
+		// TODO
+		export type DropShadow = any;
+		// TODO
+		export type Grayscale = any;
+		// TODO
+		export type HueRotate = any;
+		// TODO
+		export type Invert = any;
+		// TODO
+		export type Opacity = any;
+		// TODO
+		export type Saturate = any;
+		// TODO
+		export type Sepia = any;
+		// TODO
+		export type Color = any;
+		// TODO
+		export type ColorMix = any;
+		// TODO
+		export type ColorContrast = any;
+		// TODO
+		export type DeviceCMYK = any;
+		// TODO
+		export type HSL = any;
+		// TODO
+		export type HSLA = any;
+		// TODO
+		export type HWB = any;
+		// TODO
+		export type LAB = any;
+		// TODO
+		export type LCH = any;
+		// TODO
+		export type OKLAB = any;
+		// TODO
+		export type OKLCH = any;
+		// TODO
+		export type RGB = any;
+		// TODO
+		export type RGBA = any;
+		// TODO
+		export type ConicGradient = any;
+		// TODO
+		export type Image = any;
+		// TODO
+		export type ImageSet = any;
+		// TODO
+		export type LinearGradient = any;
+		// TODO
+		export type RadialGradient = any;
+		// TODO
+		export type RepeatingLinearGradient = any;
+		// TODO
+		export type RepeatingRadialGradient = any;
+		// TODO
+		export type RepeatingConicGradient = any;
+		// TODO
+		export type CrossFade = any;
+		// TODO
+		export type Element = any;
+		// TODO
+		export type Paint = any;
+		// TODO
+		export type Counter = any;
+		// TODO
+		export type Counters = any;
+		// TODO
+		export type Symbols = any;
+		// TODO
+		export type Stylistic = any;
+		// TODO
+		export type Styleset = any;
+		// TODO
+		export type CharacterVariant = any;
+		// TODO
+		export type Swash = any;
+		// TODO
+		export type Ornaments = any;
+		// TODO
+		export type Annotation = any;
+		// TODO
+		export type Circle = any;
+		// TODO
+		export type Ellipse = any;
+		// TODO
+		export type Inset = any;
+		// TODO
+		export type Polygon = any;
+		// TODO
+		export type Path = any;
+		// TODO
+		export type Attr = any;
+		// TODO
+		export type Env = any;
+		// TODO
+		export type URL = any;
+		// TODO
+		export type Var = any;
+		// TODO
+		export type FitContent = any;
+		// TODO
+		export type MinMax = any;
+		// TODO
+		export type Repeat = any;
 	}
 }
 
