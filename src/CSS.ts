@@ -1438,6 +1438,8 @@ export declare module css {
 
 		export type Percentage = `${number}%`;
 
+		export type Position = ("left" | "center" | "right" | "top" | "bottom" | "start" | "end" | Length) | (`${"left" | "center" | "right" | "x-start" | "x-end" | Length} ${"top" | "center" | "bottom" | "y-start" | "y-end" | Length}`) | (`${"center" | ("left" | "right" | "x-start" | "x-end") | (`left ${Length}` | `right ${Length}` | `x-start ${Length}` | `x-end ${Length}`)} ${"center" | ("top" | "bottom" | "y-start" | "y-end") | (`top ${Length}` | `bottom ${Length}` | `y-start ${Length}` | `y-end ${Length}`)}`) | (`${"center" | ("start" | "end") | (`start ${Length}` | `end ${Length}`)} ${"center" | ("start" | "end") | (`start ${Length}` | `end ${Length}`)}`);
+
 		export type Ratio = `${number} / ${number}`;
 
 		export type Rect = `rect(${string})`;
