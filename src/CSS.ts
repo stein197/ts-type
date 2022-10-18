@@ -1503,48 +1503,48 @@ export declare module css {
 		export type TranslateY = `translateY(${Length})`;
 
 		export type TranslateZ = `translateZ(${Length})`;
-		// TODO
-		export type Calc = any;
-		// TODO
-		export type Min = any;
-		// TODO
-		export type Max = any;
-		// TODO
-		export type Clamp = any;
-		// TODO
-		export type Round = any;
-		// TODO
-		export type Mod = any;
-		// TODO
-		export type Rem = any;
-		// TODO
-		export type Sin = any;
-		// TODO
-		export type Cos = any;
-		// TODO
-		export type Tan = any;
-		// TODO
-		export type Asin = any;
-		// TODO
-		export type Acos = any;
-		// TODO
-		export type Atan = any;
-		// TODO
-		export type Atan2 = any;
-		// TODO
-		export type Pow = any;
-		// TODO
-		export type Sqrt = any;
-		// TODO
-		export type Hypot = any;
-		// TODO
-		export type Log = any;
-		// TODO
-		export type Exp = any;
-		// TODO
-		export type Abs = any;
-		// TODO
-		export type Sign = any;
+
+		export type Calc = `calc(${string})`;
+
+		export type Min = `min(${string})`;
+
+		export type Max = `max(${string})`;
+
+		export type Clamp = `clamp(${string})`;
+
+		export type Round = `round(${string})`;
+
+		export type Mod = `mod(${string})`;
+
+		export type Rem = `rem(${string})`;
+
+		export type Sin = `sin(${string})`;
+
+		export type Cos = `cos(${string})`;
+
+		export type Tan = `tan(${string})`;
+
+		export type Asin = `asin(${string})`;
+
+		export type Acos = `acos(${string})`;
+
+		export type Atan = `atan(${string})`;
+
+		export type Atan2 = `atan2(${string})`;
+
+		export type Pow = `pow(${string})`;
+
+		export type Sqrt = `sqrt(${string})`;
+
+		export type Hypot = `hypot(${string})`;
+
+		export type Log = `log(${string})`;
+
+		export type Exp = `exp(${string})`;
+
+		export type Abs = `abs(${string})`;
+
+		export type Sign = `sign(${string})`;
 		// TODO
 		export type Blur = any;
 		// TODO
