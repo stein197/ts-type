@@ -1426,7 +1426,13 @@ export declare module css {
 
 		export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${number}, ${number}, ${number}, ${number})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
 
+		export type FilterFunction = fn.FilterFunction;
+
 		export type Frequency = `${number}${"Hz" | "kHz" | "%"}` | 0;
+
+		export type Gradient = fn.LinearGradient | fn.RepeatingLinearGradient | fn.RadialGradient | fn.RepeatingRadialGradient | fn.ConicGradient | fn.RepeatingConicGradient;
+
+		export type Image = fn.ImageFunction | fn.URL;
 
 		export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}` | 0;
 
