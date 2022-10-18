@@ -1395,7 +1395,7 @@ export declare module css {
 		"writing-mode": any;
 	}
 	
-	export type Angle = `${number}${"deg" | "grad" | "rad" | "turn" | "%"}`;
+	export type Angle = `${number}${"deg" | "grad" | "rad" | "turn" | "%"}` | 0;
 
 	export type BasicShape = `${"inset" | "circle" | "ellipse" | "polygon" | "path"}(${string})`; // TODO
 
@@ -1405,11 +1405,9 @@ export declare module css {
 
 	export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${number}, ${number}, ${number}, ${number})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
 
-	export type FilterFunction = `${"blur" | "brightness" | "contrast" | "drop-shadow" | "grayscale" | "hue-rotate" | "invert" | "opacity" | "sepia" | "saturate"}(${string})`; // TODO
+	export type Frequency = `${number}${"Hz" | "kHz" | "%"}` | 0;
 
-	export type Frequency = `${number}${"Hz" | "kHz" | "%"}`;
-
-	export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}`;
+	export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}` | 0;
 
 	export type Percentage = `${number}%`;
 
@@ -1419,7 +1417,7 @@ export declare module css {
 
 	type TypeShape = `rect(${string})`; // TODO
 
-	export type Time = `${number}${"s" | "ms" | "%"}`;
+	export type Time = `${number}${"s" | "ms" | "%"}` | 0;
 	// TODO
 	type TypeTransformFunction = any;
 	// TODO
@@ -1444,67 +1442,67 @@ export declare module css {
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions
 	export module fn {
 
-		export type TransformFunction = Matrix | Matrix3D | Perspective | Rotate | Rotate3D | RotateX | RotateY | RotateZ | Scale | Scale3D | ScaleX | ScaleY | ScaleZ | Skew | SkewX | SkewX | Translate | Translate3D | TranslateX | TranslateY | TranslateZ;;
+		export type TransformFunction = Matrix | Matrix3D | Perspective | Rotate | Rotate3D | RotateX | RotateY | RotateZ | Scale | Scale3D | ScaleX | ScaleY | ScaleZ | Skew | SkewX | SkewX | Translate | Translate3D | TranslateX | TranslateY | TranslateZ;
 
-		export type MathFunction = Calc | Min | Max | Clamp | Round | Mod | Rem | Sin | Cos | Tan | Asin | Acos | Atan | Atan2 | Pow | Sqrt | Hypot | Log | Exp | Abs | Sign;;
+		export type MathFunction = Calc | Min | Max | Clamp | Round | Mod | Rem | Sin | Cos | Tan | Asin | Acos | Atan | Atan2 | Pow | Sqrt | Hypot | Log | Exp | Abs | Sign;
 
-		export type FilterFunction = Blur | Brightness | Contrast | DropShadow | Grayscale | HueRotate | Invert | Opacity | Saturate | Sepia;;
+		export type FilterFunction = Blur | Brightness | Contrast | DropShadow | Grayscale | HueRotate | Invert | Opacity | Saturate | Sepia;
 
-		export type ColorFunction = Color | ColorMix | ColorContrast | DeviceCMYK | HSL | HSLA | HWB | LAB | LCH | OKLAB | OKLCH | RGB | RGBA;;
+		export type ColorFunction = Color | ColorMix | ColorContrast | DeviceCMYK | HSL | HSLA | HWB | LAB | LCH | OKLAB | OKLCH | RGB | RGBA;
 
-		export type ImageFunction = ConicGradient | Image | ImageSet | LinearGradient | RadialGradient | RepeatingLinearGradient | RepeatingRadialGradient | RepeatingConicGradient | CrossFade | Element | Paint;;
+		export type ImageFunction = ConicGradient | Image | ImageSet | LinearGradient | RadialGradient | RepeatingLinearGradient | RepeatingRadialGradient | RepeatingConicGradient | CrossFade | Element | Paint;
 
-		export type CounterFunction = Counter | Counters | Symbols;;
+		export type CounterFunction = Counter | Counters | Symbols;
 
-		export type FontFunction = Stylistic | Styleset | CharacterVariant | Swash | Ornaments | Annotation;;
+		export type FontFunction = Stylistic | Styleset | CharacterVariant | Swash | Ornaments | Annotation;
 
-		export type ShapeFunction = Circle | Ellipse | Inset | Polygon | Path;;
+		export type ShapeFunction = Circle | Ellipse | Inset | Polygon | Path;
 
-		export type ReferenceFunction = Attr | Env | URL | Var;;
+		export type ReferenceFunction = Attr | Env | URL | Var;
 
-		export type Grid = FitContent | MinMax | Repeat;;
-		// TODO
-		export type Matrix = any;
-		// TODO
-		export type Matrix3D = any;
-		// TODO
-		export type Perspective = any;
-		// TODO
-		export type Rotate = any;
-		// TODO
-		export type Rotate3D = any;
-		// TODO
-		export type RotateX = any;
-		// TODO
-		export type RotateY = any;
-		// TODO
-		export type RotateZ = any;
-		// TODO
-		export type Scale = any;
-		// TODO
-		export type Scale3D = any;
-		// TODO
-		export type ScaleX = any;
-		// TODO
-		export type ScaleY = any;
-		// TODO
-		export type ScaleZ = any;
-		// TODO
-		export type Skew = any;
-		// TODO
-		export type SkewX = any;
-		// TODO
-		export type SkewX = any;
-		// TODO
-		export type Translate = any;
-		// TODO
-		export type Translate3D = any;
-		// TODO
-		export type TranslateX = any;
-		// TODO
-		export type TranslateY = any;
-		// TODO
-		export type TranslateZ = any;
+		export type Grid = FitContent | MinMax | Repeat;
+
+		export type Matrix = `matrix(${number}, ${number}, ${number}, ${number}, ${number}, ${number})`;
+
+		export type Matrix3D = `matrix3d(${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number})`;
+
+		export type Perspective = `perspective(${"none" | Length})`;
+
+		export type Rotate = `rotate(${Angle})`;
+
+		export type Rotate3D = `rotate(${number}, ${number}, ${number}, ${Angle})`;
+
+		export type RotateX = `rotateX(${Angle})`;
+
+		export type RotateY = `rotateY(${Angle})`;
+
+		export type RotateZ = `rotateZ(${Angle})`;
+
+		export type Scale = `scale(${number | Percentage})` | `scale(${number | Percentage})`;
+
+		export type Scale3D = `scale3d(${number}, ${number}, ${number})`;
+
+		export type ScaleX = `scaleX(${number})`;
+
+		export type ScaleY = `scaleY(${number})`;
+
+		export type ScaleZ = `scaleZ(${number})`;
+
+		export type Skew = `skew(${Angle})` | `skew(${Angle}, ${Angle})`;
+
+		export type SkewX = `skewX(${Angle})`;
+
+		export type SkewY = `skewY(${Angle})`;
+
+		export type Translate = `translate(${Length})` | `translate(${Length}, ${Length})`;
+
+		export type Translate3D = `translate3d(${Length}, ${Length}, ${Length}, ${string})`;
+
+		export type TranslateX = `translateX(${Length})`;
+
+		export type TranslateY = `translateY(${Length})`;
+
+		export type TranslateZ = `translateZ(${Length})`;
 		// TODO
 		export type Calc = any;
 		// TODO
@@ -1664,4 +1662,5 @@ type Merge<T extends object, U> = {
 	[K in keyof T]: T[K] | U;
 }
 
+// TODO: Try to replace it with repeating string pattern type
 type Arrayize<T> = T | T[];
