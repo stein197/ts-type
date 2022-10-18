@@ -1447,6 +1447,8 @@ export declare module css {
 		export type Resolution = `${number}${"dpi" | "dpcm" | "dppx" | "x"}`;
 
 		export type Time = `${number}${"s" | "ms" | "%"}` | 0;
+
+		export type TransformFunction = fn.TransformFunction;
 	}
 
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions
