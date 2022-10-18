@@ -1549,22 +1549,22 @@ export declare module css {
 		export type Blur = `blur(${Length})`;
 
 		export type Brightness = `brightness(${number | Percentage})`;
-		// TODO
-		export type Contrast = any;
+
+		export type Contrast = `contrast(${number | Percentage})`;
 		// TODO
 		export type DropShadow = any;
-		// TODO
-		export type Grayscale = any;
-		// TODO
-		export type HueRotate = any;
-		// TODO
-		export type Invert = any;
-		// TODO
-		export type Opacity = any;
-		// TODO
-		export type Saturate = any;
-		// TODO
-		export type Sepia = any;
+
+		export type Grayscale = `grayscale(${number | Percentage})`;
+
+		export type HueRotate = `hue-rotate(${Angle})`;
+
+		export type Invert = `invert(${number | Percentage})`;
+
+		export type Opacity = `opacity(${number | Percentage})`;
+
+		export type Saturate = `saturate(${number | Percentage})`;
+
+		export type Sepia = `sepie(${number | Percentage})`;
 		// TODO
 		export type Color = any;
 		// TODO
