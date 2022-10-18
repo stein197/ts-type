@@ -1545,10 +1545,10 @@ export declare module css {
 		export type Abs = `abs(${string})`;
 
 		export type Sign = `sign(${string})`;
-		// TODO
-		export type Blur = any;
-		// TODO
-		export type Brightness = any;
+
+		export type Blur = `blur(${Length})`;
+
+		export type Brightness = `brightness(${number | Percentage})`;
 		// TODO
 		export type Contrast = any;
 		// TODO
