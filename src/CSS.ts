@@ -412,11 +412,11 @@ export declare module css {
 		"-moz-appearance": RealProperties["appearance"] | VendorAppearanceProperty;
 		"-webkit-appearance": RealProperties["appearance"] | VendorAppearanceProperty;
 		"-webkit-line-clamp": "none" | number;
-		"-webkit-text-fill-color": Color;
+		"-webkit-text-fill-color": type.Color;
 		"-webkit-text-stroke": `${RealProperties["-webkit-text-stroke-width"]} ${RealProperties["-webkit-text-stroke-color"]}`;
-		"-webkit-text-stroke-color": Color;
-		"-webkit-text-stroke-width": "thin" | "medium" | "thick" | Length;
-		"accent-color": "auto" | Color;
+		"-webkit-text-stroke-color": type.Color;
+		"-webkit-text-stroke-width": "thin" | "medium" | "thick" | type.Length;
+		"accent-color": "auto" | type.Color;
 		"align-content": "normal" | BaselinePosition | ContentDistribution | OverflowPosition<ContentPosition> | ContentPosition;
 		"align-items": "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition> | SelfPosition;
 		"align-self": "auto" | "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition> | SelfPosition;
@@ -424,17 +424,17 @@ export declare module css {
 		"all": GlobalValue;
 		"animation": string;
 		"animation-composition": Arrayize<"replace" | "add" | "accumulate">;
-		"animation-delay": Arrayize<Time | `${Time} ${Time}`>;
+		"animation-delay": Arrayize<type.Time | `${type.Time} ${type.Time}`>;
 		"animation-direction": Arrayize<"normal" | "reverse" | "alternate" | "alternate-reverse">;
-		"animation-duration": Arrayize<Time>;
+		"animation-duration": Arrayize<type.Time>;
 		"animation-fill-mode": Arrayize<"none" | "forwards" | "backwards" | "both">;
 		"animation-iteration-count": Arrayize<"infinite" | number>;
 		"animation-name": string;
 		"animation-play-state": Arrayize<"running" | "paused">;
 		"animation-timeline": string;
-		"animation-timing-function": Arrayize<EasingFunction>;
+		"animation-timing-function": Arrayize<type.EasingFunction>;
 		"appearance": "none" | "auto" | "searchfield" | "textarea" | "push-button" | "slider-horizontal" | "checkbox" | "radio" | "square-button" | "menulist" | "listbox" | "meter" | "progress-bar" | "button" | "textfield" | "menulist-button";
-		"aspect-ratio": "auto" | Ratio;
+		"aspect-ratio": "auto" | type.Ratio;
 		// TODO
 		"backdrop-filter": any;
 		// TODO
@@ -1394,36 +1394,7 @@ export declare module css {
 		// TODO
 		"writing-mode": any;
 	}
-	
-	export type Angle = `${number}${"deg" | "grad" | "rad" | "turn" | "%"}` | 0;
 
-	export type BasicShape = `${"inset" | "circle" | "ellipse" | "polygon" | "path"}(${string})`; // TODO
-
-	export type BlendMode = "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity";
-
-	export type Color = number | `#${string}` | "black" | "silver" | "gray" | "white" | "maroon" | "red" | "purple" | "fuchsia" | "green" | "lime" | "olive" | "yellow" | "navy" | "blue" | "teal" | "aqua" | "orange" | "aliceblue" | "antiquewhite" | "aquamarine" | "azure" | "beige" | "bisque" | "blanchedalmond" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "limegreen" | "linen" | "magenta" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "oldlace" | "olivedrab" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellowgreen" | "rebeccapurple" | "transparent" | `${"rgb" | "rgba" | "hsl" | "hsla" | "hwb" | "lab" | "lch" | "oklab" | "oklch" | "color"}(${string})`; // TODO
-
-	export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${number}, ${number}, ${number}, ${number})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
-
-	export type Frequency = `${number}${"Hz" | "kHz" | "%"}` | 0;
-
-	export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}` | 0;
-
-	export type Percentage = `${number}%`;
-
-	export type Ratio = `${number}/${number}` | `${number} / ${number}`;
-
-	export type Resolution = `${number}${"dpi" | "dpcm" | "dppx" | "x"}`;
-
-	type TypeShape = `rect(${string})`; // TODO
-
-	export type Time = `${number}${"s" | "ms" | "%"}` | 0;
-	// TODO
-	type TypeTransformFunction = any;
-	// TODO
-	type TypeTranslationValue = any;
-
-	export type URLFunction = `url(${string})`;
 
 	type GlobalValue = "inherit" | "initial" | "unset" | "revert" | "revert-layer";
 
@@ -1438,6 +1409,37 @@ export declare module css {
 	type OverflowPosition<T extends string> = `safe ${T}` | `unsafe ${T}`;
 
 	type VendorAppearanceProperty = "attachment" | "borderless-attachment" | "button-bevel" | "caps-lock-indicator" | "caret" | "checkbox-container" | "checkbox-label" | "checkmenuitem" | "color-well" | "continuous-capacity-level-indicator" | "default-button" | "discrete-capacity-level-indicator" | "inner-spin-button" | "image-controls-button" | "list-button" | "listitem" | "media-enter-fullscreen-button" | "media-exit-fullscreen-button" | "media-fullscreen-volume-slider" | "media-fullscreen-volume-slider-thumb" | "media-mute-button" | "media-play-button" | "media-overlay-play-button" | "media-return-to-realtime-button" | "media-rewind-button" | "media-seek-back-button" | "media-seek-forward-button" | "media-toggle-closed-captions-button" | "media-slider" | "media-sliderthumb" | "media-volume-slider-container" | "media-volume-slider-mute-button" | "media-volume-slider" | "media-volume-sliderthumb" | "media-controls-background" | "media-controls-dark-bar-background" | "media-controls-fullscreen-background" | "media-controls-light-bar-background" | "media-current-time-display" | "media-time-remaining-display" | "menulist-text" | "menulist-textfield" | "meterbar" | "number-input" | "progress-bar-value" | "progressbar" | "progressbar-vertical" | "range" | "range-thumb" | "rating-level-indicator" | "relevancy-level-indicator" | "scale-horizontal" | "scalethumbend" | "scalethumb-horizontal" | "scalethumbstart" | "scalethumbtick" | "scalethumb-vertical" | "scale-vertical" | "scrollbarthumb-horizontal" | "scrollbarthumb-vertical" | "scrollbartrack-horizontal" | "scrollbartrack-vertical" | "searchfield-decoration" | "searchfield-results-decoration" | "searchfield-results-button" | "searchfield-cancel-button" | "snapshotted-plugin-overlay" | "sheet" | "slider-vertical" | "sliderthumb-horizontal" | "sliderthumb-vertical" | "textfield-multiline" | "-apple-pay-button";
+
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types
+	export module type {
+
+		export type Alpha = number | Percentage;
+
+		export type Angle = `${number}${"deg" | "grad" | "rad" | "turn" | "%"}` | 0;
+
+		export type Shape = `${"inset" | "circle" | "ellipse" | "polygon" | "path"}(${string})`;
+
+		export type BlendMode = "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity";
+
+		// TODO: Union with fn.FunctionColor
+		export type Color = number | `#${string}` | "black" | "silver" | "gray" | "white" | "maroon" | "red" | "purple" | "fuchsia" | "green" | "lime" | "olive" | "yellow" | "navy" | "blue" | "teal" | "aqua" | "orange" | "aliceblue" | "antiquewhite" | "aquamarine" | "azure" | "beige" | "bisque" | "blanchedalmond" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "limegreen" | "linen" | "magenta" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "oldlace" | "olivedrab" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellowgreen" | "rebeccapurple" | "transparent" | `${"rgb" | "rgba" | "hsl" | "hsla" | "hwb" | "lab" | "lch" | "oklab" | "oklch" | "color"}(${string})`; // TODO
+
+		export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${number}, ${number}, ${number}, ${number})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
+
+		export type Frequency = `${number}${"Hz" | "kHz" | "%"}` | 0;
+
+		export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}` | 0;
+
+		export type Percentage = `${number}%`;
+
+		export type Ratio = `${number} / ${number}`;
+
+		export type Rect = `rect(${string})`;
+
+		export type Resolution = `${number}${"dpi" | "dpcm" | "dppx" | "x"}`;
+
+		export type Time = `${number}${"s" | "ms" | "%"}` | 0;
+	}
 
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions
 	export module fn {
@@ -1466,19 +1468,19 @@ export declare module css {
 
 		export type Matrix3D = `matrix3d(${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number})`;
 
-		export type Perspective = `perspective(${"none" | Length})`;
+		export type Perspective = `perspective(${"none" | type.Length})`;
 
-		export type Rotate = `rotate(${Angle})`;
+		export type Rotate = `rotate(${type.Angle})`;
 
-		export type Rotate3D = `rotate(${number}, ${number}, ${number}, ${Angle})`;
+		export type Rotate3D = `rotate(${number}, ${number}, ${number}, ${type.Angle})`;
 
-		export type RotateX = `rotateX(${Angle})`;
+		export type RotateX = `rotateX(${type.Angle})`;
 
-		export type RotateY = `rotateY(${Angle})`;
+		export type RotateY = `rotateY(${type.Angle})`;
 
-		export type RotateZ = `rotateZ(${Angle})`;
+		export type RotateZ = `rotateZ(${type.Angle})`;
 
-		export type Scale = `scale(${number | Percentage})` | `scale(${number | Percentage})`;
+		export type Scale = `scale(${number | type.Percentage})` | `scale(${number | type.Percentage})`;
 
 		export type Scale3D = `scale3d(${number}, ${number}, ${number})`;
 
@@ -1488,21 +1490,21 @@ export declare module css {
 
 		export type ScaleZ = `scaleZ(${number})`;
 
-		export type Skew = `skew(${Angle})` | `skew(${Angle}, ${Angle})`;
+		export type Skew = `skew(${type.Angle})` | `skew(${type.Angle}, ${type.Angle})`;
 
-		export type SkewX = `skewX(${Angle})`;
+		export type SkewX = `skewX(${type.Angle})`;
 
-		export type SkewY = `skewY(${Angle})`;
+		export type SkewY = `skewY(${type.Angle})`;
 
-		export type Translate = `translate(${Length})` | `translate(${Length}, ${Length})`;
+		export type Translate = `translate(${type.Length})` | `translate(${type.Length}, ${type.Length})`;
 
-		export type Translate3D = `translate3d(${Length}, ${Length}, ${Length}, ${string})`;
+		export type Translate3D = `translate3d(${type.Length}, ${type.Length}, ${type.Length}, ${string})`;
 
-		export type TranslateX = `translateX(${Length})`;
+		export type TranslateX = `translateX(${type.Length})`;
 
-		export type TranslateY = `translateY(${Length})`;
+		export type TranslateY = `translateY(${type.Length})`;
 
-		export type TranslateZ = `translateZ(${Length})`;
+		export type TranslateZ = `translateZ(${type.Length})`;
 
 		export type Calc = `calc(${string})`;
 
@@ -1546,25 +1548,25 @@ export declare module css {
 
 		export type Sign = `sign(${string})`;
 
-		export type Blur = `blur(${Length})`;
+		export type Blur = `blur(${type.Length})`;
 
-		export type Brightness = `brightness(${number | Percentage})`;
+		export type Brightness = `brightness(${number | type.Percentage})`;
 
-		export type Contrast = `contrast(${number | Percentage})`;
+		export type Contrast = `contrast(${number | type.Percentage})`;
 		// TODO
 		export type DropShadow = any;
 
-		export type Grayscale = `grayscale(${number | Percentage})`;
+		export type Grayscale = `grayscale(${number | type.Percentage})`;
 
-		export type HueRotate = `hue-rotate(${Angle})`;
+		export type HueRotate = `hue-rotate(${type.Angle})`;
 
-		export type Invert = `invert(${number | Percentage})`;
+		export type Invert = `invert(${number | type.Percentage})`;
 
-		export type Opacity = `opacity(${number | Percentage})`;
+		export type Opacity = `opacity(${number | type.Percentage})`;
 
-		export type Saturate = `saturate(${number | Percentage})`;
+		export type Saturate = `saturate(${number | type.Percentage})`;
 
-		export type Sepia = `sepie(${number | Percentage})`;
+		export type Sepia = `sepie(${number | type.Percentage})`;
 		// TODO
 		export type Color = any;
 		// TODO
