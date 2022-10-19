@@ -1423,8 +1423,7 @@ export declare module css {
 
 		export type BlendMode = "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity";
 
-		// TODO: Union with fn.FunctionColor
-		export type Color = number | `#${string}` | "black" | "silver" | "gray" | "white" | "maroon" | "red" | "purple" | "fuchsia" | "green" | "lime" | "olive" | "yellow" | "navy" | "blue" | "teal" | "aqua" | "orange" | "aliceblue" | "antiquewhite" | "aquamarine" | "azure" | "beige" | "bisque" | "blanchedalmond" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "limegreen" | "linen" | "magenta" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "oldlace" | "olivedrab" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellowgreen" | "rebeccapurple" | "transparent" | `${"rgb" | "rgba" | "hsl" | "hsla" | "hwb" | "lab" | "lch" | "oklab" | "oklch" | "color"}(${string})`; // TODO
+		export type Color = number | `#${string}` | "black" | "silver" | "gray" | "white" | "maroon" | "red" | "purple" | "fuchsia" | "green" | "lime" | "olive" | "yellow" | "navy" | "blue" | "teal" | "aqua" | "orange" | "aliceblue" | "antiquewhite" | "aquamarine" | "azure" | "beige" | "bisque" | "blanchedalmond" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "limegreen" | "linen" | "magenta" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "oldlace" | "olivedrab" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellowgreen" | "rebeccapurple" | "transparent" | fn.ColorFunction;
 
 		export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${number}, ${number}, ${number}, ${number})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
 
@@ -1578,33 +1577,33 @@ export declare module css {
 
 		export type Saturate = `saturate(${number | type.Percentage})`;
 
-		export type Sepia = `sepie(${number | type.Percentage})`;
-		// TODO
-		export type Color = any;
-		// TODO
-		export type ColorMix = any;
-		// TODO
-		export type ColorContrast = any;
-		// TODO
-		export type DeviceCMYK = any;
-		// TODO
-		export type HSL = any;
-		// TODO
-		export type HSLA = any;
-		// TODO
-		export type HWB = any;
-		// TODO
-		export type LAB = any;
-		// TODO
-		export type LCH = any;
-		// TODO
-		export type OKLAB = any;
-		// TODO
-		export type OKLCH = any;
-		// TODO
-		export type RGB = any;
-		// TODO
-		export type RGBA = any;
+		export type Sepia = `sepia(${number | type.Percentage})`;
+
+		export type Color = `color(${string})`;
+
+		export type ColorMix = `color-mix(in ${"srgb" | "srgb-linear" | "lab" | "oklab" | "xyz" | "xyz-d50" | "xyz-d65" | "hsl" | "hwb" | "lch" | "oklch"}, ${string | `${string} ${type.Percentage}`}, ${string})`;
+
+		export type ColorContrast = `color-contrast(${string})`;
+
+		export type DeviceCMYK = `device-cmyk(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`}${"" | `, ${string}`})`;
+
+		export type HSL = `hsl(${type.Angle}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `hsl(${type.Angle} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
+
+		export type HSLA = `hsla(${type.Angle}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `hsla(${type.Angle} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
+
+		export type HWB = `hvb(${type.Angle} ${type.Percentage} ${type.Percentage}${"" | ` / ${type.Alpha}`})`;
+
+		export type LAB = `lab(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+
+		export type LCH = `lch(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+
+		export type OKLAB = `oklab(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+
+		export type OKLCH = `oklch(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+
+		export type RGB = `rgb(${number | type.Percentage}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `rgb(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
+
+		export type RGBA = `rgba(${number | type.Percentage}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `rgba(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
 		// TODO
 		export type ConicGradient = any;
 		// TODO
