@@ -2,6 +2,8 @@
 export declare module css {
 
 	export type Properties = {
+		"mozAppearance": RealProperties["appearance"] | VendorAppearanceProperty;
+		"webkitPppearance": RealProperties["appearance"] | VendorAppearanceProperty;
 		"webkitLineClamp": RealProperties["-webkit-line-clamp"];
 		"webkitTextFillColor": RealProperties["-webkit-text-fill-color"];
 		"webkitTextStroke": RealProperties["-webkit-text-stroke"];
