@@ -1628,24 +1628,24 @@ export declare module css {
 		export type MozElement = `-moz-element(${string})`;
 
 		export type Paint = `paint(${string})`;
-		// TODO
-		export type Counter = any;
-		// TODO
-		export type Counters = any;
-		// TODO
-		export type Symbols = any;
-		// TODO
-		export type Stylistic = any;
-		// TODO
-		export type Styleset = any;
-		// TODO
-		export type CharacterVariant = any;
-		// TODO
-		export type Swash = any;
-		// TODO
-		export type Ornaments = any;
-		// TODO
-		export type Annotation = any;
+
+		export type Counter = `counter(${string})`;
+
+		export type Counters = `counter(${string})`;
+
+		export type Symbols = `symbols(${string})`;
+
+		export type Stylistic = `stylistic(${string})`;
+
+		export type Styleset = `styleset(${string})`;
+
+		export type CharacterVariant = `character-variant(${string})`;
+
+		export type Swash = `swash(${string})`;
+
+		export type Ornaments = `ornaments(${string})`;
+
+		export type Annotation = `annotation(${string})`;
 		// TODO
 		export type Circle = any;
 		// TODO
