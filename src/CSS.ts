@@ -1626,8 +1626,8 @@ export declare module css {
 		export type Element = `element(${string})`;
 
 		export type MozElement = `-moz-element(${string})`;
-		// TODO
-		export type Paint = any;
+
+		export type Paint = `paint(${string})`;
 		// TODO
 		export type Counter = any;
 		// TODO
