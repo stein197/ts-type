@@ -1604,26 +1604,28 @@ export declare module css {
 		export type RGB = `rgb(${number | type.Percentage}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `rgb(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
 
 		export type RGBA = `rgba(${number | type.Percentage}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `rgba(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
-		// TODO
-		export type ConicGradient = any;
-		// TODO
-		export type Image = any;
-		// TODO
-		export type ImageSet = any;
-		// TODO
-		export type LinearGradient = any;
-		// TODO
-		export type RadialGradient = any;
-		// TODO
-		export type RepeatingLinearGradient = any;
-		// TODO
-		export type RepeatingRadialGradient = any;
-		// TODO
-		export type RepeatingConicGradient = any;
-		// TODO
-		export type CrossFade = any;
-		// TODO
-		export type Element = any;
+
+		export type ConicGradient = `conic-gradient(${string})`;
+
+		export type Image = `image(${"" | `${"ltr" | "rtl"} `}${string})`;
+
+		export type ImageSet = `image-set(${string})`;
+
+		export type LinearGradient = `linear-gradient(${string})`;
+
+		export type RadialGradient = `radial-gradient(${string})`;
+
+		export type RepeatingLinearGradient = `repeating-linear-gradient(${string})`;
+
+		export type RepeatingRadialGradient = `repeating-radial-gradient(${string})`;
+
+		export type RepeatingConicGradient = `repeating-conic-gradient(${string})`;
+
+		export type CrossFade = `cross-fade(${string})`;
+
+		export type Element = `element(${string})`;
+
+		export type MozElement = `-moz-element(${string})`;
 		// TODO
 		export type Paint = any;
 		// TODO
