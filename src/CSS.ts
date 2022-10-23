@@ -451,10 +451,8 @@ export declare module css {
 		"background-position-y": Arrayize<type.Position>;
 		"background-repeat": Arrayize<"repeat-x" | "repeat-y" | `${"repeat" | "space" | "round" | "no-repeat"}${"" | ` ${"repeat" | "space" | "round" | "no-repeat"}`}`>;
 		"background-size": Arrayize<`${type.Length | "auto"}${"" | ` ${type.Length | "auto"}`}` | "cover" | "contain">;
-		// TODO
-		"block-size": any;
-		// TODO
-		"border": any;
+		"block-size": type.Length | "max-content" | "min-content" | fn.FitContent | "auto";
+		"border": string;
 		// TODO
 		"border-block": any;
 		// TODO
@@ -1411,7 +1409,7 @@ export declare module css {
 
 		export type Color = number | `#${string}` | "black" | "silver" | "gray" | "white" | "maroon" | "red" | "purple" | "fuchsia" | "green" | "lime" | "olive" | "yellow" | "navy" | "blue" | "teal" | "aqua" | "orange" | "aliceblue" | "antiquewhite" | "aquamarine" | "azure" | "beige" | "bisque" | "blanchedalmond" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "limegreen" | "linen" | "magenta" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "oldlace" | "olivedrab" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellowgreen" | "rebeccapurple" | "transparent" | fn.ColorFunction;
 
-		export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${number}, ${number}, ${number}, ${number})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
+		export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${string})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
 
 		export type FilterFunction = fn.FilterFunction;
 
@@ -1468,19 +1466,19 @@ export declare module css {
 
 		export type Matrix3D = `matrix3d(${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number}, ${number})`;
 
-		export type Perspective = `perspective(${"none" | type.Length})`;
+		export type Perspective = `perspective(${string})`;
 
-		export type Rotate = `rotate(${type.Angle})`;
+		export type Rotate = `rotate(${string})`;
 
-		export type Rotate3D = `rotate(${number}, ${number}, ${number}, ${type.Angle})`;
+		export type Rotate3D = `rotate(${string})`;
 
-		export type RotateX = `rotateX(${type.Angle})`;
+		export type RotateX = `rotateX(${string})`;
 
-		export type RotateY = `rotateY(${type.Angle})`;
+		export type RotateY = `rotateY(${string})`;
 
-		export type RotateZ = `rotateZ(${type.Angle})`;
+		export type RotateZ = `rotateZ(${string})`;
 
-		export type Scale = `scale(${number | type.Percentage})` | `scale(${number | type.Percentage})`;
+		export type Scale = `scale(${string})`;
 
 		export type Scale3D = `scale3d(${number}, ${number}, ${number})`;
 
@@ -1490,21 +1488,21 @@ export declare module css {
 
 		export type ScaleZ = `scaleZ(${number})`;
 
-		export type Skew = `skew(${type.Angle})` | `skew(${type.Angle}, ${type.Angle})`;
+		export type Skew = `skew(${string})`;
 
-		export type SkewX = `skewX(${type.Angle})`;
+		export type SkewX = `skewX(${string})`;
 
-		export type SkewY = `skewY(${type.Angle})`;
+		export type SkewY = `skewY(${string})`;
 
-		export type Translate = `translate(${type.Length})` | `translate(${type.Length}, ${type.Length})`;
+		export type Translate = `translate(${string})`;
 
-		export type Translate3D = `translate3d(${type.Length}, ${type.Length}, ${type.Length}, ${string})`;
+		export type Translate3D = `translate3d(${string})`;
 
-		export type TranslateX = `translateX(${type.Length})`;
+		export type TranslateX = `translateX(${string})`;
 
-		export type TranslateY = `translateY(${type.Length})`;
+		export type TranslateY = `translateY(${string})`;
 
-		export type TranslateZ = `translateZ(${type.Length})`;
+		export type TranslateZ = `translateZ(${string})`;
 
 		export type Calc = `calc(${string})`;
 
@@ -1548,55 +1546,55 @@ export declare module css {
 
 		export type Sign = `sign(${string})`;
 
-		export type Blur = `blur(${type.Length})`;
+		export type Blur = `blur(${string})`;
 
-		export type Brightness = `brightness(${number | type.Percentage})`;
+		export type Brightness = `brightness(${string})`;
 
-		export type Contrast = `contrast(${number | type.Percentage})`;
+		export type Contrast = `contrast(${string})`;
 
 		export type DropShadow = `drop-shadow(${string})`;
 
-		export type Grayscale = `grayscale(${number | type.Percentage})`;
+		export type Grayscale = `grayscale(${string})`;
 
-		export type HueRotate = `hue-rotate(${type.Angle})`;
+		export type HueRotate = `hue-rotate(${string})`;
 
-		export type Invert = `invert(${number | type.Percentage})`;
+		export type Invert = `invert(${string})`;
 
-		export type Opacity = `opacity(${number | type.Percentage})`;
+		export type Opacity = `opacity(${string})`;
 
-		export type Saturate = `saturate(${number | type.Percentage})`;
+		export type Saturate = `saturate(${string})`;
 
-		export type Sepia = `sepia(${number | type.Percentage})`;
+		export type Sepia = `sepia(${string})`;
 
 		export type Color = `color(${string})`;
 
-		export type ColorMix = `color-mix(in ${"srgb" | "srgb-linear" | "lab" | "oklab" | "xyz" | "xyz-d50" | "xyz-d65" | "hsl" | "hwb" | "lch" | "oklch"}, ${string | `${string} ${type.Percentage}`}, ${string})`;
+		export type ColorMix = `color-mix(${string})`;
 
 		export type ColorContrast = `color-contrast(${string})`;
 
-		export type DeviceCMYK = `device-cmyk(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`}${"" | `, ${string}`})`;
+		export type DeviceCMYK = `device-cmyk(${string})`;
 
-		export type HSL = `hsl(${type.Angle}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `hsl(${type.Angle} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
+		export type HSL = `hsl(${string})`;
 
-		export type HSLA = `hsla(${type.Angle}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `hsla(${type.Angle} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
+		export type HSLA = `hsla(${string})`;
 
-		export type HWB = `hvb(${type.Angle} ${type.Percentage} ${type.Percentage}${"" | ` / ${type.Alpha}`})`;
+		export type HWB = `hvb(${string})`;
 
-		export type LAB = `lab(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+		export type LAB = `lab(${string})`;
 
-		export type LCH = `lch(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+		export type LCH = `lch(${string})`;
 
-		export type OKLAB = `oklab(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+		export type OKLAB = `oklab(${string})`;
 
-		export type OKLCH = `oklch(${type.Percentage} ${number} ${number}${"" | ` / ${type.Alpha}`})`;
+		export type OKLCH = `oklch(${string})`;
 
-		export type RGB = `rgb(${number | type.Percentage}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `rgb(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
+		export type RGB = `rgb(${string})`;
 
-		export type RGBA = `rgba(${number | type.Percentage}, ${number | type.Percentage}, ${number | type.Percentage}${"" | `, ${type.Alpha}`})` | `rgba(${number | type.Percentage} ${number | type.Percentage} ${number | type.Percentage}${"" | ` / ${type.Alpha}`})`;
+		export type RGBA = `rgba(${string})`;
 
 		export type ConicGradient = `conic-gradient(${string})`;
 
-		export type Image = `image(${"" | `${"ltr" | "rtl"} `}${string})`;
+		export type Image = `image(${string})`;
 
 		export type ImageSet = `image-set(${string})`;
 
@@ -1636,9 +1634,9 @@ export declare module css {
 
 		export type Annotation = `annotation(${string})`;
 
-		export type Circle = `circle(${type.Length | "closest-side" | "farthest-side"}${string})`;
+		export type Circle = `circle(${string})`;
 
-		export type Ellipse = `ellipse(${type.Length | "closest-side" | "farthest-side"} ${type.Length | "closest-side" | "farthest-side"}${string})`;
+		export type Ellipse = `ellipse(${string})`;
 
 		export type Inset = `inset(${string})`;
 
@@ -1654,9 +1652,9 @@ export declare module css {
 
 		export type Var = `var(${string})`;
 
-		export type FitContent = `fit-content(${type.Length})`;
+		export type FitContent = `fit-content(${string})`;
 
-		export type MinMax = `minmax(${type.Length | type.Flex | "max-content" | "min-content" | "auto"}, ${type.Length | type.Flex | "max-content" | "min-content" | "auto"})`;
+		export type MinMax = `minmax(${string})`;
 
 		export type Repeat = `repeat(${string})`;
 	}
