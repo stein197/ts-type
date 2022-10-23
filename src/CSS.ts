@@ -581,40 +581,23 @@ export declare module css {
 		"font-variant-position": "normal" | "sub" | "super";
 		"font-variation-settings": "normal" | Arrayize<[string, number]>;
 		"font-weight": "bolder" | "lighter" | "normal" | "bold" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
-		// TODO
-		"forced-color-adjust": any;
-		// TODO
-		"gap": any;
-		// TODO
-		"grid": any;
-		// TODO
-		"grid-area": any;
-		// TODO
-		"grid-auto-columns": any;
-		// TODO
-		"grid-auto-flow": any;
-		// TODO
-		"grid-auto-rows": any;
-		// TODO
-		"grid-column": any;
-		// TODO
-		"grid-column-end": any;
-		// TODO
-		"grid-column-start": any;
-		// TODO
-		"grid-row": any;
-		// TODO
-		"grid-row-end": any;
-		// TODO
-		"grid-row-start": any;
-		// TODO
-		"grid-template": any;
-		// TODO
-		"grid-template-areas": any;
-		// TODO
-		"grid-template-columns": any;
-		// TODO
-		"grid-template-rows": any;
+		"forced-color-adjust": "auto" | "none" | "preserve-parent-color";
+		"gap": PlainWithMaxArray<type.Length | fn.Calc, 2>;
+		"grid": string;
+		"grid-area": string;
+		"grid-auto-columns": string;
+		"grid-auto-flow": "row" | "column" | "dense" | ["row" | "column", "dense"];
+		"grid-auto-rows": string;
+		"grid-column": string;
+		"grid-column-end": string;
+		"grid-column-start": string;
+		"grid-row": string;
+		"grid-row-end": string;
+		"grid-row-start": string;
+		"grid-template": string;
+		"grid-template-areas": string;
+		"grid-template-columns": string;
+		"grid-template-rows": string;
 		// TODO
 		"hanging-punctuation": any;
 		// TODO
