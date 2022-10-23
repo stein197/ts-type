@@ -1429,6 +1429,8 @@ export declare module css {
 
 		export type FilterFunction = fn.FilterFunction;
 
+		export type Flex = `${number}fr`;
+
 		export type Frequency = `${number}${"Hz" | "kHz" | "%"}` | 0;
 
 		export type Gradient = fn.LinearGradient | fn.RepeatingLinearGradient | fn.RadialGradient | fn.RepeatingRadialGradient | fn.ConicGradient | fn.RepeatingConicGradient;
@@ -1646,30 +1648,30 @@ export declare module css {
 		export type Ornaments = `ornaments(${string})`;
 
 		export type Annotation = `annotation(${string})`;
-		// TODO
-		export type Circle = any;
-		// TODO
-		export type Ellipse = any;
-		// TODO
-		export type Inset = any;
-		// TODO
-		export type Polygon = any;
-		// TODO
-		export type Path = any;
-		// TODO
-		export type Attr = any;
-		// TODO
-		export type Env = any;
-		// TODO
-		export type URL = any;
-		// TODO
-		export type Var = any;
-		// TODO
-		export type FitContent = any;
-		// TODO
-		export type MinMax = any;
-		// TODO
-		export type Repeat = any;
+
+		export type Circle = `circle(${type.Length | "closest-side" | "farthest-side"}${string})`;
+
+		export type Ellipse = `ellipse(${type.Length | "closest-side" | "farthest-side"} ${type.Length | "closest-side" | "farthest-side"}${string})`;
+
+		export type Inset = `inset(${string})`;
+
+		export type Polygon = `polygon(${string})`;
+
+		export type Path = `path(${string})`;
+
+		export type Attr = `attr(${string})`;
+
+		export type Env = `env(${string})`;
+
+		export type URL = `url(${string})`;
+
+		export type Var = `var(${string})`;
+
+		export type FitContent = `fit-content(${type.Length})`;
+
+		export type MinMax = `minmax(${type.Length | type.Flex | "max-content" | "min-content" | "auto"}, ${type.Length | type.Flex | "max-content" | "min-content" | "auto"})`;
+
+		export type Repeat = `repeat(${string})`;
 	}
 }
 
