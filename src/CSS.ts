@@ -513,82 +513,44 @@ export declare module css {
 		"border-top-style": type.BorderStyle;
 		"border-top-width": type.BorderWidth;
 		"border-width": PlainWithMaxArray<type.BorderWidth, 4>;
-		// TODO
-		"bottom": any;
-		// TODO
-		"box-decoration-break": any;
-		// TODO
-		"box-shadow": any;
-		// TODO
-		"box-sizing": any;
-		// TODO
-		"break-after": any;
-		// TODO
-		"break-before": any;
-		// TODO
-		"break-inside": any;
-		// TODO
-		"caption-side": any;
-		// TODO
-		"caret-color": any;
-		// TODO
-		"clear": any;
-		// TODO
-		"clip": any;
-		// TODO
-		"clip-path": any;
-		// TODO
-		"color": any;
-		// TODO
-		"color-scheme": any;
-		// TODO
-		"column-count": any;
-		// TODO
-		"column-fill": any;
-		// TODO
-		"column-gap": any;
-		// TODO
-		"column-rule": any;
-		// TODO
-		"column-rule-color": any;
-		// TODO
-		"column-rule-style": any;
-		// TODO
-		"column-rule-width": any;
-		// TODO
-		"column-span": any;
-		// TODO
-		"column-width": any;
-		// TODO
-		"columns": any;
-		// TODO
-		"contain": any;
-		// TODO
-		"contain-intrinsic-block-size": any;
-		// TODO
-		"contain-intrinsic-height": any;
-		// TODO
-		"contain-intrinsic-inline-size": any;
-		// TODO
-		"contain-intrinsic-size": any;
-		// TODO
-		"contain-intrinsic-width": any;
-		// TODO
-		"content": any;
-		// TODO
-		"content-visibility": any;
-		// TODO
-		"counter-increment": any;
-		// TODO
-		"counter-reset": any;
-		// TODO
-		"counter-set": any;
-		// TODO
-		"cursor": any;
-		// TODO
-		"direction": any;
-		// TODO
-		"display": any;
+		"bottom": type.Length | "auto";
+		"box-decoration-break": "slice" | "clone";
+		"box-shadow": Arrayize<string>;
+		"box-sizing": "content-box" | "border-box";
+		"break-after": BreakProperty;
+		"break-before": BreakProperty;
+		"break-inside": "auto" | "avoid" | "avoid-page" | "avoid-column" | "avoid-region";
+		"caption-side": "top" | "bottom" | "block-start" | "block-end" | "inline-start" | "inline-end";
+		"caret-color": type.Color;
+		"clear": "inline-start" | "inline-end" | "block-start" | "block-end" | "left" | "right" | "top" | "bottom" | "none";
+		"clip": "auto" | type.Rect;
+		"clip-path": "none" | fn.URL | "fill-box" | "stroke-box" | "view-box" | "margin-box" | "border-box" | "padding-box" | "content-box" | ["fill-box" | "stroke-box" | "view-box" | "margin-box" | "border-box" | "padding-box" | "content-box", type.Shape?];
+		"color": type.Color;
+		"color-scheme": string;
+		"column-count": "auto" | number;
+		"column-fill": "auto" | "balance" | "balance-all";
+		"column-gap": "normal" | type.Length;
+		"column-rule": string;
+		"column-rule-color": type.Color;
+		"column-rule-style": type.BorderStyle;
+		"column-rule-width": type.BorderWidth;
+		"column-span": "none" | "all";
+		"column-width": "auto" | type.Length;
+		"columns": string;
+		"contain": "none" | "strict" | "content" | Arrayize<"size" | "layout" | "style" | "paint">;
+		"contain-intrinsic-block-size": ContainIntrinsicProperty;
+		"contain-intrinsic-height": ContainIntrinsicProperty;
+		"contain-intrinsic-inline-size": ContainIntrinsicProperty;
+		"contain-intrinsic-size": PlainWithMaxArray<ContainIntrinsicProperty, 2>;
+		"contain-intrinsic-width": ContainIntrinsicProperty;
+		"content": string;
+		"content-visibility": "auto" | "visible" | "hidden";
+		"counter-increment": string;
+		"counter-reset": string;
+		"counter-set": string;
+		"cursor": string | [fn.URL, number, number, CursorProperty] | [fn.URL, number, number, CursorProperty];
+		"direction": "ltr" | "rtl";
+		"display": DisplayOutside | DisplayInside | [DisplayOutside, DisplayInside] | [DisplayOutside, DisplayInside | "math"] | DisplayListItem | DisplayInternal | DisplayBox | DisplayLegacy | "math";
 		// TODO
 		"empty-cells": any;
 		// TODO
@@ -1336,6 +1298,24 @@ export declare module css {
 
 	type VendorAppearanceProperty = "attachment" | "borderless-attachment" | "button-bevel" | "caps-lock-indicator" | "caret" | "checkbox-container" | "checkbox-label" | "checkmenuitem" | "color-well" | "continuous-capacity-level-indicator" | "default-button" | "discrete-capacity-level-indicator" | "inner-spin-button" | "image-controls-button" | "list-button" | "listitem" | "media-enter-fullscreen-button" | "media-exit-fullscreen-button" | "media-fullscreen-volume-slider" | "media-fullscreen-volume-slider-thumb" | "media-mute-button" | "media-play-button" | "media-overlay-play-button" | "media-return-to-realtime-button" | "media-rewind-button" | "media-seek-back-button" | "media-seek-forward-button" | "media-toggle-closed-captions-button" | "media-slider" | "media-sliderthumb" | "media-volume-slider-container" | "media-volume-slider-mute-button" | "media-volume-slider" | "media-volume-sliderthumb" | "media-controls-background" | "media-controls-dark-bar-background" | "media-controls-fullscreen-background" | "media-controls-light-bar-background" | "media-current-time-display" | "media-time-remaining-display" | "menulist-text" | "menulist-textfield" | "meterbar" | "number-input" | "progress-bar-value" | "progressbar" | "progressbar-vertical" | "range" | "range-thumb" | "rating-level-indicator" | "relevancy-level-indicator" | "scale-horizontal" | "scalethumbend" | "scalethumb-horizontal" | "scalethumbstart" | "scalethumbtick" | "scalethumb-vertical" | "scale-vertical" | "scrollbarthumb-horizontal" | "scrollbarthumb-vertical" | "scrollbartrack-horizontal" | "scrollbartrack-vertical" | "searchfield-decoration" | "searchfield-results-decoration" | "searchfield-results-button" | "searchfield-cancel-button" | "snapshotted-plugin-overlay" | "sheet" | "slider-vertical" | "sliderthumb-horizontal" | "sliderthumb-vertical" | "textfield-multiline" | "-apple-pay-button";
 
+	type BreakProperty = "auto" | "avoid" | "always" | "all" | "avoid-page" | "page" | "left" | "right" | "recto" | "verso" | "avoid-column" | "column" | "avoid-region" | "region";
+
+	type ContainIntrinsicProperty = "none" | type.Length | ["auto", type.Length];
+
+	type CursorProperty = "auto" | "default" | "none" | "context-menu" | "help" | "pointer" | "progress" | "wait" | "cell" | "crosshair" | "text" | "vertical-text" | "alias" | "copy" | "move" | "no-drop" | "not-allowed" | "grab" | "grabbing" | "e-resize" | "n-resize" | "ne-resize" | "nw-resize" | "s-resize" | "se-resize" | "sw-resize" | "w-resize" | "ew-resize" | "ns-resize" | "nesw-resize" | "nwse-resize" | "col-resize" | "row-resize" | "all-scroll" | "zoom-in" | "zoom-out";
+
+	type DisplayOutside = "block" | "inline" | "run-in";
+
+	type DisplayInside = "flow" | "flow-root" | "table" | "flex" | "grid" | "ruby";
+
+	type DisplayListItem = "list-item" | [DisplayOutside, "list-item"] | ["flow" | "flow-root", "list-item"] | [DisplayOutside, "flow" | "flow-root", "list-item"];
+
+	type DisplayInternal = "table-row-group" | "table-header-group" | "table-footer-group" | "table-row" | "table-cell" | "table-column-group" | "table-column" | "table-caption" | "ruby-base" | "ruby-text" | "ruby-base-container" | "ruby-text-container";
+
+	type DisplayBox = "contents" | "none";
+
+	type DisplayLegacy = "inline-block" | "inline-table" | "inline-flex" | "inline-grid";
+
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types
 	export module type {
 
@@ -1382,7 +1362,6 @@ export declare module css {
 		export type TransformFunction = fn.TransformFunction;
 	}
 
-	// TODO: Simplify functions? Write `<function>(${string})` insterad of writing exact syntax for each function
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions
 	export module fn {
 
