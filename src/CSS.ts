@@ -437,34 +437,20 @@ export declare module css {
 		"animation-timing-function": Arrayize<type.EasingFunction>;
 		"appearance": "none" | "auto" | "searchfield" | "textarea" | "push-button" | "slider-horizontal" | "checkbox" | "radio" | "square-button" | "menulist" | "listbox" | "meter" | "progress-bar" | "button" | "textfield" | "menulist-button";
 		"aspect-ratio": "auto" | type.Ratio;
-		// TODO
-		"backdrop-filter": any;
-		// TODO
-		"backface-visibility": any;
-		// TODO
-		"background": any;
-		// TODO
-		"background-attachment": any;
-		// TODO
-		"background-blend-mode": any;
-		// TODO
-		"background-clip": any;
-		// TODO
-		"background-color": any;
-		// TODO
-		"background-image": any;
-		// TODO
-		"background-origin": any;
-		// TODO
-		"background-position": any;
-		// TODO
-		"background-position-x": any;
-		// TODO
-		"background-position-y": any;
-		// TODO
-		"background-repeat": any;
-		// TODO
-		"background-size": any;
+		"backdrop-filter": Arrayize<type.FilterFunction | fn.URL>;
+		"backface-visibility": "visible" | "hidden";
+		"background": Arrayize<string>;
+		"background-attachment": Arrayize<"scroll" | "fixed" | "local">;
+		"background-blend-mode": Arrayize<type.BlendMode>;
+		"background-clip": Arrayize<"border-box" | "padding-box" | "content-box" | "text">;
+		"background-color": type.Color;
+		"background-image": Arrayize<type.Image>;
+		"background-origin": Arrayize<"border-box" | "padding-box" | "content-box">;
+		"background-position": Arrayize<type.Position>;
+		"background-position-x": Arrayize<type.Position>;
+		"background-position-y": Arrayize<type.Position>;
+		"background-repeat": Arrayize<"repeat-x" | "repeat-y" | `${"repeat" | "space" | "round" | "no-repeat"}${"" | ` ${"repeat" | "space" | "round" | "no-repeat"}`}`>;
+		"background-size": Arrayize<`${type.Length | "auto"}${"" | ` ${type.Length | "auto"}`}` | "cover" | "contain">;
 		// TODO
 		"block-size": any;
 		// TODO
@@ -1454,6 +1440,7 @@ export declare module css {
 		export type TransformFunction = fn.TransformFunction;
 	}
 
+	// TODO: Simplify functions? Write `<function>(${string})` insterad of writing exact syntax for each function
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions
 	export module fn {
 
