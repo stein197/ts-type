@@ -1566,8 +1566,8 @@ export declare module css {
 		export type Brightness = `brightness(${number | type.Percentage})`;
 
 		export type Contrast = `contrast(${number | type.Percentage})`;
-		// TODO
-		export type DropShadow = any;
+
+		export type DropShadow = `drop-shadow(${string})`;
 
 		export type Grayscale = `grayscale(${number | type.Percentage})`;
 
