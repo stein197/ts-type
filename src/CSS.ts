@@ -560,48 +560,27 @@ export declare module css {
 		"flex-grow": number;
 		"flex-shrink": number;
 		"flex-wrap": FlexWrap;
-		// TODO
-		"float": any;
-		// TODO
-		"font": any;
-		// TODO
-		"font-family": any;
-		// TODO
-		"font-feature-settings": any;
-		// TODO
-		"font-kerning": any;
-		// TODO
-		"font-language-override": any;
-		// TODO
-		"font-optical-sizing": any;
-		// TODO
-		"font-size": any;
-		// TODO
-		"font-size-adjust": any;
-		// TODO
-		"font-stretch": any;
-		// TODO
-		"font-style": any;
-		// TODO
-		"font-synthesis": any;
-		// TODO
-		"font-variant": any;
-		// TODO
-		"font-variant-alternates": any;
-		// TODO
-		"font-variant-caps": any;
-		// TODO
-		"font-variant-east-asian": any;
-		// TODO
-		"font-variant-ligatures": any;
-		// TODO
-		"font-variant-numeric": any;
-		// TODO
-		"font-variant-position": any;
-		// TODO
-		"font-variation-settings": any;
-		// TODO
-		"font-weight": any;
+		"float": "block-start" | "block-end" | "inline-start" | "inline-end" | "snap-block" | fn.SnapBlock | "snap-inline" | fn.SnapInline | "left" | "right" | "top" | "bottom" | "none" | "footnote";
+		"font": string;
+		"font-family": Arrayize<string>;
+		"font-feature-settings": string;
+		"font-kerning": "auto" | "normal" | "none";
+		"font-language-override": string;
+		"font-optical-sizing": "auto" | "none";
+		"font-size": type.Length | "math" | "xx-small" | "x-small" | "small" | "medium" | "large" | "x-large" | "xx-large" | "xxx-large" | "smaller" | "larger";
+		"font-size-adjust": number | ["ex-height" | "cap-height" | "ch-width" | "ic-width" | "ic-height", number];
+		"font-stretch": type.Percentage | "normal" | "ultra-condensed" | "extra-condensed" | "condensed" | "semi-condensed" | "semi-expanded" | "expanded" | "extra-expanded" | "ultra-expanded";
+		"font-style": "normal" | "italic" | "oblique" | ["oblique", type.Angle];
+		"font-synthesis": "none" | Arrayize<"weight" | "style" | "small-caps">;
+		"font-variant": string;
+		"font-variant-alternates": "normal" | Arrayize<"historical-forms" | fn.FontFunction>;
+		"font-variant-caps": "normal" | "small-caps" | "all-small-caps" | "petite-caps" | "all-petite-caps" | "unicase" | "titling-caps";
+		"font-variant-east-asian": "normal" | Arrayize<"jis78" | "jis83" | "jis90" | "jis04" | "simplified" | "traditional" | "full-width" | "proportional-width" | "ruby">;
+		"font-variant-ligatures": "normal" | "none" | Arrayize<"common-ligatures" | "no-common-ligatures" | "discretionary-ligatures" | "no-discretionary-ligatures" | "historical-ligatures" | "no-historical-ligatures" | "contextual" | "no-contextual">;
+		"font-variant-numeric": "normal" | Arrayize<"ordinal" | "slashed-zero" | "lining-nums" | "oldstyle-nums" | "proportional-nums" | "tabular-nums" | "diagonal-fractions" | "stacked-fractions">;
+		"font-variant-position": "normal" | "sub" | "super";
+		"font-variation-settings": "normal" | Arrayize<[string, number]>;
+		"font-weight": "bolder" | "lighter" | "normal" | "bold" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 		// TODO
 		"forced-color-adjust": any;
 		// TODO
@@ -1575,6 +1554,10 @@ export declare module css {
 		export type MinMax = `minmax(${string})`;
 
 		export type Repeat = `repeat(${string})`;
+
+		export type SnapBlock = `snap-block(${string})`;
+
+		export type SnapInline = `snap-inline(${string})`;
 	}
 }
 
