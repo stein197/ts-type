@@ -1618,7 +1618,7 @@ export declare module css {
 
 		export type Counter = `counter(${string})`;
 
-		export type Counters = `counter(${string})`;
+		export type Counters = `counters(${string})`;
 
 		export type Symbols = `symbols(${string})`;
 
