@@ -417,7 +417,7 @@ export declare module css {
 		"-webkit-text-fill-color": type.Color;
 		"-webkit-text-stroke": `${RealProperties["-webkit-text-stroke-width"]} ${RealProperties["-webkit-text-stroke-color"]}`;
 		"-webkit-text-stroke-color": type.Color;
-		"-webkit-text-stroke-width": "thin" | "medium" | "thick" | type.Length;
+		"-webkit-text-stroke-width": type.BorderWidth;
 		"accent-color": "auto" | type.Color;
 		"align-content": "normal" | BaselinePosition | ContentDistribution | OverflowPosition<ContentPosition> | ContentPosition;
 		"align-items": "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition> | SelfPosition;
@@ -453,126 +453,66 @@ export declare module css {
 		"background-size": Arrayize<`${type.Length | "auto"}${"" | ` ${type.Length | "auto"}`}` | "cover" | "contain">;
 		"block-size": type.Length | "max-content" | "min-content" | fn.FitContent | "auto";
 		"border": string;
-		// TODO
-		"border-block": any;
-		// TODO
-		"border-block-color": any;
-		// TODO
-		"border-block-end": any;
-		// TODO
-		"border-block-end-color": any;
-		// TODO
-		"border-block-end-style": any;
-		// TODO
-		"border-block-end-width": any;
-		// TODO
-		"border-block-start": any;
-		// TODO
-		"border-block-start-color": any;
-		// TODO
-		"border-block-start-style": any;
-		// TODO
-		"border-block-start-width": any;
-		// TODO
-		"border-block-style": any;
-		// TODO
-		"border-block-width": any;
-		// TODO
-		"border-bottom": any;
-		// TODO
-		"border-bottom-color": any;
-		// TODO
-		"border-bottom-left-radius": any;
-		// TODO
-		"border-bottom-right-radius": any;
-		// TODO
-		"border-bottom-style": any;
-		// TODO
-		"border-bottom-width": any;
-		// TODO
-		"border-collapse": any;
-		// TODO
-		"border-color": any;
-		// TODO
-		"border-end-end-radius": any;
-		// TODO
-		"border-end-start-radius": any;
-		// TODO
-		"border-image": any;
-		// TODO
-		"border-image-outset": any;
-		// TODO
-		"border-image-repeat": any;
-		// TODO
-		"border-image-slice": any;
-		// TODO
-		"border-image-source": any;
-		// TODO
-		"border-image-width": any;
-		// TODO
-		"border-inline": any;
-		// TODO
-		"border-inline-color": any;
-		// TODO
-		"border-inline-end": any;
-		// TODO
-		"border-inline-end-color": any;
-		// TODO
-		"border-inline-end-style": any;
-		// TODO
-		"border-inline-end-width": any;
-		// TODO
-		"border-inline-start": any;
-		// TODO
-		"border-inline-start-color": any;
-		// TODO
-		"border-inline-start-style": any;
-		// TODO
-		"border-inline-start-width": any;
-		// TODO
-		"border-inline-style": any;
-		// TODO
-		"border-inline-width": any;
-		// TODO
-		"border-left": any;
-		// TODO
-		"border-left-color": any;
-		// TODO
-		"border-left-style": any;
-		// TODO
-		"border-left-width": any;
-		// TODO
-		"border-radius": any;
-		// TODO
-		"border-right": any;
-		// TODO
-		"border-right-color": any;
-		// TODO
-		"border-right-style": any;
-		// TODO
-		"border-right-width": any;
-		// TODO
-		"border-spacing": any;
-		// TODO
-		"border-start-end-radius": any;
-		// TODO
-		"border-start-start-radius": any;
-		// TODO
-		"border-style": any;
-		// TODO
-		"border-top": any;
-		// TODO
-		"border-top-color": any;
-		// TODO
-		"border-top-left-radius": any;
-		// TODO
-		"border-top-right-radius": any;
-		// TODO
-		"border-top-style": any;
-		// TODO
-		"border-top-width": any;
-		// TODO
-		"border-width": any;
+		"border-block": string;
+		"border-block-color": PlainWithMaxArray<type.Color, 2>;
+		"border-block-end": string;
+		"border-block-end-color": type.Color;
+		"border-block-end-style": type.BorderStyle;
+		"border-block-end-width": type.BorderWidth;
+		"border-block-start": string;
+		"border-block-start-color": type.Color;
+		"border-block-start-style": type.BorderStyle;
+		"border-block-start-width": type.BorderWidth;
+		"border-block-style": PlainWithMaxArray<type.BorderStyle, 2>;
+		"border-block-width": PlainWithMaxArray<type.BorderWidth, 2>;
+		"border-bottom": string;
+		"border-bottom-color": type.Color;
+		"border-bottom-left-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-bottom-right-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-bottom-style": type.BorderStyle;
+		"border-bottom-width": type.BorderWidth;
+		"border-collapse": "collapse" | "separate";
+		"border-color": PlainWithMaxArray<type.Color, 4>;
+		"border-end-end-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-end-start-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-image": string;
+		"border-image-outset": PlainWithMaxArray<type.Length | number, 4>;
+		"border-image-repeat": PlainWithMaxArray<"stretch" | "repeat" | "round" | "space", 4>;
+		"border-image-slice": PlainWithMaxArray<number | type.Percentage | "fill", 4>;
+		"border-image-source": "none" | type.Image | fn.URL;
+		"border-image-width": PlainWithMaxArray<number | type.Length | "auto", 4>;
+		"border-inline": string;
+		"border-inline-color": type.Color;
+		"border-inline-end": string;
+		"border-inline-end-color": type.Color;
+		"border-inline-end-style": type.BorderStyle;
+		"border-inline-end-width": type.BorderWidth;
+		"border-inline-start": string;
+		"border-inline-start-color": type.Color;
+		"border-inline-start-style": type.BorderStyle;
+		"border-inline-start-width": type.BorderWidth;
+		"border-inline-style": PlainWithMaxArray<type.BorderStyle, 2>;
+		"border-inline-width": PlainWithMaxArray<type.BorderWidth, 2>;
+		"border-left": string;
+		"border-left-color": type.Color;
+		"border-left-style": type.BorderStyle;
+		"border-left-width": type.BorderWidth;
+		"border-radius": string;
+		"border-right": string;
+		"border-right-color": type.Color;
+		"border-right-style": type.BorderStyle;
+		"border-right-width": type.BorderWidth;
+		"border-spacing": PlainWithMaxArray<type.Length, 2>;
+		"border-start-end-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-start-start-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-style": PlainWithMaxArray<type.BorderStyle, 4>;
+		"border-top": string;
+		"border-top-color": type.Color;
+		"border-top-left-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-top-right-radius": PlainWithMaxArray<type.Length, 2>;
+		"border-top-style": type.BorderStyle;
+		"border-top-width": type.BorderWidth;
+		"border-width": PlainWithMaxArray<type.BorderWidth, 4>;
 		// TODO
 		"bottom": any;
 		// TODO
@@ -1407,6 +1347,10 @@ export declare module css {
 
 		export type BlendMode = "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity";
 
+		export type BorderStyle = "none" | "hidden" | "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset";
+
+		export type BorderWidth = "thin" | "medium" | "thick" | Length;
+
 		export type Color = number | `#${string}` | "black" | "silver" | "gray" | "white" | "maroon" | "red" | "purple" | "fuchsia" | "green" | "lime" | "olive" | "yellow" | "navy" | "blue" | "teal" | "aqua" | "orange" | "aliceblue" | "antiquewhite" | "aquamarine" | "azure" | "beige" | "bisque" | "blanchedalmond" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "limegreen" | "linen" | "magenta" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "oldlace" | "olivedrab" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellowgreen" | "rebeccapurple" | "transparent" | fn.ColorFunction;
 
 		export type EasingFunction = "linear" | `linear(${string})` | "ease" | "ease-in" | "ease-out" | "ease-in-out" | `cubic-bezier(${string})` | "step-start" | "step-end" | `steps(${number})` | `steps(${number}, ${"jump-start" | "jump-end" | "jump-none" | "jump-both" | "start" | "end"})`
@@ -1666,3 +1610,7 @@ type Merge<T extends object, U> = {
 
 // TODO: Try to replace it with repeating string pattern type
 type Arrayize<T> = T | T[];
+
+type MaxArray<T, L extends number, U extends T[] = [T]> = U extends {length: L} ? U : (U | MaxArray<T, L, [...U, T]>);
+
+type PlainWithMaxArray<T, L extends number> = T | MaxArray<T, L>;
