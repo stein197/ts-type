@@ -551,24 +551,15 @@ export declare module css {
 		"cursor": string | [fn.URL, number, number, CursorProperty] | [fn.URL, number, number, CursorProperty];
 		"direction": "ltr" | "rtl";
 		"display": DisplayOutside | DisplayInside | [DisplayOutside, DisplayInside] | [DisplayOutside, DisplayInside | "math"] | DisplayListItem | DisplayInternal | DisplayBox | DisplayLegacy | "math";
-		// TODO
-		"empty-cells": any;
-		// TODO
-		"filter": any;
-		// TODO
-		"flex": any;
-		// TODO
-		"flex-basis": any;
-		// TODO
-		"flex-direction": any;
-		// TODO
-		"flex-flow": any;
-		// TODO
-		"flex-grow": any;
-		// TODO
-		"flex-shrink": any;
-		// TODO
-		"flex-wrap": any;
+		"empty-cells": "show" | "hide";
+		"filter": "none" | Arrayize<type.FilterFunction>;
+		"flex": string;
+		"flex-basis": "auto" | "content" | "max-content" | "min-content" | "fit-content" | type.Length;
+		"flex-direction": "row" | "row-reverse" | "column" | "column-reverse";
+		"flex-flow": FlexDirection | FlexWrap | [FlexDirection, FlexWrap];
+		"flex-grow": number;
+		"flex-shrink": number;
+		"flex-wrap": FlexWrap;
 		// TODO
 		"float": any;
 		// TODO
@@ -1315,6 +1306,10 @@ export declare module css {
 	type DisplayBox = "contents" | "none";
 
 	type DisplayLegacy = "inline-block" | "inline-table" | "inline-flex" | "inline-grid";
+
+	type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
+
+	type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
 
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types
 	export module type {
