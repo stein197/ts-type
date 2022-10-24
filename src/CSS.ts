@@ -688,22 +688,14 @@ export declare module css {
 		"outline-offset": type.Length;
 		"outline-style": type.BorderStyle;
 		"outline-width": type.BorderWidth;
-		// TODO
-		"overflow": any;
-		// TODO
-		"overflow-anchor": any;
-		// TODO
-		"overflow-block": any;
-		// TODO
-		"overflow-clip-margin": any;
-		// TODO
-		"overflow-inline": any;
-		// TODO
-		"overflow-wrap": any;
-		// TODO
-		"overflow-x": any;
-		// TODO
-		"overflow-y": any;
+		"overflow": PlainWithMaxArray<"visible" | "hidden" | "clip" | "scroll" | "auto" | "overlay" | "-moz-scrollbars-none" | "-moz-scrollbars-horizontal" | "-moz-scrollbars-vertical" | "-moz-hidden-unscrollable", 2>;
+		"overflow-anchor": "auto" | "none";
+		"overflow-block": "visible" | "hidden" | "scroll" | "auto";
+		"overflow-clip-margin": "content-box" | "padding-box" | "border-box" | type.Length;
+		"overflow-inline": "visible" | "hidden" | "scroll" | "auto";
+		"overflow-wrap": "normal" | "break-word" | "anywhere";
+		"overflow-x": "visible" | "hidden" | "clip" | "scroll" | "auto";
+		"overflow-y": "visible" | "hidden" | "clip" | "scroll" | "auto";
 		// TODO
 		"overscroll-behavior": any;
 		// TODO
