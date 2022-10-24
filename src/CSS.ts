@@ -680,22 +680,14 @@ export declare module css {
 		"offset-path": "none" | fn.Ray | fn.URL | type.Shape | CoordBox | [type.Shape, CoordBox];
 		"offset-position": "auto" | type.Position;
 		"offset-rotate": "auto" | "rotate" | type.Angle | ["auto" | "rotate", type.Angle];
-		// TODO
-		"opacity": any;
-		// TODO
-		"order": any;
-		// TODO
-		"orphans": any;
-		// TODO
-		"outline": any;
-		// TODO
-		"outline-color": any;
-		// TODO
-		"outline-offset": any;
-		// TODO
-		"outline-style": any;
-		// TODO
-		"outline-width": any;
+		"opacity": type.Alpha;
+		"order": number;
+		"orphans": number;
+		"outline": string | Arrayize<RealProperties["outline-color"] | RealProperties["outline-style"] | RealProperties["outline-width"]>;
+		"outline-color": type.Color;
+		"outline-offset": type.Length;
+		"outline-style": type.BorderStyle;
+		"outline-width": type.BorderWidth;
 		// TODO
 		"overflow": any;
 		// TODO
