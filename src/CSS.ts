@@ -598,42 +598,24 @@ export declare module css {
 		"grid-template-areas": string;
 		"grid-template-columns": string;
 		"grid-template-rows": string;
-		// TODO
-		"hanging-punctuation": any;
-		// TODO
-		"height": any;
-		// TODO
-		"hyphenate-character": any;
-		// TODO
-		"hyphens": any;
-		// TODO
-		"image-orientation": any;
-		// TODO
-		"image-rendering": any;
-		// TODO
-		"image-resolution": any;
-		// TODO
-		"ime-mode": any;
-		// TODO
-		"initial-letter": any;
-		// TODO
-		"initial-letter-align": any;
-		// TODO
-		"inline-size": any;
-		// TODO
-		"inset": any;
-		// TODO
-		"inset-block": any;
-		// TODO
-		"inset-block-end": any;
-		// TODO
-		"inset-block-start": any;
-		// TODO
-		"inset-inline": any;
-		// TODO
-		"inset-inline-end": any;
-		// TODO
-		"inset-inline-start": any;
+		"hanging-punctuation": "none" | Arrayize<"first" | "force-end" | "allow-end" | "last">;
+		"height": type.Length | "auto" | "max-content" | "min-content" | "fit-content" | fn.FitContent | fn.Clamp;
+		"hyphenate-character": string;
+		"hyphens": "none" | "manual" | "auto";
+		"image-orientation": "none" | "from-image" | Arrayize<type.Angle | "flip">;
+		"image-rendering": "auto" | "smooth" | "high-quality" | "pixelated" | "crisp-edges";
+		"image-resolution": Arrayize<"from-image" | type.Resolution> | "snap";
+		"ime-mode": "auto" | "normal" | "active" | "inactive" | "disabled";
+		"initial-letter": "normal" | [number, number] | [number, ("drop" | "raise")?] | ["drop" | "raise", number];
+		"initial-letter-align": "border-box" | "alphabetic" | "ideographic" | "hanging" | "leading";
+		"inline-size": type.Length | fn.FitContent | "max-content" | "min-content" | "auto";
+		"inset": "auto" | type.Length | MaxArray<type.Length, 4>;
+		"inset-block": "auto" | type.Length | MaxArray<type.Length, 2>;
+		"inset-block-end": "auto" | type.Length;
+		"inset-block-start": "auto" | type.Length;
+		"inset-inline": "auto" | type.Length | MaxArray<type.Length, 2>;
+		"inset-inline-end": "auto" | type.Length;
+		"inset-inline-start": "auto" | type.Length;
 		// TODO
 		"isolation": any;
 		// TODO
@@ -1235,7 +1217,6 @@ export declare module css {
 		// TODO
 		"writing-mode": any;
 	}
-
 
 	type GlobalValue = "inherit" | "initial" | "unset" | "revert" | "revert-layer";
 
