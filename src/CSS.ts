@@ -449,8 +449,8 @@ export declare module css {
 		"background-position": Arrayize<type.Position>;
 		"background-position-x": Arrayize<type.Position>;
 		"background-position-y": Arrayize<type.Position>;
-		"background-repeat": Arrayize<"repeat-x" | "repeat-y" | `${"repeat" | "space" | "round" | "no-repeat"}${"" | ` ${"repeat" | "space" | "round" | "no-repeat"}`}`>;
-		"background-size": Arrayize<`${type.Length | "auto"}${"" | ` ${type.Length | "auto"}`}` | "cover" | "contain">;
+		"background-repeat": Arrayize<RepeatStyle>;
+		"background-size": Arrayize<BackgroundSize>;
 		"block-size": type.Length | "max-content" | "min-content" | fn.FitContent | "auto";
 		"border": string;
 		"border-block": string;
@@ -642,40 +642,23 @@ export declare module css {
 		"margin-right": "auto" | type.Length;
 		"margin-top": "auto" | type.Length;
 		"margin-trim": "none" | "block" | "inline" | "in-flow" | "all" | Arrayize<"block-start" | "inline-start" | "block-end" | "inline-end">;
-		// TODO
-		"mask": any;
-		// TODO
-		"mask-border": any;
-		// TODO
-		"mask-border-mode": any;
-		// TODO
-		"mask-border-outset": any;
-		// TODO
-		"mask-border-repeat": any;
-		// TODO
-		"mask-border-slice": any;
-		// TODO
-		"mask-border-source": any;
-		// TODO
-		"mask-border-width": any;
-		// TODO
-		"mask-clip": any;
-		// TODO
-		"mask-composite": any;
-		// TODO
-		"mask-image": any;
-		// TODO
-		"mask-mode": any;
-		// TODO
-		"mask-origin": any;
-		// TODO
-		"mask-position": any;
-		// TODO
-		"mask-repeat": any;
-		// TODO
-		"mask-size": any;
-		// TODO
-		"mask-type": any;
+		"mask": string | Arrayize<RealProperties["mask-clip"] | RealProperties["mask-composite"] | RealProperties["mask-image"] | RealProperties["mask-mode"] | RealProperties["mask-origin"] | RealProperties["mask-position"] | RealProperties["mask-repeat"] | RealProperties["mask-size"]>;
+		"mask-border": string | Arrayize<RealProperties["mask-border-mode"] | RealProperties["mask-border-outset"] | RealProperties["mask-border-repeat"] | RealProperties["mask-border-slice"] | RealProperties["mask-border-source"] | RealProperties["mask-border-width"]>;
+		"mask-border-mode": "alpha" | "luminance";
+		"mask-border-outset": PlainWithMaxArray<number | type.Length, 4>;
+		"mask-border-repeat": PlainWithMaxArray<"stretch" | "repeat" | "round" | "space", 2>;
+		"mask-border-slice": number | type.Percentage | [number | type.Percentage, "fill"?] | [number | type.Percentage, number | type.Percentage, "fill"?] | [number | type.Percentage, number | type.Percentage, number | type.Percentage, "fill"?] | [number | type.Percentage, number | type.Percentage, number | type.Percentage, number | type.Percentage, "fill"?];
+		"mask-border-source": "none" | type.Image;
+		"mask-border-width": PlainWithMaxArray<"auto" | number | type.Length, 4>;
+		"mask-clip": Arrayize<GeometryBox>;
+		"mask-composite": Arrayize<"add" | "substract" | "intersect" | "exclude">;
+		"mask-image": Arrayize<"none" | type.Image>;
+		"mask-mode": Arrayize<"alpha" | "luminance" | "match-source">;
+		"mask-origin": Arrayize<GeometryBox>;
+		"mask-position": Arrayize<type.Position>;
+		"mask-repeat": Arrayize<RepeatStyle>;
+		"mask-size": Arrayize<BackgroundSize>;
+		"mask-type": "alpha" | "luminance";
 		// TODO
 		"masonry-auto-flow": any;
 		// TODO
@@ -1228,6 +1211,12 @@ export declare module css {
 
 	type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
 
+	type GeometryBox = "no-clip" | "fill-box" | "stroke-box" | "view-box" | "margin-box" | "border-box" | "padding-box" | "content-box";
+
+	type RepeatStyle = "repeat-x" | "repeat-y" | PlainWithMaxArray<"repeat" | "space" | "round" | "no-repeat", 2>
+
+	type BackgroundSize = "cover" | "contain" | PlainWithMaxArray<"auto" | type.Length, 2>;
+
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types
 	export module type {
 
@@ -1267,6 +1256,7 @@ export declare module css {
 
 		export type Percentage = `${number}%`;
 
+		// TODO: Refactor it, replace template types with tuples
 		export type Position = ("left" | "center" | "right" | "top" | "bottom" | "start" | "end" | Length) | (`${"left" | "center" | "right" | "x-start" | "x-end" | Length} ${"top" | "center" | "bottom" | "y-start" | "y-end" | Length}`) | (`${"center" | ("left" | "right" | "x-start" | "x-end") | (`left ${Length}` | `right ${Length}` | `x-start ${Length}` | `x-end ${Length}`)} ${"center" | ("top" | "bottom" | "y-start" | "y-end") | (`top ${Length}` | `bottom ${Length}` | `y-start ${Length}` | `y-end ${Length}`)}`) | (`${"center" | ("start" | "end") | (`start ${Length}` | `end ${Length}`)} ${"center" | ("start" | "end") | (`start ${Length}` | `end ${Length}`)}`);
 
 		export type Ratio = `${number} / ${number}`;
