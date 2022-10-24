@@ -712,12 +712,9 @@ export declare module css {
 		"padding-left": type.Length;
 		"padding-right": type.Length;
 		"padding-top": type.Length;
-		// TODO
-		"page-break-after": any;
-		// TODO
-		"page-break-before": any;
-		// TODO
-		"page-break-inside": any;
+		"page-break-after": "auto" | "always" | "avoid" | "left" | "right" | "inherit";
+		"page-break-before": "auto" | "always" | "avoid" | "left" | "right" | "inherit";
+		"page-break-inside": "avoid" | "auto";
 		// TODO
 		"paint-order": any;
 		// TODO
