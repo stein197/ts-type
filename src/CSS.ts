@@ -616,16 +616,11 @@ export declare module css {
 		"inset-inline": "auto" | type.Length | MaxArray<type.Length, 2>;
 		"inset-inline-end": "auto" | type.Length;
 		"inset-inline-start": "auto" | type.Length;
-		// TODO
-		"isolation": any;
-		// TODO
-		"justify-content": any;
-		// TODO
-		"justify-items": any;
-		// TODO
-		"justify-self": any;
-		// TODO
-		"justify-tracks": any;
+		"isolation": "auto" | "isolate";
+		"justify-content": "normal" | ContentDistribution | ContentPosition | "left" | "right" | OverflowPosition<ContentPosition | "left" | "right">;
+		"justify-items": "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition | "left" | "right"> | SelfPosition | "left" | "right" | "legacy" | ["legacy", "left" | "right" | "center"];
+		"justify-self": "auto" | "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition | "left" | "right"> | SelfPosition | "left" | "right";
+		"justify-tracks": Arrayize<"normal" | ContentDistribution | ContentPosition | "left" | "right" | OverflowPosition<ContentPosition | "left" | "right">>
 		// TODO
 		"left": any;
 		// TODO
@@ -1220,7 +1215,7 @@ export declare module css {
 
 	type GlobalValue = "inherit" | "initial" | "unset" | "revert" | "revert-layer";
 
-	type BaselinePosition = "baseline" | "first baseline" | "last baseline";
+	type BaselinePosition = "baseline" | ["first" | "last", "baseline"];
 
 	type ContentDistribution = "space-between" | "space-around" | "space-evenly" | "stretch";
 
@@ -1228,7 +1223,7 @@ export declare module css {
 
 	type SelfPosition = ContentPosition | "self-start" | "self-end";
 
-	type OverflowPosition<T extends string> = `safe ${T}` | `unsafe ${T}`;
+	type OverflowPosition<T extends string> = ["safe" | "unsafe", T];
 
 	type VendorAppearanceProperty = "attachment" | "borderless-attachment" | "button-bevel" | "caps-lock-indicator" | "caret" | "checkbox-container" | "checkbox-label" | "checkmenuitem" | "color-well" | "continuous-capacity-level-indicator" | "default-button" | "discrete-capacity-level-indicator" | "inner-spin-button" | "image-controls-button" | "list-button" | "listitem" | "media-enter-fullscreen-button" | "media-exit-fullscreen-button" | "media-fullscreen-volume-slider" | "media-fullscreen-volume-slider-thumb" | "media-mute-button" | "media-play-button" | "media-overlay-play-button" | "media-return-to-realtime-button" | "media-rewind-button" | "media-seek-back-button" | "media-seek-forward-button" | "media-toggle-closed-captions-button" | "media-slider" | "media-sliderthumb" | "media-volume-slider-container" | "media-volume-slider-mute-button" | "media-volume-slider" | "media-volume-sliderthumb" | "media-controls-background" | "media-controls-dark-bar-background" | "media-controls-fullscreen-background" | "media-controls-light-bar-background" | "media-current-time-display" | "media-time-remaining-display" | "menulist-text" | "menulist-textfield" | "meterbar" | "number-input" | "progress-bar-value" | "progressbar" | "progressbar-vertical" | "range" | "range-thumb" | "rating-level-indicator" | "relevancy-level-indicator" | "scale-horizontal" | "scalethumbend" | "scalethumb-horizontal" | "scalethumbstart" | "scalethumbtick" | "scalethumb-vertical" | "scale-vertical" | "scrollbarthumb-horizontal" | "scrollbarthumb-vertical" | "scrollbartrack-horizontal" | "scrollbartrack-vertical" | "searchfield-decoration" | "searchfield-results-decoration" | "searchfield-results-button" | "searchfield-cancel-button" | "snapshotted-plugin-overlay" | "sheet" | "slider-vertical" | "sliderthumb-horizontal" | "sliderthumb-vertical" | "textfield-multiline" | "-apple-pay-button";
 
