@@ -630,30 +630,18 @@ export declare module css {
 		"list-style-image": type.ListStyleImage;
 		"list-style-position": type.ListStylePosition;
 		"list-style-type": type.ListStyleType;
-		// TODO
-		"margin": any;
-		// TODO
-		"margin-block": any;
-		// TODO
-		"margin-block-end": any;
-		// TODO
-		"margin-block-start": any;
-		// TODO
-		"margin-bottom": any;
-		// TODO
-		"margin-inline": any;
-		// TODO
-		"margin-inline-end": any;
-		// TODO
-		"margin-inline-start": any;
-		// TODO
-		"margin-left": any;
-		// TODO
-		"margin-right": any;
-		// TODO
-		"margin-top": any;
-		// TODO
-		"margin-trim": any;
+		"margin": PlainWithMaxArray<"auto" | type.Length, 4>;
+		"margin-block": PlainWithMaxArray<"auto" | type.Length, 2>;
+		"margin-block-end": "auto" | type.Length;
+		"margin-block-start": "auto" | type.Length;
+		"margin-bottom": "auto" | type.Length;
+		"margin-inline": PlainWithMaxArray<"auto" | type.Length, 2>;
+		"margin-inline-end": "auto" | type.Length;
+		"margin-inline-start": "auto" | type.Length;
+		"margin-left": "auto" | type.Length;
+		"margin-right": "auto" | type.Length;
+		"margin-top": "auto" | type.Length;
+		"margin-trim": "none" | "block" | "inline" | "in-flow" | "all" | Arrayize<"block-start" | "inline-start" | "block-end" | "inline-end">;
 		// TODO
 		"mask": any;
 		// TODO
