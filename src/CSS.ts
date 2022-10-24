@@ -696,16 +696,11 @@ export declare module css {
 		"overflow-wrap": "normal" | "break-word" | "anywhere";
 		"overflow-x": "visible" | "hidden" | "clip" | "scroll" | "auto";
 		"overflow-y": "visible" | "hidden" | "clip" | "scroll" | "auto";
-		// TODO
-		"overscroll-behavior": any;
-		// TODO
-		"overscroll-behavior-block": any;
-		// TODO
-		"overscroll-behavior-inline": any;
-		// TODO
-		"overscroll-behavior-x": any;
-		// TODO
-		"overscroll-behavior-y": any;
+		"overscroll-behavior": PlainWithMaxArray<"contain" | "none" | "auto", 2>;
+		"overscroll-behavior-block": "contain" | "none" | "auto";
+		"overscroll-behavior-inline": "contain" | "none" | "auto";
+		"overscroll-behavior-x": "contain" | "none" | "auto";
+		"overscroll-behavior-y": "contain" | "none" | "auto";
 		// TODO
 		"padding": any;
 		// TODO
