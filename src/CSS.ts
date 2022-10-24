@@ -674,18 +674,12 @@ export declare module css {
 		"mix-blend-mode": "plus-darker" | "plus-lighter" | type.BlendMode;
 		"object-fit": "fill" | "contain" | "cover" | "none" | "scale-down";
 		"object-position": type.Position;
-		// TODO
-		"offset": any;
-		// TODO
-		"offset-anchor": any;
-		// TODO
-		"offset-distance": any;
-		// TODO
-		"offset-path": any;
-		// TODO
-		"offset-position": any;
-		// TODO
-		"offset-rotate": any;
+		"offset": Arrayize<RealProperties["offset-anchor"] | RealProperties["offset-distance"] | RealProperties["offset-path"] | RealProperties["offset-position"] | RealProperties["offset-rotate"]>;
+		"offset-anchor": "auto" | type.Position;
+		"offset-distance": type.Length;
+		"offset-path": "none" | fn.Ray | fn.URL | type.Shape | CoordBox | [type.Shape, CoordBox];
+		"offset-position": "auto" | type.Position;
+		"offset-rotate": "auto" | "rotate" | type.Angle | ["auto" | "rotate", type.Angle];
 		// TODO
 		"opacity": any;
 		// TODO
@@ -1204,6 +1198,8 @@ export declare module css {
 
 	type Width = type.Length | "max-content" | "min-content" | fn.FitContent;
 
+	type CoordBox = "content-box" | "padding-box" | "border-box" | "fill-box" | "stroke-box" | "view-box";
+
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types
 	export module type {
 
@@ -1481,6 +1477,8 @@ export declare module css {
 		export type SnapBlock = `snap-block(${string})`;
 
 		export type SnapInline = `snap-inline(${string})`;
+
+		export type Ray = `ray(${string})`;
 	}
 }
 
