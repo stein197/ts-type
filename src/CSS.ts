@@ -701,28 +701,17 @@ export declare module css {
 		"overscroll-behavior-inline": "contain" | "none" | "auto";
 		"overscroll-behavior-x": "contain" | "none" | "auto";
 		"overscroll-behavior-y": "contain" | "none" | "auto";
-		// TODO
-		"padding": any;
-		// TODO
-		"padding-block": any;
-		// TODO
-		"padding-block-end": any;
-		// TODO
-		"padding-block-start": any;
-		// TODO
-		"padding-bottom": any;
-		// TODO
-		"padding-inline": any;
-		// TODO
-		"padding-inline-end": any;
-		// TODO
-		"padding-inline-start": any;
-		// TODO
-		"padding-left": any;
-		// TODO
-		"padding-right": any;
-		// TODO
-		"padding-top": any;
+		"padding": PlainWithMaxArray<type.Length, 4>;
+		"padding-block": PlainWithMaxArray<type.Length, 2>;
+		"padding-block-end": type.Length;
+		"padding-block-start": type.Length;
+		"padding-bottom": type.Length;
+		"padding-inline": PlainWithMaxArray<type.Length, 2>;
+		"padding-inline-end": type.Length;
+		"padding-inline-start": type.Length;
+		"padding-left": type.Length;
+		"padding-right": type.Length;
+		"padding-top": type.Length;
 		// TODO
 		"page-break-after": any;
 		// TODO
