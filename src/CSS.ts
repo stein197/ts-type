@@ -621,24 +621,15 @@ export declare module css {
 		"justify-items": "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition | "left" | "right"> | SelfPosition | "left" | "right" | "legacy" | ["legacy", "left" | "right" | "center"];
 		"justify-self": "auto" | "normal" | "stretch" | BaselinePosition | OverflowPosition<SelfPosition | "left" | "right"> | SelfPosition | "left" | "right";
 		"justify-tracks": Arrayize<"normal" | ContentDistribution | ContentPosition | "left" | "right" | OverflowPosition<ContentPosition | "left" | "right">>
-		// TODO
-		"left": any;
-		// TODO
-		"letter-spacing": any;
-		// TODO
-		"line-break": any;
-		// TODO
-		"line-height": any;
-		// TODO
-		"line-height-step": any;
-		// TODO
-		"list-style": any;
-		// TODO
-		"list-style-image": any;
-		// TODO
-		"list-style-position": any;
-		// TODO
-		"list-style-type": any;
+		"left": "auto" | type.Length;
+		"letter-spacing": "normal" | type.Length;
+		"line-break": "auto" | "loose" | "normal" | "strict" | "anywhere";
+		"line-height": "normal" | number | type.Length;
+		"line-height-step": type.Length;
+		"list-style": Arrayize<type.ListStylePosition | type.ListStyleImage | type.ListStyleType>;
+		"list-style-image": type.ListStyleImage;
+		"list-style-position": type.ListStylePosition;
+		"list-style-type": type.ListStyleType;
 		// TODO
 		"margin": any;
 		// TODO
@@ -1279,6 +1270,12 @@ export declare module css {
 		export type Image = fn.ImageFunction | fn.URL;
 
 		export type Length = `${number}${"cap" | "ch" | "em" | "ex" | "ic" | "lh" | "rem" | "rlh" | "vh" | "vw" | "vi" | "vb" | "vmin" | "vmax" | "px" | "cm" | "mm" | "Q" | "in" | "pc" | "pt" | "%"}` | 0;
+
+		export type ListStylePosition = "inside" | "outside";
+
+		export type ListStyleImage = "none" | Image;
+
+		export type ListStyleType = string;
 
 		export type Percentage = `${number}%`;
 
