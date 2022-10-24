@@ -451,7 +451,7 @@ export declare module css {
 		"background-position-y": Arrayize<type.Position>;
 		"background-repeat": Arrayize<RepeatStyle>;
 		"background-size": Arrayize<BackgroundSize>;
-		"block-size": type.Length | "max-content" | "min-content" | fn.FitContent | "auto";
+		"block-size": "auto" | Width;
 		"border": string;
 		"border-block": string;
 		"border-block-color": PlainWithMaxArray<type.Color, 2>;
@@ -599,7 +599,7 @@ export declare module css {
 		"grid-template-columns": string;
 		"grid-template-rows": string;
 		"hanging-punctuation": "none" | Arrayize<"first" | "force-end" | "allow-end" | "last">;
-		"height": type.Length | "auto" | "max-content" | "min-content" | "fit-content" | fn.FitContent | fn.Clamp;
+		"height": "auto" | "fit-content" | fn.Clamp | Width;
 		"hyphenate-character": string;
 		"hyphens": "none" | "manual" | "auto";
 		"image-orientation": "none" | "from-image" | Arrayize<type.Angle | "flip">;
@@ -608,7 +608,7 @@ export declare module css {
 		"ime-mode": "auto" | "normal" | "active" | "inactive" | "disabled";
 		"initial-letter": "normal" | [number, number] | [number, ("drop" | "raise")?] | ["drop" | "raise", number];
 		"initial-letter-align": "border-box" | "alphabetic" | "ideographic" | "hanging" | "leading";
-		"inline-size": type.Length | fn.FitContent | "max-content" | "min-content" | "auto";
+		"inline-size": "auto" | Width;
 		"inset": "auto" | type.Length | MaxArray<type.Length, 4>;
 		"inset-block": "auto" | type.Length | MaxArray<type.Length, 2>;
 		"inset-block-end": "auto" | type.Length;
@@ -659,36 +659,21 @@ export declare module css {
 		"mask-repeat": Arrayize<RepeatStyle>;
 		"mask-size": Arrayize<BackgroundSize>;
 		"mask-type": "alpha" | "luminance";
-		// TODO
-		"masonry-auto-flow": any;
-		// TODO
-		"math-depth": any;
-		// TODO
-		"math-shift": any;
-		// TODO
-		"math-style": any;
-		// TODO
-		"max-block-size": any;
-		// TODO
-		"max-height": any;
-		// TODO
-		"max-inline-size": any;
-		// TODO
-		"max-width": any;
-		// TODO
-		"min-block-size": any;
-		// TODO
-		"min-height": any;
-		// TODO
-		"min-inline-size": any;
-		// TODO
-		"min-width": any;
-		// TODO
-		"mix-blend-mode": any;
-		// TODO
-		"object-fit": any;
-		// TODO
-		"object-position": any;
+		"masonry-auto-flow": "pack" | "next" | "definite-first" | "ordered" | ["pack" | "next", "definite-first" | "ordered"] | ["definite-first" | "ordered", "pack" | "next"];
+		"math-depth": number | "auto-add" | fn.Add;
+		"math-shift": "normal" | "compact";
+		"math-style": "normal" | "compact";
+		"max-block-size": "none" | Width;
+		"max-height": "none" | Width;
+		"max-inline-size": "none" | Width;
+		"max-width": "none" | Width;
+		"min-block-size": Width;
+		"min-height": "auto" | Width;
+		"min-inline-size": Width;
+		"min-width": "auto" | Width;
+		"mix-blend-mode": "plus-darker" | "plus-lighter" | type.BlendMode;
+		"object-fit": "fill" | "contain" | "cover" | "none" | "scale-down";
+		"object-position": type.Position;
 		// TODO
 		"offset": any;
 		// TODO
@@ -1217,6 +1202,8 @@ export declare module css {
 
 	type BackgroundSize = "cover" | "contain" | PlainWithMaxArray<"auto" | type.Length, 2>;
 
+	type Width = type.Length | "max-content" | "min-content" | fn.FitContent;
+
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types
 	export module type {
 
@@ -1275,7 +1262,7 @@ export declare module css {
 
 		export type TransformFunction = Matrix | Matrix3D | Perspective | Rotate | Rotate3D | RotateX | RotateY | RotateZ | Scale | Scale3D | ScaleX | ScaleY | ScaleZ | Skew | SkewX | SkewX | Translate | Translate3D | TranslateX | TranslateY | TranslateZ;
 
-		export type MathFunction = Calc | Min | Max | Clamp | Round | Mod | Rem | Sin | Cos | Tan | Asin | Acos | Atan | Atan2 | Pow | Sqrt | Hypot | Log | Exp | Abs | Sign;
+		export type MathFunction = Add | Calc | Min | Max | Clamp | Round | Mod | Rem | Sin | Cos | Tan | Asin | Acos | Atan | Atan2 | Pow | Sqrt | Hypot | Log | Exp | Abs | Sign;
 
 		export type FilterFunction = Blur | Brightness | Contrast | DropShadow | Grayscale | HueRotate | Invert | Opacity | Saturate | Sepia;
 
@@ -1334,6 +1321,8 @@ export declare module css {
 		export type TranslateY = `translateY(${string})`;
 
 		export type TranslateZ = `translateZ(${string})`;
+
+		export type Add = `add(${string})`;
 
 		export type Calc = `calc(${string})`;
 
