@@ -715,20 +715,13 @@ export declare module css {
 		"page-break-after": "auto" | "always" | "avoid" | "left" | "right" | "inherit";
 		"page-break-before": "auto" | "always" | "avoid" | "left" | "right" | "inherit";
 		"page-break-inside": "avoid" | "auto";
-		// TODO
-		"paint-order": any;
-		// TODO
-		"perspective": any;
-		// TODO
-		"perspective-origin": any;
-		// TODO
-		"place-content": any;
-		// TODO
-		"place-items": any;
-		// TODO
-		"place-self": any;
-		// TODO
-		"pointer-events": any;
+		"paint-order": "normal" | Arrayize<"fill" | "stroke" | "markers">;
+		"perspective": "none" | type.Length;
+		"perspective-origin": type.Position;
+		"place-content": RealProperties["align-content"] | [RealProperties["align-content"], RealProperties["justify-content"]];
+		"place-items": RealProperties["align-items"] | [RealProperties["align-items"], RealProperties["justify-items"]];
+		"place-self": RealProperties["align-self"] | [RealProperties["align-self"], RealProperties["justify-self"]];
+		"pointer-events": "auto" | "none";
 		// TODO
 		"position": any;
 		// TODO
@@ -988,6 +981,7 @@ export declare module css {
 		"writingMode": RealSVGProperties["writing-mode"];
 	}
 
+	// https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation
 	export type RealSVGProperties = {
 		// TODO
 		"alignment-baseline": any;
@@ -1071,8 +1065,7 @@ export declare module css {
 		"opacity": any;
 		// TODO
 		"overflow": any;
-		// TODO
-		"pointer-events": any;
+		"pointer-events": RealProperties["pointer-events"] | "bounding-box" | "visiblePainted" | "visibleFill" | "visibleStroke" | "visible" | "painted" | "fill" | "stroke" | "all";
 		// TODO
 		"shape-rendering": any;
 		// TODO
