@@ -761,12 +761,9 @@ export declare module css {
 		"scroll-timeline": string | [RealProperties["scroll-timeline-name"], RealProperties["scroll-timeline-axis"]];
 		"scroll-timeline-axis": "block" | "inline" | "vertical" | "horizontal";
 		"scroll-timeline-name": string;
-		// TODO
-		"scrollbar-color": any;
-		// TODO
-		"scrollbar-gutter": any;
-		// TODO
-		"scrollbar-width": any;
+		"scrollbar-color": "auto" | [type.Color, type.Color];
+		"scrollbar-gutter": "auto" | "stable" | ["stable", "both-edges"];
+		"scrollbar-width": "auto" | "thin" | "none";
 		// TODO
 		"shape-image-threshold": any;
 		// TODO
