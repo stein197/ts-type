@@ -732,64 +732,35 @@ export declare module css {
 		"ruby-align": "start" | "center" | "space-between" | "space-around";
 		"ruby-position": "alternate" | "over" | "under" | "inter-character" | ["alternate", "over" | "under"];
 		"scale": "none" | PlainWithMaxArray<number | type.Percentage, 3>;
-		// TODO
-		"scroll-behavior": any;
-		// TODO
-		"scroll-margin": any;
-		// TODO
-		"scroll-margin-block": any;
-		// TODO
-		"scroll-margin-block-end": any;
-		// TODO
-		"scroll-margin-block-start": any;
-		// TODO
-		"scroll-margin-bottom": any;
-		// TODO
-		"scroll-margin-inline": any;
-		// TODO
-		"scroll-margin-inline-end": any;
-		// TODO
-		"scroll-margin-inline-start": any;
-		// TODO
-		"scroll-margin-left": any;
-		// TODO
-		"scroll-margin-right": any;
-		// TODO
-		"scroll-margin-top": any;
-		// TODO
-		"scroll-padding": any;
-		// TODO
-		"scroll-padding-block": any;
-		// TODO
-		"scroll-padding-block-end": any;
-		// TODO
-		"scroll-padding-block-start": any;
-		// TODO
-		"scroll-padding-bottom": any;
-		// TODO
-		"scroll-padding-inline": any;
-		// TODO
-		"scroll-padding-inline-end": any;
-		// TODO
-		"scroll-padding-inline-start": any;
-		// TODO
-		"scroll-padding-left": any;
-		// TODO
-		"scroll-padding-right": any;
-		// TODO
-		"scroll-padding-top": any;
-		// TODO
-		"scroll-snap-align": any;
-		// TODO
-		"scroll-snap-stop": any;
-		// TODO
-		"scroll-snap-type": any;
-		// TODO
-		"scroll-timeline": any;
-		// TODO
-		"scroll-timeline-axis": any;
-		// TODO
-		"scroll-timeline-name": any;
+		"scroll-behavior": "auto" | "smooth";
+		"scroll-margin": string | PlainWithMaxArray<type.Length, 4>;
+		"scroll-margin-block": PlainWithMaxArray<type.Length, 2>;
+		"scroll-margin-block-end": type.Length;
+		"scroll-margin-block-start": type.Length;
+		"scroll-margin-bottom": type.Length;
+		"scroll-margin-inline": PlainWithMaxArray<type.Length, 2>;
+		"scroll-margin-inline-end": type.Length;
+		"scroll-margin-inline-start": type.Length;
+		"scroll-margin-left": type.Length;
+		"scroll-margin-right": type.Length;
+		"scroll-margin-top": type.Length;
+		"scroll-padding": string | PlainWithMaxArray<"auto" | type.Length, 4>;
+		"scroll-padding-block": string | PlainWithMaxArray<"auto" | type.Length, 2>;
+		"scroll-padding-block-end": "auto" | type.Length;
+		"scroll-padding-block-start": "auto" | type.Length;
+		"scroll-padding-bottom": "auto" | type.Length;
+		"scroll-padding-inline": string | PlainWithMaxArray<"auto" | type.Length, 2>;
+		"scroll-padding-inline-end": "auto" | type.Length;
+		"scroll-padding-inline-start": "auto" | type.Length;
+		"scroll-padding-left": "auto" | type.Length;
+		"scroll-padding-right": "auto" | type.Length;
+		"scroll-padding-top": "auto" | type.Length;
+		"scroll-snap-align": PlainWithMaxArray<"none" | "start" | "end" | "center", 2>;
+		"scroll-snap-stop": "normal" | "always";
+		"scroll-snap-type": "none" | "x" | "y" | "block" | "inline" | "both" | ["x" | "y" | "block" | "inline" | "both", "mandatory" | "proximity"];
+		"scroll-timeline": string | [RealProperties["scroll-timeline-name"], RealProperties["scroll-timeline-axis"]];
+		"scroll-timeline-axis": "block" | "inline" | "vertical" | "horizontal";
+		"scroll-timeline-name": string;
 		// TODO
 		"scrollbar-color": any;
 		// TODO
