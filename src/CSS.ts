@@ -764,12 +764,9 @@ export declare module css {
 		"scrollbar-color": "auto" | [type.Color, type.Color];
 		"scrollbar-gutter": "auto" | "stable" | ["stable", "both-edges"];
 		"scrollbar-width": "auto" | "thin" | "none";
-		// TODO
-		"shape-image-threshold": any;
-		// TODO
-		"shape-margin": any;
-		// TODO
-		"shape-outside": any;
+		"shape-image-threshold": type.Alpha;
+		"shape-margin": type.Length;
+		"shape-outside": "none" | Arrayize<type.Shape | "margin-box" | "border-box" | "padding-box" | "content-box"> | type.Image;
 		// TODO
 		"tab-size": any;
 		// TODO
