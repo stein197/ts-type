@@ -722,26 +722,16 @@ export declare module css {
 		"place-items": RealProperties["align-items"] | [RealProperties["align-items"], RealProperties["justify-items"]];
 		"place-self": RealProperties["align-self"] | [RealProperties["align-self"], RealProperties["justify-self"]];
 		"pointer-events": "auto" | "none";
-		// TODO
-		"position": any;
-		// TODO
-		"print-color-adjust": any;
-		// TODO
-		"quotes": any;
-		// TODO
-		"resize": any;
-		// TODO
-		"right": any;
-		// TODO
-		"rotate": any;
-		// TODO
-		"row-gap": any;
-		// TODO
-		"ruby-align": any;
-		// TODO
-		"ruby-position": any;
-		// TODO
-		"scale": any;
+		"position": "static" | "relative" | "absolute" | "sticky" | "fixed";
+		"print-color-adjust": "economy" | "exact";
+		"quotes": "none" | "auto" | [string, string][];
+		"resize": "none" | "both" | "horizontal" | "vertical" | "block" | "inline";
+		"right": "auto" | type.Length;
+		"rotate": "none" | type.Angle | ["x" | "y" | "z" | [number, number, number], type.Angle];
+		"row-gap": "normal" | type.Length;
+		"ruby-align": "start" | "center" | "space-between" | "space-around";
+		"ruby-position": "alternate" | "over" | "under" | "inter-character" | ["alternate", "over" | "under"];
+		"scale": "none" | PlainWithMaxArray<number | type.Percentage, 3>;
 		// TODO
 		"scroll-behavior": any;
 		// TODO
