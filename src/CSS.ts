@@ -767,10 +767,8 @@ export declare module css {
 		"shape-image-threshold": type.Alpha;
 		"shape-margin": type.Length;
 		"shape-outside": "none" | Arrayize<type.Shape | "margin-box" | "border-box" | "padding-box" | "content-box"> | type.Image;
-		// TODO
-		"tab-size": any;
-		// TODO
-		"table-layout": any;
+		"tab-size": number | type.Length;
+		"table-layout": "auto" | "fixed";
 		// TODO
 		"text-align": any;
 		// TODO
