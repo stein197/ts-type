@@ -804,32 +804,19 @@ export declare module css {
 		"transition-duration": Arrayize<type.Time>;
 		"transition-property": string;
 		"transition-timing-function": type.EasingFunction;
-		// TODO
-		"translate": any;
-		// TODO
-		"unicode-bidi": any;
-		// TODO
-		"user-select": any;
-		// TODO
-		"vertical-align": any;
-		// TODO
-		"visibility": any;
-		// TODO
-		"white-space": any;
-		// TODO
-		"widows": any;
-		// TODO
-		"width": any;
-		// TODO
-		"will-change": any;
-		// TODO
-		"word-break": any;
-		// TODO
-		"word-spacing": any;
-		// TODO
-		"writing-mode": any;
-		// TODO
-		"z-index": any;
+		"translate": "none" | PlainWithMaxArray<type.Length, 3>;
+		"unicode-bidi": "normal" | "embed" | "isolate" | "bidi-override" | "isolate-override" | "plaintext";
+		"user-select": "auto" | "text" | "none" | "contain" | "all";
+		"vertical-align": "baseline" | "sub" | "super" | "text-top" | "text-bottom" | "middle" | "top" | "bottom" | "baseline" | "sub" | "super" | "text-top" | "text-bottom" | "top" | "middle" | "bottom" | "first" | "last" | type.Length;
+		"visibility": "visible" | "hidden" | "collapse";
+		"white-space": "normal" | "pre" | "nowrap" | "pre-wrap" | "break-spaces" | "pre-line";
+		"widows": number;
+		"width": "auto" | "max-content" | "min-content" | fn.FitContent | type.Length;
+		"will-change": string;
+		"word-break": "normal" | "keep-all" | "break-all" | "break-word";
+		"word-spacing": "normal" | type.Length;
+		"writing-mode": "horizontal-tb" | "vertical-rl" | "vertical-lr" | "sideways-rl" | "sideways-lr" | "lr" | "lr-tb" | "rl" | "tb" | "tb-lr" | "tb-rl";
+		"z-index": "auto" | number;
 	}, GlobalValue>;
 
 	export type SVGProperties = {
