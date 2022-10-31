@@ -769,54 +769,30 @@ export declare module css {
 		"shape-outside": "none" | Arrayize<type.Shape | "margin-box" | "border-box" | "padding-box" | "content-box"> | type.Image;
 		"tab-size": number | type.Length;
 		"table-layout": "auto" | "fixed";
-		// TODO
-		"text-align": any;
-		// TODO
-		"text-align-last": any;
-		// TODO
-		"text-combine-upright": any;
-		// TODO
-		"text-decoration": any;
-		// TODO
-		"text-decoration-color": any;
-		// TODO
-		"text-decoration-line": any;
-		// TODO
-		"text-decoration-skip": any;
-		// TODO
-		"text-decoration-skip-ink": any;
-		// TODO
-		"text-decoration-style": any;
-		// TODO
-		"text-decoration-thickness": any;
-		// TODO
-		"text-emphasis": any;
-		// TODO
-		"text-emphasis-color": any;
-		// TODO
-		"text-emphasis-position": any;
-		// TODO
-		"text-emphasis-style": any;
-		// TODO
-		"text-indent": any;
-		// TODO
-		"text-justify": any;
-		// TODO
-		"text-orientation": any;
-		// TODO
-		"text-overflow": any;
-		// TODO
-		"text-rendering": any;
-		// TODO
-		"text-shadow": any;
-		// TODO
-		"text-size-adjust": any;
-		// TODO
-		"text-transform": any;
-		// TODO
-		"text-underline-offset": any;
-		// TODO
-		"text-underline-position": any;
+		"text-align": "start" | "end" | "left" | "right" | "center" | "justify" | "match-parent" | "justify-all";
+		"text-align-last": "auto" | "start" | "end" | "left" | "right" | "center" | "justify" | "match-parent";
+		"text-combine-upright": "none" | "all" | "digits" | ["digits", number, number, number?, number?];
+		"text-decoration": Arrayize<RealProperties["text-decoration-color"] | RealProperties["text-decoration-line"] | RealProperties["text-decoration-style"] | RealProperties["text-decoration-thickness"]>;
+		"text-decoration-color": type.Color;
+		"text-decoration-line": "none" | Arrayize<"underline" | "overline" | "line-through" | "blink">;
+		"text-decoration-skip": "none" | Arrayize<"objects" | "spaces" | "leading-spaces" | "trailing-spaces" | "edges" | "box-decoration">;
+		"text-decoration-skip-ink": "none" | "auto" | "all";
+		"text-decoration-style": "solid" | "double" | "dotted" | "dashed" | "wavy";
+		"text-decoration-thickness": "auto" | "from-font" | type.Length;
+		"text-emphasis": Arrayize<RealProperties["text-emphasis-color"] | RealProperties["text-emphasis-style"]>;
+		"text-emphasis-color": type.Color;
+		"text-emphasis-position": "over" | "under" | ["over" | "under", "left" | "right"];
+		"text-emphasis-style": "none" | `"${string}"` | "filled" | "open" | "dot" | "circle" | "double-circle" | "triangle" | "sesame" | ["filled" | "open", "dot" | "circle" | "double-circle" | "triangle" | "sesame"];
+		"text-indent": Arrayize<type.Length | "hanging" | "each-line">;
+		"text-justify": "none" | "auto" | "inter-word" | "inter-character" | "distribute";
+		"text-orientation": "mixed" | "upright" | "sideways-right" | "sideways" | "use-glyph-orientation";
+		"text-overflow": "clip" | "ellipsis" | `"${string}"`;
+		"text-rendering": "auto" | "optimizeSpeed" | "optimizeLegibility" | "geometricPrecision";
+		"text-shadow": string;
+		"text-size-adjust": "auto" | "none" | type.Percentage;
+		"text-transform": "none" | Arrayize<"capitalize" | "uppercase" | "lowercase" | "full-width" | "full-size-kana"> | "math-auto" | "math-bold" | "math-italic" | "math-bold-italic" | "math-double-struck" | "math-bold-fraktur" | "math-script" | "math-bold-script" | "math-fraktur" | "math-sans-serif" | "math-bold-sans-serif" | "math-sans-serif-italic" | "math-sans-serif-bold-italic" | "math-monospace" | "math-initial" | "math-tailed" | "math-looped" | "math-stretched";
+		"text-underline-offset": "auto" | type.Length;
+		"text-underline-position": "auto" | "under" | "left" | "right" | ["under", "left" | "right"];
 		// TODO
 		"top": any;
 		// TODO
