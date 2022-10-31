@@ -793,28 +793,17 @@ export declare module css {
 		"text-transform": "none" | Arrayize<"capitalize" | "uppercase" | "lowercase" | "full-width" | "full-size-kana"> | "math-auto" | "math-bold" | "math-italic" | "math-bold-italic" | "math-double-struck" | "math-bold-fraktur" | "math-script" | "math-bold-script" | "math-fraktur" | "math-sans-serif" | "math-bold-sans-serif" | "math-sans-serif-italic" | "math-sans-serif-bold-italic" | "math-monospace" | "math-initial" | "math-tailed" | "math-looped" | "math-stretched";
 		"text-underline-offset": "auto" | type.Length;
 		"text-underline-position": "auto" | "under" | "left" | "right" | ["under", "left" | "right"];
-		// TODO
-		"top": any;
-		// TODO
-		"touch-action": any;
-		// TODO
-		"transform": any;
-		// TODO
-		"transform-box": any;
-		// TODO
-		"transform-origin": any;
-		// TODO
-		"transform-style": any;
-		// TODO
-		"transition": any;
-		// TODO
-		"transition-delay": any;
-		// TODO
-		"transition-duration": any;
-		// TODO
-		"transition-property": any;
-		// TODO
-		"transition-timing-function": any;
+		"top": "auto" | type.Length;
+		"touch-action": "auto" | "none" | "manipulation" | Arrayize<"pan-x" | "pan-left" | "pan-right" | "pan-y" | "pan-up" | "pan-down" | "pinch-zoom">;
+		"transform": Arrayize<type.TransformFunction>;
+		"transform-box": "content-box" | "border-box" | "fill-box" | "stroke-box" | "view-box";
+		"transform-origin": type.Position;
+		"transform-style": "flat" | "preserve-3d";
+		"transition": Arrayize<"transition-delay" | "transition-duration" | "transition-property" | "transition-timing-function">;
+		"transition-delay": type.Time;
+		"transition-duration": Arrayize<type.Time>;
+		"transition-property": string;
+		"transition-timing-function": type.EasingFunction;
 		// TODO
 		"translate": any;
 		// TODO
