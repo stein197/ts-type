@@ -1,6 +1,6 @@
 {
   "name": "@stein197/ts-util",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "TypeScript utility types",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "equalable",
     "nullable",
     "json",
-    "mime"
+    "mime",
+	"css"
   ],
   "author": "Nail Gafarov <nil20122013@gmail.com> (http://gnail.dev)",
   "license": "MIT",
