@@ -887,135 +887,72 @@ export declare module css {
 	}
 
 	// https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation
-	export type RealSVGProperties = {
-		// TODO
-		"alignment-baseline": any;
-		// TODO
-		"baseline-shift": any;
-		// TODO
-		"clip": any;
-		// TODO
-		"clip-path": any;
-		// TODO
-		"clip-rule": any;
-		// TODO
-		"color": any;
-		// TODO
-		"color-interpolation": any;
-		// TODO
-		"color-interpolation-filters": any;
-		// TODO
-		"color-profile": any;
-		// TODO
-		"color-rendering": any;
-		// TODO
-		"cursor": any;
-		// TODO
-		"d": any;
-		// TODO
-		"direction": any;
-		// TODO
-		"display": any;
-		// TODO
-		"dominant-baseline": any;
-		// TODO
-		"enable-background": any;
-		// TODO
-		"fill": any;
-		// TODO
-		"fill-opacity": any;
-		// TODO
-		"fill-rule": any;
-		// TODO
-		"filter": any;
-		// TODO
-		"flood-color": any;
-		// TODO
-		"flood-opacity": any;
-		// TODO
-		"font-family": any;
-		// TODO
-		"font-size": any;
-		// TODO
-		"font-size-adjust": any;
-		// TODO
-		"font-stretch": any;
-		// TODO
-		"font-style": any;
-		// TODO
-		"font-variant": any;
-		// TODO
-		"font-weight": any;
-		// TODO
-		"glyph-orientation-horizontal": any;
-		// TODO
-		"glyph-orientation-vertical": any;
-		// TODO
-		"image-rendering": any;
-		// TODO
-		"kerning": any;
-		// TODO
-		"letter-spacing": any;
-		// TODO
-		"lighting-color": any;
-		// TODO
-		"marker-end": any;
-		// TODO
-		"marker-mid": any;
-		// TODO
-		"marker-start": any;
-		// TODO
-		"mask": any;
-		// TODO
-		"opacity": any;
-		// TODO
-		"overflow": any;
+	export type RealSVGProperties = Merge<{
+		"alignment-baseline": "auto" | "baseline" | "before-edge" | "text-before-edge" | "middle" | "central" | "after-edge" | "text-after-edge" | "ideographic" | "alphabetic" | "hanging" | "mathematical";
+		"baseline-shift": "auto" | "baseline" | "super" | "sub" | type.Length;
+		"clip": "auto" | type.Rect;
+		"clip-path": "none" | fn.URL | type.Shape | "fill-box" | "stroke-box" | "view-box" | [type.Shape, "fill-box" | "stroke-box" | "view-box"];
+		"clip-rule": "nonezero" | "evenodd";
+		"color": type.Color;
+		"color-interpolation": "auto" | "sRGB" | "linearRGB";
+		"color-interpolation-filters": "auto" | "sRGB" | "linearRGB";
+		"color-profile": string;
+		"color-rendering": "auto" | "optimizeSpeed" | "optimizeQuality";
+		"cursor": RealProperties["cursor"];
+		"d": string;
+		"direction": "ltr" | "rtl";
+		"display": RealProperties["display"];
+		"dominant-baseline": "auto" | "use-script" | "no-change" | "reset-size" | "ideographic" | "alphabetic" | "hanging" | "mathematical" | "central" | "middle" | "text-after-edge" | "text-before-edge" | "text-top";
+		"enable-background": "accumulate" | "new";
+		"fill": type.Color;
+		"fill-opacity": type.Alpha;
+		"fill-rule": "nonzero" | "evenodd";
+		"filter": "none" | type.FilterFunction | fn.URL;
+		"flood-color": type.Color;
+		"flood-opacity": type.Alpha;
+		"font-family": RealProperties["font-family"];
+		"font-size": RealProperties["font-size"];
+		"font-size-adjust": "none" | number;
+		"font-stretch": RealProperties["font-stretch"];
+		"font-style": RealProperties["font-style"];
+		"font-variant": RealProperties["font-variant"];
+		"font-weight": RealProperties["font-weight"];
+		"glyph-orientation-horizontal": type.Angle;
+		"glyph-orientation-vertical": "auto" | type.Angle;
+		"image-rendering": "auto" | "optimizeQuality" | "optimizeSpeed";
+		"kerning": "auto" | type.Length;
+		"letter-spacing": "normal" | type.Length;
+		"lighting-color": type.Color;
+		"marker-end": string;
+		"marker-mid": string;
+		"marker-start": string;
+		"mask": RealProperties["mask"];
+		"opacity": type.Alpha;
+		"overflow": "visible" | "hidden" | "scroll" | "auto";
 		"pointer-events": RealProperties["pointer-events"] | "bounding-box" | "visiblePainted" | "visibleFill" | "visibleStroke" | "visible" | "painted" | "fill" | "stroke" | "all";
-		// TODO
-		"shape-rendering": any;
-		// TODO
-		"solid-color": any;
-		// TODO
-		"solid-opacity": any;
-		// TODO
-		"stop-color": any;
-		// TODO
-		"stop-opacity": any;
-		// TODO
-		"stroke": any;
-		// TODO
-		"stroke-dasharray": any;
-		// TODO
-		"stroke-dashoffset": any;
-		// TODO
-		"stroke-linecap": any;
-		// TODO
-		"stroke-linejoin": any;
-		// TODO
-		"stroke-miterlimit": any;
-		// TODO
-		"stroke-opacity": any;
-		// TODO
-		"stroke-width": any;
-		// TODO
-		"text-anchor": any;
-		// TODO
-		"text-decoration": any;
-		// TODO
-		"text-rendering": any;
-		// TODO
-		"transform": any;
-		// TODO
-		"unicode-bidi": any;
-		// TODO
-		"vector-effect": any;
-		// TODO
-		"visibility": any;
-		// TODO
-		"word-spacing": any;
-		// TODO
-		"writing-mode": any;
-	}
+		"shape-rendering": "auto" | "optimizeSpeed" | "crispEdges" | "geometricPrecision";
+		"solid-color": type.Color;
+		"solid-opacity": type.Alpha;
+		"stop-color": type.Color;
+		"stop-opacity": type.Alpha;
+		"stroke": type.Color;
+		"stroke-dasharray": "none" | number[];
+		"stroke-dashoffset": number | type.Length;
+		"stroke-linecap": "butt" | "round" | "square";
+		"stroke-linejoin": "arcs" | "bevel" | "miter" | "miter-clip" | "round";
+		"stroke-miterlimit": number;
+		"stroke-opacity": type.Alpha;
+		"stroke-width": number | type.Length;
+		"text-anchor": "start" | "middle" | "end";
+		"text-decoration": RealProperties["text-decoration"];
+		"text-rendering": "auto" | "optimizeSpeed" | "optimizeLegibility" | "geometricPrecision";
+		"transform": Arrayize<type.TransformFunction>;
+		"unicode-bidi": RealProperties["unicode-bidi"];
+		"vector-effect": "none" | "non-scaling-stroke" | "non-scaling-size" | "non-rotation" | "fixed-position"; 
+		"visibility": "visible" | "hidden" | "collapse";
+		"word-spacing": number | type.Length;
+		"writing-mode": "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "horizontal-tb" | "vertical-rl" | "vertical-lr";
+	}, GlobalValue>;
 
 	type GlobalValue = "inherit" | "initial" | "unset" | "revert" | "revert-layer";
 
