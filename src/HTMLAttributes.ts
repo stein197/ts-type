@@ -343,14 +343,14 @@ type HTMLAnchorElementAttributes = GlobalAttributes & {
 	"href": string;
 	"hreflang": string; // TODO: Replace with BCP47 std
 	"ping": string;
-	"referrerpolicy": Exclude<ReferrerPolicyAttr, "no-referrer" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin">;
-	"rel": RelAttr[];
-	"target": TargetAttr;
+	"referrerpolicy": Exclude<attr.ReferrerPolicy, "no-referrer" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin">;
+	"rel": attr.Rel[];
+	"target": attr.Target;
 	"type": mime.All;
 	"charset": string;
 	"coords": number[];
 	"name": string;
-	"shape": ShapeAttr;
+	"shape": attr.Shape;
 	"datafld": string;
 	"datasrc": string;
 	"methods": string;
@@ -358,7 +358,7 @@ type HTMLAnchorElementAttributes = GlobalAttributes & {
 }
 
 type HTMLAppletElementAttributes = GlobalAttributes & {
-	"align": AlignAttr | "middle"| "absbottom" | "absmiddle" | "baseline" | "center" | "texttop";
+	"align": attr.Align | "middle"| "absbottom" | "absmiddle" | "baseline" | "center" | "texttop";
 	"alt": string;
 	"archive": string;
 	"code": string;
@@ -382,10 +382,10 @@ type HTMLAreaElementAttributes = GlobalAttributes & {
 	"href": string;
 	"hreflang": string; // TODO: Replace with BCP47 std
 	"ping": string;
-	"referrerpolicy": ReferrerPolicyAttr;
-	"rel": RelAttr[];
-	"shape": ShapeAttr;
-	"target": TargetAttr;
+	"referrerpolicy": attr.ReferrerPolicy;
+	"rel": attr.Rel[];
+	"shape": attr.Shape;
+	"target": attr.Target;
 	"name": string;
 	"nohref": string;
 	"type": string;
@@ -395,7 +395,7 @@ type HTMLAudioElementAttributes = GlobalAttributes & {
 	"autoplay": BooleanUnion;
 	"controls": "";
 	"controlslist": "nodownload" | "nofullscreen" | "noremoteplayback";
-	"crossorigin": CrossOriginAttr;
+	"crossorigin": attr.CrossOrigin;
 	"disableremoteplayback": string;
 	"loop": BooleanUnion;
 	"muted": BooleanUnion;
@@ -405,7 +405,7 @@ type HTMLAudioElementAttributes = GlobalAttributes & {
 
 type HTMLBaseElementAttributes = GlobalAttributes & {
 	"href": string;
-	"target": TargetAttr;
+	"target": attr.Target;
 }
 
 type HTMLBgSoundElementAttributes = GlobalAttributes & {
@@ -441,10 +441,10 @@ type HTMLButtonElementAttributes = GlobalAttributes & {
 	"disabled": BooleanUnion;
 	"form": string;
 	"formaction": string;
-	"formenctype": EnctypeAttr;
-	"formmethod": MethodAttr;
+	"formenctype": attr.Enctype;
+	"formmethod": attr.Method;
 	"formnovalidate": BooleanUnion;
-	"formtarget": TargetAttr;
+	"formtarget": attr.Target;
 	"name": string;
 	"type": "submit" | "reset" | "button";
 	"value": string;
@@ -457,7 +457,7 @@ type HTMLCanvasElementAttributes = GlobalAttributes & {
 }
 
 type HTMLCaptionElementAttributes = GlobalAttributes & {
-	"align": AlignAttr;
+	"align": attr.Align;
 }
 
 type HTMLColElementAttributes = GlobalAttributes & {
@@ -516,14 +516,14 @@ type HTMLFontElementAttributes = GlobalAttributes & {
 type HTMLFormElementAttributes = GlobalAttributes & {
 	"accept": mime.All;
 	"accept-charset": string | string[];
-	"autocomplete": AutocompleteAttr;
+	"autocomplete": attr.Autocomplete;
 	"name": string;
-	"rel": RelAttr[];
+	"rel": attr.Rel[];
 	"action": string;
-	"enctype": EnctypeAttr;
-	"method": MethodAttr | "dialog";
+	"enctype": attr.Enctype;
+	"method": attr.Method | "dialog";
 	"novalidate": BooleanUnion;
-	"target": TargetAttr;
+	"target": attr.Target;
 }
 
 type HTMLFrameElementAttributes = GlobalAttributes & {
@@ -556,12 +556,12 @@ type HTMLIFrameElementAttributes = GlobalAttributes & {
 	"allowfullscreen": BooleanUnion;
 	"allowpaymentrequest": BooleanUnion;
 	"csp": string; // TODO: Take values from Content Security Policy
-	"fetchpriority": FetchPriorityAttr;
+	"fetchpriority": attr.FetchPriority;
 	"width": number;
 	"height": number;
-	"loading": LoadingAttr;
+	"loading": attr.Loading;
 	"name": string;
-	"referrerpolicy": ReferrerPolicyAttr;
+	"referrerpolicy": attr.ReferrerPolicy;
 	"sandbox": "allow-downloads-without-user-activation" | "allow-downloads" | "allow-forms" | "allow-modals" | "allow-orientation-lock" | "allow-pointer-lock" | "allow-popups" | "allow-popups-to-escape-sandbox" | "allow-presentation" | "allow-same-origin" | "allow-scripts" | "allow-storage-access-by-user-activation" | "allow-top-navigation" | "allow-top-navigation-by-user-activation";
 	"src": string;
 	"srcdoc": string;
@@ -569,19 +569,19 @@ type HTMLIFrameElementAttributes = GlobalAttributes & {
 
 type HTMLImageElementAttributes = GlobalAttributes & {
 	"alt": string;
-	"crossorigin": CrossOriginAttr;
+	"crossorigin": attr.CrossOrigin;
 	"decoding": "sync" | "async" | "auto";
-	"fetchpriority": FetchPriorityAttr;
+	"fetchpriority": attr.FetchPriority;
 	"width": number;
 	"height": number;
 	"ismap": BooleanUnion;
-	"loading": LoadingAttr;
-	"referrerpolicy": ReferrerPolicyAttr;
+	"loading": attr.Loading;
+	"referrerpolicy": attr.ReferrerPolicy;
 	"sizes": string | string[];
 	"src": string;
 	"srcset": string | string[];
 	"usemap": string;
-	"align": AlignAttr | "middle";
+	"align": attr.Align | "middle";
 	"border": number;
 	"hspace": number;
 	"longdesc": string;
@@ -592,17 +592,17 @@ type HTMLImageElementAttributes = GlobalAttributes & {
 type HTMLInputElementAttributes = GlobalAttributes & {
 	"accept": string;
 	"alt": string;
-	"autocomplete": AutocompleteAttr;
+	"autocomplete": attr.Autocomplete;
 	"capture": string;
 	"checked": BooleanUnion;
 	"dirname": string;
 	"disabled": BooleanUnion;
 	"form": string;
 	"formaction": string;
-	"formenctype": EnctypeAttr;
-	"formmethod": MethodAttr;
+	"formenctype": attr.Enctype;
+	"formmethod": attr.Method;
 	"formnovalidate": BooleanUnion;
-	"formtarget": TargetAttr;
+	"formtarget": attr.Target;
 	"width": number;
 	"height": number;
 	"inputmode": "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search";
@@ -639,7 +639,7 @@ type HTMLKeygenElementAttributes = GlobalAttributes & {
 
 type HTMLLIElementAttributes = GlobalAttributes & {
 	"value": number;
-	"type": ListTypeAttr;
+	"type": attr.ListType;
 }
 
 type HTMLLabelElementAttributes = GlobalAttributes & {
@@ -648,9 +648,9 @@ type HTMLLabelElementAttributes = GlobalAttributes & {
 
 type HTMLLinkElementAttributes = GlobalAttributes & {
 	"as": "audio" | "document" | "embed" | "fetch" | "font" | "image" | "object" | "script" | "style" | "track" | "video" | "worker";
-	"crossorigin": CrossOriginAttr;
+	"crossorigin": attr.CrossOrigin;
 	"disabled": BooleanUnion;
-	"fetchpriority": FetchPriorityAttr;
+	"fetchpriority": attr.FetchPriority;
 	"href": string;
 	"hreflang": string; // TODO: Replace with BCP47 std
 	"imagesizes": string;
@@ -658,8 +658,8 @@ type HTMLLinkElementAttributes = GlobalAttributes & {
 	"integrity": string;
 	"media": string;
 	"prefetch": string;
-	"referrerpolicy": Exclude<ReferrerPolicyAttr, "same-origin" | "strict-origin" | "strict-origin-when-cross-origin">;
-	"rel": RelAttr;
+	"referrerpolicy": Exclude<attr.ReferrerPolicy, "same-origin" | "strict-origin" | "strict-origin-when-cross-origin">;
+	"rel": attr.Rel;
 	"sizes": string;
 	"type": mime.All;
 }
@@ -712,7 +712,7 @@ type HTMLMeterElementAttributes = GlobalAttributes & {
 type HTMLOListElementAttributes = GlobalAttributes & {
 	"reversed": BooleanUnion;
 	"start": number;
-	"type": ListTypeAttr;
+	"type": attr.ListType;
 }
 
 type HTMLObjectElementAttributes = GlobalAttributes & {
@@ -758,7 +758,7 @@ type HTMLParamElementAttributes = GlobalAttributes & {
 }
 
 type HTMLPortalElementAttributes = GlobalAttributes & {
-	"referrerpolicy": ReferrerPolicyAttr;
+	"referrerpolicy": attr.ReferrerPolicy;
 	"src": string;
 }
 
@@ -779,13 +779,13 @@ type HTMLQuoteElementAttributes = GlobalAttributes & {
 
 type HTMLScriptElementAttributes = GlobalAttributes & {
 	"async": string;
-	"crossorigin": CrossOriginAttr;
+	"crossorigin": attr.CrossOrigin;
 	"defer": BooleanUnion;
-	"fetchpriority": FetchPriorityAttr;
+	"fetchpriority": attr.FetchPriority;
 	"integrity": string;
 	"nomodule": BooleanUnion;
 	"nonce": string;
-	"referrerpolicy": ReferrerPolicyAttr;
+	"referrerpolicy": attr.ReferrerPolicy;
 	"src": string;
 	"type": "module" | mime.All;
 	"charset": string;
@@ -793,7 +793,7 @@ type HTMLScriptElementAttributes = GlobalAttributes & {
 }
 
 type HTMLSelectElementAttributes = GlobalAttributes & {
-	"autocomplete": AutocompleteAttr;
+	"autocomplete": attr.Autocomplete;
 	"disabled": BooleanUnion;
 	"form": string;
 	"multiple": BooleanUnion;
@@ -860,7 +860,7 @@ type HTMLTableElementAttributes = GlobalAttributes & {
 }
 
 type HTMLTextAreaElementAttributes = GlobalAttributes & {
-	"autocomplete": AutocompleteAttr;
+	"autocomplete": attr.Autocomplete;
 	"autocorrect": OnOffUnion;
 	"cols": number;
 	"disabled": BooleanUnion;
@@ -897,7 +897,7 @@ type HTMLVideoElementAttributes = GlobalAttributes & {
 	"autopictureinpicture": BooleanUnion;
 	"controls": string;
 	"controlslist": ("nodownload" | "nofullscreen" | "noremoteplayback")[];
-	"crossorigin": CrossOriginAttr;
+	"crossorigin": attr.CrossOrigin;
 	"disablepictureinpicture": string;
 	"disableremoteplayback": BooleanUnion;
 	"width": number;
@@ -1111,30 +1111,6 @@ type SVGViewElementAttributes = SVGGlobalAttributes & {}
 // TODO
 type SVGVkernElementAttributes = SVGGlobalAttributes & {}
 
-type AlignAttr = "top" | "bottom" | "left" | "right";
-
-type AutocompleteAttr = OnOffUnion | "name" | "honorific-prefix" | "given-name" | "additional-name" | "family-name" | "honorific-suffix" | "nickname" | "email" | "username" | "new-password" | "current-password" | "one-time-code" | "organization-title" | "organization" | "street-address" | "address-line1" | "address-line2" | "address-line3" | "address-level1" | "address-level2" | "address-level3" | "address-level4" | "country" | "country-name" | "postal-code" | "cc-name" | "cc-given-name" | "cc-additional-name" | "cc-family-name" | "cc-number" | "cc-exp" | "cc-exp-month" | "cc-exp-year" | "cc-csc" | "cc-type" | "transaction-currency" | "transaction-amount" | "language" | "bday" | "bday-day" | "bday-month" | "bday-year" | "sex" | "tel" | "tel-country-code" | "tel-national" | "tel-area-code" | "tel-local" | "tel-extension" | "impp" | "url" | "photo"
-
-type CrossOriginAttr = "" | "anonymous" | "use-credentials";
-
-type EnctypeAttr = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
-
-type FetchPriorityAttr = "high" | "low" | "auto";
-
-type ListTypeAttr = "a" | "A" | "i" | "I" | "1";
-
-type LoadingAttr = "eager" | "lazy";
-
-type MethodAttr = "get" | "post";
-
-type ReferrerPolicyAttr = "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url";
-
-type RelAttr = "alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up";
-
-type ShapeAttr = "default" | "circle" | "rect" | "polygon" | "poly";
-
-type TargetAttr = "_blank" | "_parent" | "_self" | "_top";
-
 type BooleanUnion = "" | "false" | "true" | boolean;
 
 type YesNoUnion = "yes" | "no";
@@ -1144,3 +1120,30 @@ type OnOffUnion = "on" | "off";
 type OrientationUnion = "horizontal" | "vertical";
 
 type UndefinedUnion = "undefined" | undefined;
+
+declare module attr {
+
+	type Align = "top" | "bottom" | "left" | "right";
+	
+	type Autocomplete = OnOffUnion | "name" | "honorific-prefix" | "given-name" | "additional-name" | "family-name" | "honorific-suffix" | "nickname" | "email" | "username" | "new-password" | "current-password" | "one-time-code" | "organization-title" | "organization" | "street-address" | "address-line1" | "address-line2" | "address-line3" | "address-level1" | "address-level2" | "address-level3" | "address-level4" | "country" | "country-name" | "postal-code" | "cc-name" | "cc-given-name" | "cc-additional-name" | "cc-family-name" | "cc-number" | "cc-exp" | "cc-exp-month" | "cc-exp-year" | "cc-csc" | "cc-type" | "transaction-currency" | "transaction-amount" | "language" | "bday" | "bday-day" | "bday-month" | "bday-year" | "sex" | "tel" | "tel-country-code" | "tel-national" | "tel-area-code" | "tel-local" | "tel-extension" | "impp" | "url" | "photo"
+	
+	type CrossOrigin = "" | "anonymous" | "use-credentials";
+	
+	type Enctype = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
+	
+	type FetchPriority = "high" | "low" | "auto";
+	
+	type ListType = "a" | "A" | "i" | "I" | "1";
+	
+	type Loading = "eager" | "lazy";
+	
+	type Method = "get" | "post";
+	
+	type ReferrerPolicy = "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url";
+	
+	type Rel = "alternate" | "archives" | "author" | "bookmark" | "dns-prefetch" | "external" | "first" | "help" | "icon" | "index" | "last" | "license" | "manifest" | "next" | "nofollow" | "noopener" | "noreferrer" | "pingback" | "preconnect" | "prefetch" | "preload" | "prerender" | "prev" | "search" | "stylesheet" | "sidebar" | "tag" | "up";
+	
+	type Shape = "default" | "circle" | "rect" | "polygon" | "poly";
+	
+	type Target = "_blank" | "_parent" | "_self" | "_top";
+}
