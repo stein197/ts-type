@@ -272,6 +272,33 @@ type SVGGlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttribu
 	"xml:space": string;
 	"class": string | string[];
 	"style": string | css.RealSVGProperties;
+	"requiredExtensions": string;
+	"requiredFeatures": string;
+	"systemLanguage": string;
+}
+
+type SVGAnimationAttributes = {
+	"begin": string;
+	"dur": string;
+	"end": string;
+	"min": string;
+	"max": string;
+	"restart": "always" | "whenNotActive" | "never";
+	"repeatCount": number | "indefinite";
+	"repeatDur": string;
+	"calcMode": "discrete" | "linear" | "paced" | "spline";
+	"values": string;
+	"keyTimes": string;
+	"keySplines": string;
+	"from": string;
+	"to": string;
+	"by": string;
+	"attributeName": string;
+	"additive": "replace" | "sum";
+	"accumulate": "none" | "sum";
+	"onbegin": string | ((e: any) => void);
+	"onend": string | ((e: any) => void);
+	"onrepeat": string | ((e: any) => void);
 }
 
 type DataAttributes = {
@@ -910,44 +937,102 @@ type HTMLVideoElementAttributes = GlobalAttributes & {
 	"src": string;
 }
 
-// TODO
-type SVGAltGlyphElementAttributes = SVGGlobalAttributes & {}
+type SVGAltGlyphElementAttributes = SVGGlobalAttributes & {
+	"x": number | string | number[];
+	"y": number | string | number[];
+	"dx": number | string | number[];
+	"dy": number | string | number[];
+	"rotate": number | number[];
+	"glyphRef": string;
+	"fill": css.type.Color;
+	"format": string;
+	"xlink:href": string;
+	"xlink:type": "simple";
+	"xlink:role": string;
+	"xlink:arcrole": string;
+	"xlink:title": string;
+	"xlink:show": "new" | "replace" | "embed" | "other" | "none";
+}
 
-// TODO
-type SVGAnimateElementAttributes = SVGGlobalAttributes & {}
+type SVGAnimateElementAttributes = SVGGlobalAttributes & SVGAnimationAttributes & {
+	"fill": "freeze" | "remove";
+}
 
-// TODO
-type SVGAnimateMotionElementAttributes = SVGGlobalAttributes & {}
+type SVGAnimateMotionElementAttributes = SVGGlobalAttributes & SVGAnimationAttributes & {
+	"fill": "freeze" | "remove";
+	"keyPoints": string;
+	"path": string;
+	"rotate": number | "auto" | "auto-reverse";
+}
 
-// TODO
-type SVGAnimateTransformElementAttributes = SVGGlobalAttributes & {}
+type SVGAnimateTransformElementAttributes = SVGGlobalAttributes & {
+	"fill": "freeze" | "remove";
+	"type": "translate" | "scale" | "rotate" | "skewX" | "skewY";
+}
 
-// TODO
-type SVGCircleElementAttributes = SVGGlobalAttributes & {}
+type SVGCircleElementAttributes = SVGGlobalAttributes & {
+	"cx": number | css.type.Length;
+	"cy": number | css.type.Length;
+	"r": number | css.type.Length;
+	"pathLength": number;
+}
 
-// TODO
-type SVGClipPathElementAttributes = SVGGlobalAttributes & {}
+type SVGClipPathElementAttributes = SVGGlobalAttributes & {
+	"clipPathUnits": "userSpaceOnUse" | "objectBoundingBox";
+}
 
-// TODO
-type SVGCursorElementAttributes = SVGGlobalAttributes & {}
+type SVGCursorElementAttributes = SVGGlobalAttributes & {
+	"x": string;
+	"y": string;
+	"xlink:href": string;
+}
 
-// TODO
-type SVGEllipseElementAttributes = SVGGlobalAttributes & {}
+type SVGEllipseElementAttributes = SVGGlobalAttributes & {
+	"cx": number | css.type.Length;
+	"cy": number | css.type.Length;
+	"rx": "auto" | number | css.type.Length;
+	"ry": "auto" | number | css.type.Length;
+	"pathLength": number;
+}
 
-// TODO
-type SVGFEBlendElementAttributes = SVGGlobalAttributes & {}
+type SVGFEBlendElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+	"in2": string;
+	"mode": css.type.BlendMode;
+}
 
-// TODO
-type SVGFEColorMatrixElementAttributes = SVGGlobalAttributes & {}
+type SVGFEColorMatrixElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+	"type": "matrix" | "saturate" | "hueRotate" | "luminanceToAlpha";
+	"values": string;
+}
 
-// TODO
-type SVGFEComponentTransferElementAttributes = SVGGlobalAttributes & {}
+type SVGFEComponentTransferElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+}
 
-// TODO
-type SVGFECompositeElementAttributes = SVGGlobalAttributes & {}
+type SVGFECompositeElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+	"in2": string;
+	"operator": "over" | "in" | "out" | "atop" | "xor" | "lighter" | "arithmetic";
+	"k1": number;
+	"k2": number;
+	"k3": number;
+	"k4": number;
+}
 
-// TODO
-type SVGFEConvolveMatrixElementAttributes = SVGGlobalAttributes & {}
+type SVGFEConvolveMatrixElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+	"order": number;
+	"kernelMatrix": string | number[];
+	"divisor": number;
+	"bias": number;
+	"targetX": string;
+	"targetY": string;
+	"edgeMode": attr.EdgeMode;
+	"kernelUnitLength": number;
+	"preserveAlpha": BooleanUnion;
+}
 
 // TODO
 type SVGFEDiffuseLightingElementAttributes = SVGGlobalAttributes & {}
@@ -962,19 +1047,29 @@ type SVGFEDistantLightElementAttributes = SVGGlobalAttributes & {}
 type SVGFEFloodElementAttributes = SVGGlobalAttributes & {}
 
 // TODO
-type SVGFEFuncAElementAttrinutes = SVGGlobalAttributes & {}
+type SVGFEFuncAElementAttrinutes = SVGGlobalAttributes & {
+	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
+}
 
 // TODO
-type SVGFEFuncBElementAttrinutes = SVGGlobalAttributes & {}
+type SVGFEFuncBElementAttrinutes = SVGGlobalAttributes & {
+	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
+}
 
 // TODO
-type SVGFEFuncGElementAttrinutes = SVGGlobalAttributes & {}
+type SVGFEFuncGElementAttrinutes = SVGGlobalAttributes & {
+	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
+}
 
 // TODO
-type SVGFEFuncRElementAttrinutes = SVGGlobalAttributes & {}
+type SVGFEFuncRElementAttrinutes = SVGGlobalAttributes & {
+	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
+}
 
 // TODO
-type SVGFEGaussianBlurElementAttributes = SVGGlobalAttributes & {}
+type SVGFEGaussianBlurElementAttributes = SVGGlobalAttributes & {
+	"edgeMode": attr.EdgeMode;
+}
 
 // TODO
 type SVGFEImageElementAttributes = SVGGlobalAttributes & {}
@@ -1004,7 +1099,9 @@ type SVGFESpotLightElementAttributes = SVGGlobalAttributes & {}
 type SVGFETileElementAttributes = SVGGlobalAttributes & {}
 
 // TODO
-type SVGFETurbulenceElementAttributes = SVGGlobalAttributes & {}
+type SVGFETurbulenceElementAttributes = SVGGlobalAttributes & {
+	"type": "fractalNoise" | "turbulence";
+}
 
 // TODO
 type SVGFilterElementAttributes = SVGGlobalAttributes & {}
@@ -1079,7 +1176,9 @@ type SVGRadialGradientElementAttributes = SVGGlobalAttributes & {}
 type SVGRectElementAttributes = SVGGlobalAttributes & {}
 
 // TODO
-type SVGSetElement = SVGGlobalAttributes & {}
+type SVGSetElement = SVGGlobalAttributes & {
+	"fill": "freeze" | "remove";
+}
 
 // TODO
 type SVGStopElementAttributes = SVGGlobalAttributes & {}
@@ -1128,6 +1227,8 @@ declare module attr {
 	type Autocomplete = OnOffUnion | "name" | "honorific-prefix" | "given-name" | "additional-name" | "family-name" | "honorific-suffix" | "nickname" | "email" | "username" | "new-password" | "current-password" | "one-time-code" | "organization-title" | "organization" | "street-address" | "address-line1" | "address-line2" | "address-line3" | "address-level1" | "address-level2" | "address-level3" | "address-level4" | "country" | "country-name" | "postal-code" | "cc-name" | "cc-given-name" | "cc-additional-name" | "cc-family-name" | "cc-number" | "cc-exp" | "cc-exp-month" | "cc-exp-year" | "cc-csc" | "cc-type" | "transaction-currency" | "transaction-amount" | "language" | "bday" | "bday-day" | "bday-month" | "bday-year" | "sex" | "tel" | "tel-country-code" | "tel-national" | "tel-area-code" | "tel-local" | "tel-extension" | "impp" | "url" | "photo"
 	
 	type CrossOrigin = "" | "anonymous" | "use-credentials";
+
+	type EdgeMode = "duplicate" | "wrap" | "none";
 	
 	type Enctype = "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
 	
