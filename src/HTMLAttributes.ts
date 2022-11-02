@@ -1034,17 +1034,30 @@ type SVGFEConvolveMatrixElementAttributes = SVGGlobalAttributes & {
 	"preserveAlpha": BooleanUnion;
 }
 
-// TODO
-type SVGFEDiffuseLightingElementAttributes = SVGGlobalAttributes & {}
+type SVGFEDiffuseLightingElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+	"surfaceScale": number;
+	"diffuseConstant": number;
+	"kernelUnitLength": number;
+}
 
-// TODO
-type SVGFEDisplacementMapElementAttributes = SVGGlobalAttributes & {}
+type SVGFEDisplacementMapElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+	"in2": string;
+	"scale": number;
+	"xChannelSelector": "R" | "G" | "B" | "A";
+	"yChannelSelector": "R" | "G" | "B" | "A";
+}
 
-// TODO
-type SVGFEDistantLightElementAttributes = SVGGlobalAttributes & {}
+type SVGFEDistantLightElementAttributes = SVGGlobalAttributes & {
+	"azimuth": number;
+	"elevation": number;
+}
 
-// TODO
-type SVGFEFloodElementAttributes = SVGGlobalAttributes & {}
+type SVGFEFloodElementAttributes = SVGGlobalAttributes & {
+	"flood-color": css.type.Color;
+	"flood-opacity": css.type.Alpha;
+}
 
 // TODO
 type SVGFEFuncAElementAttrinutes = SVGGlobalAttributes & {
