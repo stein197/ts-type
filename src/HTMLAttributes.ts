@@ -5,6 +5,7 @@
 // TODO: Mark deprecated elements and attributes
 // TODO: Add AnimationTimingAttributes, AnimationValueAttributes, etc.
 import type {mime} from "./MIME";
+import type {css} from "./CSS";
 
 export type ElementAttributesMap = HTMLElementAttributesMap & SVGElementAttributesMap & MathMLElementAttributesMap;
 
@@ -256,8 +257,7 @@ type GlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes
 	"part": string;
 	"slot": string;
 	"spellcheck": BooleanUnion;
-	// TODO: Replace with map type
-	"style": string;
+	"style": string | css.RealProperties;
 	"tabindex": number;
 	"title": string;
 	"translate": "" | YesNoUnion;
@@ -271,8 +271,7 @@ type SVGGlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttribu
 	"lang": string; // TODO: Replace with BCP47 std
 	"xml:space": string;
 	"class": string | string[];
-	// TODO: Replace with map type
-	"style": string;
+	"style": string | css.RealSVGProperties;
 }
 
 type DataAttributes = {
