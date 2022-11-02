@@ -301,6 +301,34 @@ type SVGAnimationAttributes = {
 	"onrepeat": string | ((e: any) => void);
 }
 
+type SVGFilterAttributes = {
+	"height": "auto" | number | css.type.Length;
+	"width": "auto" | number | css.type.Length;
+	"result": string;
+	"x": "auto" | number | css.type.Length;
+	"y": "auto" | number | css.type.Length;
+}
+
+type SVGTransferAttributes = {
+	"type": string;
+	"tableValues": string | number | number[];
+	"slope": number;
+	"intercept": number;
+	"amplitude": number;
+	"exponent": number;
+	"offset": string;
+}
+
+type SVGXLinkAttributes = {
+	"xlink:href": string;
+	"xlink:type": string;
+	"xlink:role": string;
+	"xlink:arcrole": string;
+	"xlink:title": string;
+	"xlink:show": string;
+	"xlink:actuate": string;
+}
+
 type DataAttributes = {
 	[K: `data-${string}`]: string;
 }
@@ -1059,33 +1087,31 @@ type SVGFEFloodElementAttributes = SVGGlobalAttributes & {
 	"flood-opacity": css.type.Alpha;
 }
 
-// TODO
-type SVGFEFuncAElementAttrinutes = SVGGlobalAttributes & {
+type SVGFEFuncAElementAttrinutes = SVGGlobalAttributes & SVGTransferAttributes & {
 	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
 }
 
-// TODO
-type SVGFEFuncBElementAttrinutes = SVGGlobalAttributes & {
+type SVGFEFuncBElementAttrinutes = SVGGlobalAttributes & SVGTransferAttributes & {
 	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
 }
 
-// TODO
-type SVGFEFuncGElementAttrinutes = SVGGlobalAttributes & {
+type SVGFEFuncGElementAttrinutes = SVGGlobalAttributes & SVGTransferAttributes & {
 	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
 }
 
-// TODO
-type SVGFEFuncRElementAttrinutes = SVGGlobalAttributes & {
+type SVGFEFuncRElementAttrinutes = SVGGlobalAttributes & SVGTransferAttributes & {
 	"type": "identity" | "table" | "discrete" | "linear" | "gamma";
 }
 
-// TODO
-type SVGFEGaussianBlurElementAttributes = SVGGlobalAttributes & {
+type SVGFEGaussianBlurElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & {
+	"in": string;
+	"stdDeviation": number;
 	"edgeMode": attr.EdgeMode;
 }
 
-// TODO
-type SVGFEImageElementAttributes = SVGGlobalAttributes & {}
+type SVGFEImageElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & SVGXLinkAttributes & {
+	"preserveAspectRatio": attr.PreserveAspectRatio;
+}
 
 // TODO
 type SVGFEMergeElementAttributes = SVGGlobalAttributes & {}
@@ -1252,6 +1278,8 @@ declare module attr {
 	type Loading = "eager" | "lazy";
 	
 	type Method = "get" | "post";
+
+	type PreserveAspectRatio = "none" | "xMinYMin" | "xMidYMin" | "xMaxYMin" | "xMinYMid" | "xMidYMid" | "xMaxYMid" | "xMinYMax" | "xMidYMax" | "xMaxYMax" | ["xMinYMin" | "xMidYMin" | "xMaxYMin" | "xMinYMid" | "xMidYMid" | "xMaxYMid" | "xMinYMax" | "xMidYMax" | "xMaxYMax", "meet" | "slice"];
 	
 	type ReferrerPolicy = "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url";
 	
