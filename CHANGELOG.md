@@ -1,6 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
-- Add HTTP headers typings
+- Change file extensions from `ts` to `d.ts`
+
+## [1.5.0](../../compare/1.4.1..1.5.0) - 2022-11-01
+### Added
+- CSS module
 
 ## [1.4.1](../../compare/1.4.0..1.4.1) - 2022-09-19
 ### Added
