@@ -2,6 +2,10 @@
 ## [Unreleased]
 - Change file extensions from `ts` to `d.ts`
 
+## [1.6.0](../../compare/1.5.0..1.6.0) - 2022-11-03
+### Added
+- `PromiseState` enum
+
 ## [1.5.0](../../compare/1.4.1..1.5.0) - 2022-11-01
 ### Added
 - CSS module

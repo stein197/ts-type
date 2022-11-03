@@ -20,6 +20,9 @@ npm install @stein197/ts-util
 - Large `MIME` module that contains all available MIME-types, described [here](https://www.iana.org/assignments/media-types/media-types.xhtml)
 - Large `css` module that contains types related to CSS properties and their types.
 
+## Enums
+- `PromiseState`
+
 ## NPM scripts
 - `make:index` generates at the root `index.ts`
 - `make:mime` generates `MIME.ts` file
