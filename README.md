@@ -22,6 +22,7 @@ npm install @stein197/ts-util
 
 ## Enums
 - `PromiseState`
+- `KeyboardCode`
 
 ## NPM scripts
 - `make:index` generates at the root `index.ts`
