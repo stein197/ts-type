@@ -2,6 +2,10 @@
 ## [Unreleased]
 - Change file extensions from `ts` to `d.ts`
 
+## [1.8.0](../../compare/1.7.0..1.8.0) - 2022-11-04
+### Removed
+- Moved all enums to [@stein197/util](https://github.com/stein197/js-util)
+
 ## [1.7.0](../../compare/1.6.0..1.7.0) - 2022-11-04
 ### Added
 - `KeyboardCode` enum
