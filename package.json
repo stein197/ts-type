@@ -25,9 +25,7 @@
     "nullable",
     "json",
     "mime",
-	"css",
-	"promise",
-	"keyboard"
+	"css"
   ],
   "author": "Nail Gafarov <nil20122013@gmail.com> (http://gnail.dev)",
   "license": "MIT",
