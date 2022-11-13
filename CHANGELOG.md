@@ -2,6 +2,10 @@
 ## [Unreleased]
 - Change file extensions from `ts` to `d.ts`
 
+## [1.9.0](../../compare/1.8.0..1.9.0) - 2022-11-13
+### Added
+- `Tuple` module which contains three new types: `Optional`, `TrimStart` and `TrimEnd`
+
 ## [1.8.0](../../compare/1.7.0..1.8.0) - 2022-11-04
 ### Removed
 - Moved all enums to [@stein197/util](https://github.com/stein197/js-util)
