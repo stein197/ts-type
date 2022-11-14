@@ -232,7 +232,7 @@ export type SVGElementAttributesMap = {
 // TODO
 export type MathMLElementAttributesMap = {}
 
-type GlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes & {
+type GlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes & css.RealSVGProperties & {
 	"accesskey": string;
 	"autocapitalize": OnOffUnion | "none" | "sentences" | "words" | "characters";
 	"autofocus": "";
