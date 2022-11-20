@@ -229,8 +229,41 @@ export type SVGElementAttributesMap = {
 	"vkern": SVGVkernElementAttributes;
 }
 
-// TODO
-export type MathMLElementAttributesMap = {}
+export type MathMLElementAttributesMap = {
+	"math": MathMLMathElementAttributes;
+	"maction": MathMLMactionElementAttributes;
+	"annotation": MathMLAnnotationElementAttributes;
+	"annotation-xml": MathMLAnnotationElementAttributes;
+	"menclose": MathMLMencloseElementAttributes;
+	"merror": MathMLMerrorElementAttributes;
+	"mfenced": MathMLMfencedElementAttributes;
+	"mfrac": MathMLMfracElementAttributes;
+	"mi": MathMLMiElementAttributes;
+	"mmultiscripts": MathMLMmultiscriptsElementAttributes;
+	"mn": MathMLMnElementAttributes;
+	"none": MathMLNoneElementAttributes;
+	"mo": MathMLMoElementAttributes;
+	"mover": MathMLMoverElementAttributes;
+	"mpadded": MathMLMpaddedElementAttributes;
+	"mphantom": MathMLMphantomElementAttributes;
+	"mprescripts": MathMLMprescriptsElementAttributes;
+	"mroot": MathMLMrootElementAttributes;
+	"mrow": MathMLMrowElementAttributes;
+	"ms": MathMLMsElementAttributes;
+	"semantics": MathMLSemanticsElementAttributes;
+	"mspace": MathMLMspaceElementAttributes;
+	"msqrt": MathMLMsqrtElementAttributes;
+	"mstyle": MathMLMstyleElementAttributes;
+	"msub": MathMLMsubElementAttributes;
+	"msup": MathMLMsupElementAttributes;
+	"msubsup": MathMLMsubsupElementAttributes;
+	"mtable": MathMLMtableElementAttributes;
+	"mtd": MathMLMtdElementAttributes;
+	"mtext": MathMLMtextElementAttributes;
+	"mtr": MathMLMtrElementAttributes;
+	"munder": MathMLMunderElementAttributes;
+	"munderover": MathMLMunderoverElementAttributes;
+}
 
 type GlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes & css.RealSVGProperties & {
 	"accesskey": string;
@@ -334,6 +367,9 @@ type SVGGraphicalEventAttributes = {
 	"onfocusin": string | ((e: any) => void);
 	"onfocusout": string | ((e: any) => void);
 }
+
+// TODO
+type MathMLGlobalAttributes = {}
 
 type DataAttributes = {
 	[K: `data-${string}`]: string;
@@ -1474,6 +1510,105 @@ type SVGVkernElementAttributes = SVGGlobalAttributes & {
 	"g2": string | string[];
 	"k": number;
 }
+
+// TODO
+type MathMLMathElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMactionElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLAnnotationXMLElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLAnnotationElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMencloseElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMerrorElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMfencedElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMfracElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMiElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMmultiscriptsElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMnElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLNoneElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMoElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMoverElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMpaddedElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMphantomElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMprescriptsElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMrootElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMrowElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMsElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLSemanticsElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMspaceElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMsqrtElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMstyleElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMsubElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMsupElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMsubsupElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMtableElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMtdElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMtextElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMtrElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMunderElementAttributes = MathMLGlobalAttributes & {}
+
+// TODO
+type MathMLMunderoverElementAttributes = MathMLGlobalAttributes & {}
 
 type BooleanUnion = "" | "false" | "true" | boolean;
 
