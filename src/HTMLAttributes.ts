@@ -1113,61 +1113,155 @@ type SVGFEImageElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & S
 	"preserveAspectRatio": attr.PreserveAspectRatio;
 }
 
-// TODO
-type SVGFEMergeElementAttributes = SVGGlobalAttributes & {}
+type SVGFEMergeElementAttributes = SVGGlobalAttributes & SVGFilterAttributes;
 
-// TODO
-type SVGFEMergeNodeElementAttributes = SVGGlobalAttributes & {}
+type SVGFEMergeNodeElementAttributes = SVGGlobalAttributes & {
+	"in": string;
+}
 
-// TODO
-type SVGFEMorphologyElementAttributes = SVGGlobalAttributes & {}
+type SVGFEMorphologyElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & {
+	"in": string;
+	"operator": "over" | "in" | "out" | "atop" | "xor" | "lighter" | "arithmetic";
+	"radius": number;
+}
 
-// TODO
-type SVGFEOffsetElementAttributes = SVGGlobalAttributes & {}
+type SVGFEOffsetElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & {
+	"in": string;
+	"dx": number;
+	"dy": number;
+}
 
-// TODO
-type SVGFEPointLightElementAttributes = SVGGlobalAttributes & {}
+type SVGFEPointLightElementAttributes = SVGGlobalAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"z": number | css.type.Length;
+}
 
-// TODO
-type SVGFESpecularLightingElementAttributes = SVGGlobalAttributes & {}
+type SVGFESpecularLightingElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & {
+	"in": string;
+	"surfaceScale": number;
+	"specularConstant": number;
+	"specularExponent": number;
+	"kernelUnitLength": number;
+}
 
-// TODO
-type SVGFESpotLightElementAttributes = SVGGlobalAttributes & {}
+type SVGFESpotLightElementAttributes = SVGGlobalAttributes & {
+	"x": number;
+	"y": number;
+	"z": number;
+	"pointsAtX": number;
+	"pointsAtY": number;
+	"pointsAtZ": number;
+	"specularExponent": number;
+	"limitingConeAngle": number;
+}
 
-// TODO
-type SVGFETileElementAttributes = SVGGlobalAttributes & {}
+type SVGFETileElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & {
+	"in": string;
+}
 
-// TODO
-type SVGFETurbulenceElementAttributes = SVGGlobalAttributes & {
+type SVGFETurbulenceElementAttributes = SVGGlobalAttributes & SVGFilterAttributes & {
+	"baseFrequency": number;
+	"numOctaves": number;
+	"seed": number;
+	"stitchTiles": "noStitch" | "stitch";
 	"type": "fractalNoise" | "turbulence";
 }
 
-// TODO
-type SVGFilterElementAttributes = SVGGlobalAttributes & {}
+type SVGFilterElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"width": number | css.type.Length;
+	"height": number | css.type.Length;
+	"filterRes": number;
+	"filterUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"primitiveUnits": "userSpaceOnUse" | "objectBoundingBox";
+}
+
+type SVGFontElementAttributes = SVGGlobalAttributes & {
+	"horiz-origin-x": number;
+	"horiz-origin-y": number;
+	"horiz-adv-x": number;
+	"vert-origin-x": number;
+	"vert-origin-y": number;
+	"vert-adv-y": number;
+}
 
 // TODO
-type SVGFontElementAttributes = SVGGlobalAttributes & {}
+type SVGFontFaceElementAttributes = SVGGlobalAttributes & {
+	"font-family": string;
+	"font-style": "normal" | "italic" | "oblique";
+	"font-variant": string;
+	"font-weight": css.RealProperties["font-weight"];
+	"font-stretch": css.RealProperties["font-stretch"];
+	"font-size": css.RealProperties["font-size"];
+	"unicode-range": string;
+	"units-per-em": number;
+	"panose-1": [number, number, number, number, number, number, number, number, number, number];
+	"stemv": number;
+	"stemh": number;
+	"slope": number;
+	"cap-height": number;
+	"x-height": number;
+	"accent-height": number;
+	"ascent": number;
+	"descent": number;
+	"widths": number;
+	"bbox": string;
+	"ideographic": number;
+	"alphabetic": number;
+	"mathematical": number;
+	"hanging": number;
+	"v-ideographic": number;
+	"v-alphabetic": number;
+	"v-mathematical": number;
+	"v-hanging": number;
+	"underline-position": number;
+	"underline-thickness": number;
+	"strikethrough-position": number;
+	"strikethrough-thickness": number;
+	"overline-position": number;
+	"overline-thickness": number;
+}
 
-// TODO
-type SVGFontFaceElementAttributes = SVGGlobalAttributes & {}
+type SVGFontFaceFormatElementAttributes = SVGGlobalAttributes & {
+	"string": string;
+}
 
-// TODO
-type SVGFontFaceFormatElementAttributes = SVGGlobalAttributes & {}
+type SVGFontFaceNameElementAttributes = SVGGlobalAttributes & {
+	"name": string;
+}
 
-// TODO
-type SVGFontFaceNameElementAttributes = SVGGlobalAttributes & {}
+type SVGFontFaceURIElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes;
 
-// TODO
-type SVGFontFaceURIElementAttributes = SVGGlobalAttributes & {}
+type SVGForeignObjectElementAttributes = SVGGlobalAttributes & {
+	"height": number | css.type.Length;
+	"width": number | css.type.Length;
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+}
 
-// TODO
-type SVGForeignObjectElementAttributes = SVGGlobalAttributes & {}
+type SVGGlyphElementAttributes = SVGGlobalAttributes & {
+	"d": string;
+	"horiz-adv-x": number;
+	"vert-origin-x": number;
+	"vert-origin-y": number;
+	"vert-adv-y": number;
+	"unicode": string;
+	"glyph-name": string;
+	"orientation": "h" | "v";
+	"arabic-form": "initial" | "medial" | "terminal" | "isolated";
+	"lang": string;
+}
 
-// TODO
-type SVGGlyphElementAttributes = SVGGlobalAttributes & {}
-
-// TODO
-type SVGGlyphRefElementAttributes = SVGGlobalAttributes & {}
+type SVGGlyphRefElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"dx": number;
+	"dy": number;
+	"glyphRef": number;
+	"format": number;
+}
 
 // TODO
 type SVGHKernElementAttributes = SVGGlobalAttributes & {}
