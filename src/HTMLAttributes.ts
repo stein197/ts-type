@@ -1375,43 +1375,105 @@ type SVGRadialGradientElementAttributes = SVGGlobalAttributes & SVGXLinkAttribut
 	"spreadMethod": "pad" | "reflect" | "repeat";
 }
 
-// TODO
-type SVGRectElementAttributes = SVGGlobalAttributes & {}
+type SVGRectElementAttributes = SVGGlobalAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"width": "auto" | number | css.type.Length;
+	"height": "auto" | number | css.type.Length;
+	"rx": "auto" | number | css.type.Length;
+	"ry": "auto" | number | css.type.Length;
+	"pathLength": number;
+}
 
-// TODO
-type SVGSetElement = SVGGlobalAttributes & {
+type SVGSetElement = SVGGlobalAttributes & SVGAnimationAttributes & {
 	"fill": "freeze" | "remove";
 }
 
-// TODO
-type SVGStopElementAttributes = SVGGlobalAttributes & {}
+type SVGStopElementAttributes = SVGGlobalAttributes & {
+	"offset": number | css.type.Percentage;
+	"stop-color": css.type.Color;
+	"stop-opacity": number;
+}
 
-// TODO
-type SVGSVGElementAttributes = SVGGlobalAttributes & {}
+type SVGSVGElementAttributes = SVGGlobalAttributes & {
+	"baseProfile": string;
+	"contentScriptType": string;
+	"contentStyleType": string;
+	"width": number | css.type.Length;
+	"height": number | css.type.Length;
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"preserveAspectRatio": attr.PreserveAspectRatio;
+	"version": string;
+	"viewBox": number[];
+}
 
-// TODO
-type SVGSwitchElementAttributes = SVGGlobalAttributes & {}
+type SVGSwitchElementAttributes = SVGGlobalAttributes & SVGGraphicalEventAttributes;
 
-// TODO
-type SVGSymbolElementAttributes = SVGGlobalAttributes & {}
+type SVGSymbolElementAttributes = SVGGlobalAttributes & {
+	"width": "auto" | number | css.type.Length;
+	"height": "auto" | number | css.type.Length;
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"preserveAspectRatio": attr.PreserveAspectRatio;
+	"refX": "left" | "center" | "right" | number | css.type.Length;
+	"refY": "top" | "center" | "bottom" | number | css.type.Length;
+	"viewBox": number[];
+}
 
-// TODO
-type SVGTextElementAttributes = SVGGlobalAttributes & {}
+type SVGTextElementAttributes = SVGGlobalAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"dx": number | css.type.Length;
+	"dy": number | css.type.Length;
+	"rotate": number[];
+	"lengthAdjust": "spacing" | "spacingAndGlyphs";
+	"textLength": number | css.type.Length;
+}
 
-// TODO
-type SVGTextPathElementAttributes = SVGGlobalAttributes & {}
+type SVGTextPathElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
+	"href": string;
+	"lengthAdjust": "spacing" | "spacingAndGlyphs";
+	"method": "aligh" | "stretch";
+	"path": string;
+	"side": "left" | "right";
+	"spacing": "auto" | "exact";
+	"startOffset": number | css.type.Length;
+	"textLength": number | css.type.Length;
+}
 
-// TODO
-type SVGTSpanElementAttributes = SVGGlobalAttributes & {}
+type SVGTSpanElementAttributes = SVGGlobalAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"dx": number | css.type.Length;
+	"dy": number | css.type.Length;
+	"rotate": number[];
+	"lengthAdjust": "spacing" | "spacingAndGlyphs";
+	"textLength": number | css.type.Length;
+}
 
-// TODO
-type SVGUseElementAttributes = SVGGlobalAttributes & {}
+type SVGUseElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
+	"href": string;
+	"x": number;
+	"y": number;
+	"width": number | css.type.Length;
+	"height": number | css.type.Length;
+}
 
-// TODO
-type SVGViewElementAttributes = SVGGlobalAttributes & {}
+type SVGViewElementAttributes = SVGGlobalAttributes & {
+	"viewBox": number[];
+	"preserveAspectRatio": attr.PreserveAspectRatio;
+	"zoomAndPan": "disable" | "magnify";
+	"viewTarget": string;
+}
 
-// TODO
-type SVGVkernElementAttributes = SVGGlobalAttributes & {}
+type SVGVkernElementAttributes = SVGGlobalAttributes & {
+	"u1": string | string[];
+	"g1": string | string[];
+	"u2": string | string[];
+	"g2": string | string[];
+	"k": number;
+}
 
 type BooleanUnion = "" | "false" | "true" | boolean;
 
