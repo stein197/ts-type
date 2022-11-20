@@ -1012,7 +1012,7 @@ type SVGCircleElementAttributes = SVGGlobalAttributes & {
 }
 
 type SVGClipPathElementAttributes = SVGGlobalAttributes & {
-	"clipPathUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"clipPathUnits": attr.Unit;
 }
 
 type SVGCursorElementAttributes = SVGGlobalAttributes & {
@@ -1180,8 +1180,8 @@ type SVGFilterElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
 	"width": number | css.type.Length;
 	"height": number | css.type.Length;
 	"filterRes": number;
-	"filterUnits": "userSpaceOnUse" | "objectBoundingBox";
-	"primitiveUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"filterUnits": attr.Unit;
+	"primitiveUnits": attr.Unit;
 }
 
 type SVGFontElementAttributes = SVGGlobalAttributes & {
@@ -1296,7 +1296,7 @@ type SVGLineElementAttributes = SVGGlobalAttributes & {
 }
 
 type SVGLinearGradientElementAttributes = SVGGlobalAttributes & {
-	"gradientUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"gradientUnits": attr.Unit;
 	"gradientTransform": string;
 	"href": string;
 	"spreadMethod": "pad" | "reflect" | "repeat";
@@ -1322,8 +1322,8 @@ type SVGMaskElementAttributes = SVGGlobalAttributes & {
 	"y": number | css.type.Length;
 	"width": number | css.type.Length;
 	"height": number | css.type.Length;
-	"maskContentUnits": "userSpaceOnUse" | "objectBoundingBox";
-	"maskUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"maskContentUnits": attr.Unit;
+	"maskUnits": attr.Unit;
 }
 
 type SVGMissingGlyphElementAttributes = SVGGlobalAttributes & {
@@ -1345,9 +1345,9 @@ type SVGPatternElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
 	"width": number | css.type.Length;
 	"height": number | css.type.Length;
 	"href": string;
-	"patternContentUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"patternContentUnits": attr.Unit;
 	"patternTransform": string;
-	"patternUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"patternUnits": attr.Unit;
 	"preserveAspectRatio": attr.PreserveAspectRatio;
 	"viewBox": number[];
 }
@@ -1368,7 +1368,7 @@ type SVGRadialGradientElementAttributes = SVGGlobalAttributes & SVGXLinkAttribut
 	"fr": number | css.type.Length;
 	"fx": number | css.type.Length;
 	"fy": number | css.type.Length;
-	"gradientUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"gradientUnits": attr.Unit;
 	"gradientTransform": string;
 	"href": string;
 	"r": number | css.type.Length;
@@ -1452,4 +1452,6 @@ declare module attr {
 	type Shape = "default" | "circle" | "rect" | "polygon" | "poly";
 	
 	type Target = "_blank" | "_parent" | "_self" | "_top";
+
+	type Unit = "userSpaceOnUse" | "objectBoundingBox";
 }
