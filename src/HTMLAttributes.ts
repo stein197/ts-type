@@ -206,9 +206,9 @@ export type SVGElementAttributesMap = {
 	"linearGradient": SVGLinearGradientElementAttributes;
 	"marker": SVGMarkerElementAttributes;
 	"mask": SVGMaskElementAttributes;
-	"metadata": SVGMetadataElementAttributes;
+	"metadata": SVGGlobalAttributes;
 	"missing-glyph": SVGMissingGlyphElementAttributes;
-	"mpath": SVGMPathElementAttributes;
+	"mpath": SVGGlobalAttributes;
 	"path": SVGPathElementAttributes;
 	"pattern": SVGPatternElementAttributes;
 	"polygon": SVGPolygonElementAttributes;
@@ -265,7 +265,7 @@ type GlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes
 	"x-ms-format-detection": "all" | "none" | "phone";
 }
 
-type SVGGlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes & {
+type SVGGlobalAttributes = AriaAttributes & DataAttributes & EventHandlerAttributes & css.RealSVGProperties & {
 	"id": string;
 	"tabindex": number;
 	"lang": string; // TODO: Replace with BCP47 std
@@ -327,6 +327,12 @@ type SVGXLinkAttributes = {
 	"xlink:title": string;
 	"xlink:show": string;
 	"xlink:actuate": string;
+}
+
+type SVGGraphicalEventAttributes = {
+	"onactivate": string | ((e: any) => void);
+	"onfocusin": string | ((e: any) => void);
+	"onfocusout": string | ((e: any) => void);
 }
 
 type DataAttributes = {
@@ -1263,47 +1269,111 @@ type SVGGlyphRefElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
 	"format": number;
 }
 
-// TODO
-type SVGHKernElementAttributes = SVGGlobalAttributes & {}
+type SVGHKernElementAttributes = SVGGlobalAttributes & {
+	"u1": string | string[];
+	"g1": string | string[];
+	"u2": string | string[];
+	"g2": string | string[];
+	"k": number;
+}
 
-// TODO
-type SVGImageElementAttributes = SVGGlobalAttributes & {}
+type SVGImageElementAttributes = SVGGlobalAttributes & SVGGraphicalEventAttributes & SVGXLinkAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"width": "auto" | number | css.type.Length;
+	"height": "auto" | number | css.type.Length;
+	"href": string;
+	"preserveAspectRatio": attr.PreserveAspectRatio;
+	"crossorigin": "anonymous" | "use-credentials" | "";
+}
 
-// TODO
-type SVGLineElementAttributes = SVGGlobalAttributes & {}
+type SVGLineElementAttributes = SVGGlobalAttributes & {
+	"x1": number | css.type.Length;
+	"y1": number | css.type.Length;
+	"x2": number | css.type.Length;
+	"y2": number | css.type.Length;
+	"pathLength": number;
+}
 
-// TODO
-type SVGLinearGradientElementAttributes = SVGGlobalAttributes & {}
+type SVGLinearGradientElementAttributes = SVGGlobalAttributes & {
+	"gradientUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"gradientTransform": string;
+	"href": string;
+	"spreadMethod": "pad" | "reflect" | "repeat";
+	"x1": number | css.type.Length;
+	"x2": number | css.type.Length;
+	"y1": number | css.type.Length;
+	"y2": number | css.type.Length;
+}
 
-// TODO
-type SVGMarkerElementAttributes = SVGGlobalAttributes & {}
+type SVGMarkerElementAttributes = SVGGlobalAttributes & {
+	"markerHeight": number | css.type.Length;
+	"markerUnits": "userSpaceOnUse" | "strokeWidth";
+	"markerWidth": number | css.type.Length;
+	"orient": "auto" | "auto-start-reverse" | number | css.type.Length;
+	"preserveAspectRatio": attr.PreserveAspectRatio;
+	"refX": "left" | "center" | "right" | number | css.type.Length;
+	"refY": "top" | "center" | "bottom" | number | css.type.Length;
+	"viewBox": number[];
+}
 
-// TODO
-type SVGMaskElementAttributes = SVGGlobalAttributes & {}
+type SVGMaskElementAttributes = SVGGlobalAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"width": number | css.type.Length;
+	"height": number | css.type.Length;
+	"maskContentUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"maskUnits": "userSpaceOnUse" | "objectBoundingBox";
+}
 
-// TODO
-type SVGMetadataElementAttributes = SVGGlobalAttributes & {}
+type SVGMissingGlyphElementAttributes = SVGGlobalAttributes & {
+	"d": string;
+	"horiz-adv-x": number;
+	"vert-origin-x": number;
+	"vert-origin-y": number;
+	"vert-adv-y": number;
+}
 
-// TODO
-type SVGMissingGlyphElementAttributes = SVGGlobalAttributes & {}
+type SVGPathElementAttributes = SVGGlobalAttributes & {
+	"d": string;
+	"pathLength": number;
+}
 
-// TODO
-type SVGMPathElementAttributes = SVGGlobalAttributes & {}
+type SVGPatternElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
+	"x": number | css.type.Length;
+	"y": number | css.type.Length;
+	"width": number | css.type.Length;
+	"height": number | css.type.Length;
+	"href": string;
+	"patternContentUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"patternTransform": string;
+	"patternUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"preserveAspectRatio": attr.PreserveAspectRatio;
+	"viewBox": number[];
+}
 
-// TODO
-type SVGPathElementAttributes = SVGGlobalAttributes & {}
+type SVGPolygonElementAttributes = SVGGlobalAttributes & {
+	"points": number[];
+	"pathLength": number;
+}
 
-// TODO
-type SVGPatternElementAttributes = SVGGlobalAttributes & {}
+type SVGPolylineElementAttributes = SVGGlobalAttributes & {
+	"points": number[];
+	"pathLength": number;
+}
 
-// TODO
-type SVGPolygonElementAttributes = SVGGlobalAttributes & {}
-
-// TODO
-type SVGPolylineElementAttributes = SVGGlobalAttributes & {}
-
-// TODO
-type SVGRadialGradientElementAttributes = SVGGlobalAttributes & {}
+type SVGRadialGradientElementAttributes = SVGGlobalAttributes & SVGXLinkAttributes & {
+	"cx": number | css.type.Length;
+	"cy": number | css.type.Length;
+	"fr": number | css.type.Length;
+	"fx": number | css.type.Length;
+	"fy": number | css.type.Length;
+	"gradientUnits": "userSpaceOnUse" | "objectBoundingBox";
+	"gradientTransform": string;
+	"href": string;
+	"r": number | css.type.Length;
+	"spreadMethod": "pad" | "reflect" | "repeat";
+}
 
 // TODO
 type SVGRectElementAttributes = SVGGlobalAttributes & {}
