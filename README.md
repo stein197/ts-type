@@ -19,6 +19,7 @@ npm install @stein197/ts-util
 - `JsonObject`
 - Large `MIME` module that contains all available MIME-types, described [here](https://www.iana.org/assignments/media-types/media-types.xhtml)
 - Large `css` module that contains types related to CSS properties and their types.
+- Large `HTMLAttributes` module that contains HTML-related typings
 - `Tuple` module
 
 > NOTE: For more detailed documentation, please, refer to the TSDoc comments in the source code.

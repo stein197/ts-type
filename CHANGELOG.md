@@ -2,6 +2,10 @@
 ## [Unreleased]
 - Change file extensions from `ts` to `d.ts`
 
+## [1.10.0](../../compare/1.9.0..1.10.0) - 2022-12-04
+### Added
+- `HTMLAttributes` typings
+
 ## [1.9.0](../../compare/1.8.0..1.9.0) - 2022-11-13
 ### Added
 - `Tuple` module which contains three new types: `Optional`, `TrimStart` and `TrimEnd`
