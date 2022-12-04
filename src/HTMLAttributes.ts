@@ -368,8 +368,20 @@ type SVGGraphicalEventAttributes = {
 	"onfocusout": string | ((e: any) => void);
 }
 
-// TODO
-type MathMLGlobalAttributes = {}
+type MathMLGlobalAttributes = EventHandlerAttributes & DataAttributes & {
+	"class": string | string[];
+	"dir": "ltr" | "rtl";
+	"displaystyle": BooleanUnion;
+	"id": string;
+	"mathbackground": css.type.Color;
+	"mathcolor": css.type.Color;
+	"mathsize": css.type.Length;
+	"mathvariant": "normal" | "bold" | "italic" | "bold-italic" | "double-struck" | "bold-fraktur" | "script" | "bold-script" | "fraktur" | "sans-serif" | "bold-sans-serif" | "sans-serif-italic" | "sans-serif-bold-italic" | "monospace" | "initial" | "tailed" | "looped" | "stretched";
+	"nonce": string;
+	"scriptlevel": number | `${number}`;
+	"style": string | css.RealProperties;
+	"tabindex": number | `${number}`;
+}
 
 type DataAttributes = {
 	[K: `data-${string}`]: string;
