@@ -233,33 +233,33 @@ export type MathMLElementAttributesMap = {
 	"math": MathMLMathElementAttributes;
 	"maction": MathMLMactionElementAttributes;
 	"annotation": MathMLAnnotationElementAttributes;
-	"annotation-xml": MathMLAnnotationElementAttributes;
+	"annotation-xml": MathMLAnnotationXMLElementAttributes;
 	"menclose": MathMLMencloseElementAttributes;
-	"merror": MathMLMerrorElementAttributes;
+	"merror": MathMLGlobalAttributes;
 	"mfenced": MathMLMfencedElementAttributes;
 	"mfrac": MathMLMfracElementAttributes;
-	"mi": MathMLMiElementAttributes;
+	"mi": MathMLGlobalAttributes;
 	"mmultiscripts": MathMLMmultiscriptsElementAttributes;
-	"mn": MathMLMnElementAttributes;
+	"mn": MathMLGlobalAttributes;
 	"none": MathMLNoneElementAttributes;
 	"mo": MathMLMoElementAttributes;
 	"mover": MathMLMoverElementAttributes;
 	"mpadded": MathMLMpaddedElementAttributes;
-	"mphantom": MathMLMphantomElementAttributes;
+	"mphantom": MathMLGlobalAttributes;
 	"mprescripts": MathMLMprescriptsElementAttributes;
-	"mroot": MathMLMrootElementAttributes;
-	"mrow": MathMLMrowElementAttributes;
+	"mroot": MathMLGlobalAttributes;
+	"mrow": MathMLGlobalAttributes;
 	"ms": MathMLMsElementAttributes;
 	"semantics": MathMLSemanticsElementAttributes;
 	"mspace": MathMLMspaceElementAttributes;
-	"msqrt": MathMLMsqrtElementAttributes;
+	"msqrt": MathMLGlobalAttributes;
 	"mstyle": MathMLMstyleElementAttributes;
 	"msub": MathMLMsubElementAttributes;
 	"msup": MathMLMsupElementAttributes;
 	"msubsup": MathMLMsubsupElementAttributes;
 	"mtable": MathMLMtableElementAttributes;
 	"mtd": MathMLMtdElementAttributes;
-	"mtext": MathMLMtextElementAttributes;
+	"mtext": MathMLGlobalAttributes;
 	"mtr": MathMLMtrElementAttributes;
 	"munder": MathMLMunderElementAttributes;
 	"munderover": MathMLMunderoverElementAttributes;
@@ -1241,7 +1241,6 @@ type SVGFontElementAttributes = SVGGlobalAttributes & {
 	"vert-adv-y": number;
 }
 
-// TODO
 type SVGFontFaceElementAttributes = SVGGlobalAttributes & {
 	"font-family": string;
 	"font-style": "normal" | "italic" | "oblique";
@@ -1523,104 +1522,153 @@ type SVGVkernElementAttributes = SVGGlobalAttributes & {
 	"k": number;
 }
 
-// TODO
-type MathMLMathElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMathElementAttributes = MathMLGlobalAttributes & {
+	"display": "block" | "inline";
+}
 
-// TODO
-type MathMLMactionElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMactionElementAttributes = MathMLGlobalAttributes & {
+	"actiontype": "statusline" | "toggle";
+	"selection": string;
+}
 
-// TODO
-type MathMLAnnotationXMLElementAttributes = MathMLGlobalAttributes & {}
+type MathMLAnnotationElementAttributes = MathMLGlobalAttributes & {
+	"encoding": string;
+	"src": string;
+}
 
-// TODO
-type MathMLAnnotationElementAttributes = MathMLGlobalAttributes & {}
+type MathMLAnnotationXMLElementAttributes = MathMLGlobalAttributes & {
+	"encoding": string;
+	"src": string;
+}
 
-// TODO
-type MathMLMencloseElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMencloseElementAttributes = MathMLGlobalAttributes & {
+	"notation": Arrayize<"longdiv" | "actuarial" | "box" | "roundedbox" | "circle" | "left" | "right" | "top" | "bottom" | "updiagonalstrike" | "downdiagonalstrike" | "verticalstrike" | "horizontalstrike" | "madruwb" | "updiagonalarrow" | "phasorangle">;
+}
 
-// TODO
-type MathMLMerrorElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMfencedElementAttributes = MathMLGlobalAttributes & {
+	"close": string;
+	"open": string;
+	"separators": string;
+}
 
-// TODO
-type MathMLMfencedElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMfracElementAttributes = MathMLGlobalAttributes & {
+	"denomalign": "left" | "center" | "right";
+	"linethickness": css.type.Length;
+	"numalign": "left" | "center" | "right";
+}
 
-// TODO
-type MathMLMfracElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMmultiscriptsElementAttributes = MathMLGlobalAttributes & {
+	"subscriptshift": css.type.Length;
+	"superscriptshift": css.type.Length;
+}
 
-// TODO
-type MathMLMiElementAttributes = MathMLGlobalAttributes & {}
+type MathMLNoneElementAttributes = MathMLGlobalAttributes & {
+	"subscriptshift": css.type.Length;
+	"superscriptshift": css.type.Length;
+}
 
-// TODO
-type MathMLMmultiscriptsElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMoElementAttributes = MathMLGlobalAttributes & {
+	"accent": BooleanUnion;
+	"fence": BooleanUnion;
+	"lspace": css.type.Length;
+	"maxsize": css.type.Length;
+	"minsize": css.type.Length;
+	"movablelimits": BooleanUnion;
+	"rspace": css.type.Length;
+	"separator": BooleanUnion;
+	"stretchy": BooleanUnion;
+	"symmetric": BooleanUnion;
+}
 
-// TODO
-type MathMLMnElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMoverElementAttributes = MathMLGlobalAttributes & {
+	"accent": BooleanUnion;
+}
 
-// TODO
-type MathMLNoneElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMpaddedElementAttributes = MathMLGlobalAttributes & {
+	"depth": css.type.Length;
+	"height": css.type.Length;
+	"lspace": css.type.Length;
+	"voffset": css.type.Length;
+	"width": css.type.Length;
+}
 
-// TODO
-type MathMLMoElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMprescriptsElementAttributes = MathMLGlobalAttributes & {
+	"subscriptshift": css.type.Length;
+	"superscriptshift": css.type.Length;
+}
 
-// TODO
-type MathMLMoverElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMsElementAttributes = MathMLGlobalAttributes & {
+	"lquote": string;
+	"rquote": string;
+}
 
-// TODO
-type MathMLMpaddedElementAttributes = MathMLGlobalAttributes & {}
+type MathMLSemanticsElementAttributes = MathMLGlobalAttributes & {
+	"encoding": string;
+	"src": string;
+}
 
-// TODO
-type MathMLMphantomElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMspaceElementAttributes = MathMLGlobalAttributes & {
+	"depth": css.type.Length;
+	"height": css.type.Length;
+	"width": css.type.Length;
+}
 
-// TODO
-type MathMLMprescriptsElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMstyleElementAttributes = MathMLGlobalAttributes & {
+	"background": css.RealProperties["background-color"];
+	"color": css.RealProperties["color"];
+	"fontsize": css.RealProperties["font-size"];
+	"fontstyle": css.RealProperties["font-style"];
+	"fontweight": css.RealProperties["font-weight"];
+	"scriptminsize": css.type.Length;
+	"scriptsizemultiplier": number | `${number}`;
+}
 
-// TODO
-type MathMLMrootElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMsubElementAttributes = MathMLGlobalAttributes & {
+	"subscriptshift": css.type.Length;
+}
 
-// TODO
-type MathMLMrowElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMsupElementAttributes = MathMLGlobalAttributes & {
+	"superscriptshift": css.type.Length;
+}
 
-// TODO
-type MathMLMsElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMsubsupElementAttributes = MathMLGlobalAttributes & {
+	"subscriptshift": css.type.Length;
+	"superscriptshift": css.type.Length;
+}
 
-// TODO
-type MathMLSemanticsElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMtableElementAttributes = MathMLGlobalAttributes & {
+	"align": "axis" | "baseline" | "bottom" | "center" | "top" | `axis ${number}` | `baseline ${number}` | `bottom ${number}` | `center ${number}` | `top ${number}`;
+	"columnalign": Arrayize<"left" | "right" | "center">;
+	"columnlines": Arrayize<"none" | "solid" | "dashed">;
+	"columnspacing": Arrayize<css.type.Length>;
+	"frame": "none" | "solid" | "dashed";
+	"framespacing": css.type.Length;
+	"rowalign": Arrayize<"axis" | "baseline" | "bottom" | "center" | "top">;
+	"rowlines": Arrayize<"none" | "solid" | "dashed">;
+	"rowspacing": Arrayize<css.type.Length>;
+	"width": css.type.Length;
+}
 
-// TODO
-type MathMLMspaceElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMtdElementAttributes = MathMLGlobalAttributes & {
+	"columnspan": number | `${number}`;
+	"rowspan": number | `${number}`;
+	"columnalign": "left" | "center" | "right";
+	"rowalign": "axis" | "baseline" | "bottom" | "center" | "top";
+}
 
-// TODO
-type MathMLMsqrtElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMtrElementAttributes = MathMLGlobalAttributes & {
+	"columnalign": Arrayize<"left" | "center" | "right">;
+	"rowalign": "axis" | "baseline" | "bottom" | "center" | "top";
+}
 
-// TODO
-type MathMLMstyleElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMunderElementAttributes = MathMLGlobalAttributes & {
+	"accentunder": BooleanUnion;
+}
 
-// TODO
-type MathMLMsubElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMsupElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMsubsupElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMtableElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMtdElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMtextElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMtrElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMunderElementAttributes = MathMLGlobalAttributes & {}
-
-// TODO
-type MathMLMunderoverElementAttributes = MathMLGlobalAttributes & {}
+type MathMLMunderoverElementAttributes = MathMLGlobalAttributes & {
+	"accent": BooleanUnion;
+	"accentunder": BooleanUnion;
+}
 
 type BooleanUnion = "" | "false" | "true" | boolean;
 
@@ -1664,3 +1712,5 @@ declare module attr {
 
 	type Unit = "userSpaceOnUse" | "objectBoundingBox";
 }
+
+type Arrayize<T> = T | T[];
