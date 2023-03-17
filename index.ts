@@ -8,3 +8,11 @@ export * from "./src/MIME";
 export * from "./src/Nullable";
 export * from "./src/ObjectMap";
 export * from "./src/Tuple";
+
+export type DeepPartial<T> = {
+	[K in keyof T]?: DeepPartial<T[K]>;
+}
+
+export type DeepRequired<T> = {
+	[K in keyof T]-?: DeepRequired<T[K]>;
+}
