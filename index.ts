@@ -16,3 +16,7 @@ export type DeepPartial<T> = {
 export type DeepRequired<T> = {
 	[K in keyof T]-?: DeepRequired<T[K]>;
 }
+
+export type DeepReadonly<T> = {
+	readonly [K in keyof T]: DeepReadonly<T[K]>;
+}
