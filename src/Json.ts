@@ -1,17 +1,20 @@
-/**
- * Represents JSON type
- */
-export type Json = null | boolean | number | string | JsonArray | JsonObject
+export declare module json {
 
-/**
- * Represents an array of JSON values
- */
-export type JsonArray = Json[];
+	/**
+	 * Represents JSON type
+	 */
+	export type Json = null | boolean | number | string | JsonArray | JsonObject
 
-/**
- * Represents an object of JSON values
- */
-export type JsonObject = {
-	[K: string]: Json;
-	[K: number]: Json;
+	/**
+	 * Represents an array of JSON values
+	 */
+	export type JsonArray = Json[];
+
+	/**
+	 * Represents an object of JSON values
+	 */
+	export type JsonObject = {
+		[K: string]: Json;
+		[K: number]: Json;
+	}
 }
