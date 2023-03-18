@@ -6,5 +6,5 @@ export * from "./src/DeepRequired";
 export * from "./src/Equalable";
 export * from "./src/Json";
 export * from "./src/MIME";
-export * from "./src/ObjectMap";
+export * from "./src/PlainMap";
 export * from "./src/Tuple";
