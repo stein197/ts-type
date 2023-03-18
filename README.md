@@ -3,7 +3,7 @@ This package contains most frequently used types that most projects need.
 
 ## Installation
 ```
-npm install @stein197/ts-util
+npm install @stein197/type
 ```
 
 ## Interfaces
@@ -12,14 +12,14 @@ npm install @stein197/ts-util
 - `Equalable<T>`
 
 ## Types
-- `Nullable<T>`
-- `ObjectMap<T>`
-- `Json`
-- `JsonArray`
-- `JsonObject`
+- `PlainMap<T>`
+- `json.Json`
+- `json.JsonArray`
+- `json.JsonObject`
 - Large `MIME` module that contains all available MIME-types, described [here](https://www.iana.org/assignments/media-types/media-types.xhtml)
-- Large `css` module that contains types related to CSS properties and their types.
-- Large `HTMLAttributes` module that contains HTML-related typings
+- `DeepPartial<T>`
+- `DeepReadonly<T>`
+- `DeepRequired<T>`
 - `Tuple` module
 
 > NOTE: For more detailed documentation, please, refer to the TSDoc comments in the source code.
