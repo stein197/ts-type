@@ -1,40 +1,32 @@
 {
-  "name": "@stein197/ts-util",
-  "version": "1.10.0",
+  "name": "@stein197/type",
+  "version": "2.0.0",
   "description": "TypeScript utility types",
   "main": "index.js",
   "scripts": {
     "make:index": "node scripts/make-index.mjs",
     "make:mime": "node scripts/make-mime.mjs",
-    "build": "npm run make:mime && npm run make:index"
+    "build": "npm run make:mime && npm run make:index",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stein197/ts-util.git"
+    "url": "git+https://github.com/stein197/ts-type.git"
   },
   "keywords": [
-    "ts",
     "typescript",
-    "util",
-    "utility",
-    "utils",
-    "utilities",
-    "cloneable",
-    "comparable",
-    "equalable",
-    "nullable",
-    "json",
-    "mime",
-    "attributes",
-	"css",
-	"tuple"
+    "ts",
+    "type",
+    "types",
+    "typing",
+    "typings"
   ],
   "author": "Nail Gafarov <nil20122013@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stein197/ts-util/issues"
+    "url": "https://github.com/stein197/ts-type/issues"
   },
-  "homepage": "https://github.com/stein197/ts-util#readme",
+  "homepage": "https://github.com/stein197/ts-type#readme",
   "devDependencies": {
     "chalk": "5.0.1",
     "jsdom": "20.0.0",
