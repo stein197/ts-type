@@ -11,6 +11,17 @@ export declare module tuple {
 	export type Optional<T extends any[]> = T extends [infer First, ...infer Rest] ? [First?, ...Optional<Rest>] : T;
 
 	/**
+	 * An array of fixed size.
+	 * @typeParam T - Type of the elements in the array.
+	 * @typeParam L - Length of the array.
+	 * @example
+	 * ```ts
+	 * type ThreeNumbers = Fixed<number, 3>; // [number, number, number]
+	 * ```
+	 */
+	export type Fixed<T, L extends number> = FixedInternal<T, L, []>;
+
+	/**
 	 * Trims first `L` elements from the tuple.
 	 * @typeParam T - Tuple to trim.
 	 * @typeParam L - How many elements to trim from the start.
@@ -51,4 +62,6 @@ export declare module tuple {
 			never
 		)
 	);
+
+	type FixedInternal<T, L extends number, U extends T[]> = U extends {length: L} ? U : FixedInternal<T, L, [...U, T]>;
 }

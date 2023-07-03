@@ -2,6 +2,10 @@
 ## [Unreleased]
 - Change file extensions from `ts` to `d.ts`
 
+## [2.1.0](../../compare/2.0.0..2.1.0) - 2023-07-03
+### Added
+- `tuple.Fixed` type
+
 ## [2.0.0](../../compare/1.10.0..2.0.0) - 2023-03-18
 ### Added
 - `DeepPartial`, `DeepReadonly` and `DeepRequired` types
